@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Синий луг</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header__top">
+        <div class="header__logo">
+          <a class="header__logo-link" href="/">
+            <img class="header__logo-img" src="./assets/logo/logo.svg" alt="Логотип курорта Синий луг">
+            <span class="header__logo-text">твой лучший курорт</span>
+          </a>
+        </div>
+
+        <div class="header__actions">
+          <button class="header__actions-btn" type="button">Обратная связь</button>
+          <a class="header__actions-phone" href="tel:88007703030">8 800 770 30 30</a>
+        </div>
+      </div>
+
+      <div class="header__bottom">
+        <nav class="header__nav-primary" aria-label="Основная навигация курорта">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">Курорт</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">Чем заняться</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">Купить онлайн</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link header__nav-link--active">Афиша мероприятий</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">Проживание</a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="header__nav-secondary" aria-label="Дополнительные сервисы">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">Программа лояльности</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">Для бизнеса</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="hero">
+        <div class="hero__content">
+          <img class="hero__img" src="./images/hero/mountains.jpg" alt="Горы">
+        </div>
+        <h1 class="hero__title">Отдыхай на курорте Синий луг</h1>
+      </section>
+
+      <section class="entertainments">
+        <h2 class="entertainments__title">Развлечения</h2>
+        <div class="entertainments__items">
+          <div class="entertainments__item">
+            <img class="entertainments__item-img" src="./images/entertainments/snowboarding.jpg"
+              alt="Сноубордист на склоне">
+            <p class="entertainments__item-text">СПОРТИВНЫЕ РАЗВЛЕЧЕНИЯ</p>
+          </div>
+          <div class="entertainments__item">
+            <img class="entertainments__item-img" src="./images/entertainments/nightlife.jpg"
+              alt="Неоновая вывеска бара">
+            <p class="entertainments__item-text">РАЗВЛЕКАТЕЛЬНЫЕ МЕРОПРИЯТИЯ</p>
+          </div>
+          <div class="entertainments__item">
+            <img class="entertainments__item-img" src="./images/entertainments/hiking.jpg" alt="Люди в горах">
+            <p class="entertainments__item-text">ПЕШИЕ ТУРЫ</p>
+          </div>
+          <div class="entertainments__item">
+            <img class="entertainments__item-img" src="./images/entertainments/spa.jpg" alt="Бассейн спа-комплекса">
+            <p class="entertainments__item-text">СПА</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="accommodation">
+        <h2 class="accommodation__title">Проживание на курорте</h2>
+        <div class="accommodation__content">
+          <div class="accommodation__content-left">
+            <div class="offer offer--lux">
+              <h3 class="offer__title offer__title--lux">Апартаменты люкс</h3>
+              <div class="offer__actions offer__actions--lux">
+                <button class="offer__button offer__button--lux" type="button">ЗАБРОНИРОВАТЬ</button>
+                <a class="offer__link offer__link--lux" href="#">ПОСМОТРЕТЬ</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="accommodation__content-right">
+            <div class="offer offer--hotel">
+              <h3 class="offer__title offer__title--hotel">Подберите отель<br />по выгодной цене</h3>
+              <div class="offer__actions">
+                <a class="offer__link" href="#">
+                  ПОДОБРАТЬ
+                  <img class="offer__actions-arrow" src="./assets/icons/arrow.svg" alt="Стрелка вправо для ссылки">
+                </a>
+              </div>
+            </div>
+            <div class="offer offer--loyalty">
+              <h3 class="offer__title offer__title--loyalty">Программа лояльности</h3>
+              <p class="offer__text">Покупайте услуги курорта со скидкой до 20% и получите до 300 баллов за регистрацию!
+              </p>
+              <div class="offer__actions">
+                <button class="offer__button" type="button">УЧАСТВОВАТЬ</button>
+                <a class="offer__link" href="#">ПОДРОБНЕЕ</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__column">
+          <p class="footer__copyright">© 2001-2020 Синий луг</p>
+          <p class="footer__text">Официальный сайт Курорта Синий Луг</p>
+          <a class="footer__policy" href="#">Политика конфиденциальности</a>
+        </div>
+        <div class="footer__column">
+          <button class="footer__feedback-btn" type="button">Обратная связь</button>
+          <address class="footer__address">Россия,<br />Москва, 113337, ул. Советская, д. 42</address>
+        </div>
+        <div class="footer__column">
+          <p class="footer__disclaimer">Указанные на сайте цены не являются публичной офертой (ст.435 ГК РФ).
+            Стоимость
+            и
+            возможность предоставления
+            услуг необходимо уточнять в кассах</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

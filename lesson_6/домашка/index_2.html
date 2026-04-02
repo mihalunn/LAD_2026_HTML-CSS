@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админка_2</title>
+    <link rel="stylesheet" href="style_2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">  
+</head>
+<body>
+    <!-- шапка начало -->
+    <header> <!-- не присваиваю имя классу тк это просто секция, не блок -->
+        <div class="header d-flex jc-sb"> <!-- а вот это уже блок с элементами -->
+            <img class="header__logo" src="images/hibrain-header-logo.svg" alt="Логотип hiBrain">
+            <div class="header__login-area d-flex jc-sb">
+                <img class="header__login-icon" src="images/login-icon.svg" alt="Войти">
+                <a class="header__login-link" href="">Войти</a>
+                <img class="header__search-icon" src="images/search-icon.svg" alt="Поиск">
+            </div>
+        </div>
+    </header>
+    <!-- шапка конец -->
+    <!-- все содержимое между шапкой и подвалом - начало -->
+    <main> <!-- здесь аналогично считаю main секцией с серым фоном, отдельно блоком не делаю -->
+        <div class="main-container d-grid jc-sb">
+            <!-- левая секция начало -->
+            <section class="main-container__sidebar d-flex jc-sb fd-col">
+                <div class="main-container__sidebar-top d-flex">
+                    <div class="main-container__a-letter-box d-flex">
+                        <span>A</span>
+                    </div>
+                    <div class="main-container__user-name-area d-flex fd-col">
+                        <span class="main-container__user-name">Алексей У.</span>
+                        <span class="main-container__personal-account">Личный кабинет</span>
+                    </div>
+                </div>
+                <div class="main-container__sidebar-bottom d-flex fd-col jc-sb">
+                    <div class="main-container__ads-line d-flex"> <!-- ??? затрудняюсь с выбором тега для контейнера - div или span? Из-за его строчного поведения укажу пока span, посмотрим как пойдет -->
+                        <img src="images/book-icon.svg" alt="Объявления">
+                        <span>Объявления</span>
+                    </div>
+                    <div class="main-container__logout-line d-flex">
+                        <img src="images/logout-icon.svg" alt="Выйти">
+                        <a href="">Выход</a>
+                    </div>
+                </div>
+            </section>
+            <!-- левая секция конец -->
+             <!-- правая секция начало -->
+            <section class="main-container__feed d-flex jc-sb fd-col">
+                <!-- раздел шапка правой секции - начало -->
+                <div class="main-container__head d-flex jc-sb">
+                    <div class="main-container__head-left d-flex fd-col">
+                        <h1>Объявления</h1>
+                        <span>Всего: 45</span>
+                    </div>
+                    <div class="main-container__head-btn d-flex jc-sb">
+                        <button class="main-container__btn d-flex jc-sb" type="button">
+                            Добавить
+                            <img src="images/add-icon.svg" alt="Добавить объявление">
+                        </button>
+                    </div>
+                </div>
+                <!-- раздел шапка правой секции - конец -->
+                <!-- раздел поиск - начало -->
+                <div class="main-container__search d-flex jc-sb">
+                    <input class="main-container__search-input" name="search" type="search" placeholder="Найти объявление"> <!-- лупу добавлю фоном, чтобы не перегружать HTML -->
+                    <button class="main-container__filter-btn d-flex jc-sb">Фильтровать<img src="images/filter-icon.svg" alt="Фильтр"></button>
+                    <p class="main-container__count">1-8 из 145</p>
+                    <img class="main-container__arrow-left" src="images/arrow-left-icon.svg" alt="Стрелка влево"> <!-- пока описываю структуру, не всегда сразу понимаю, понадобятся ли классы, напрмиер, этим картинкам. посмотрю уже по ходу. Если классы будут избыточными - уберу -->
+                    <img class="main-container__arrow-right" src="images/arrow-right-icon.svg" alt="Стрелка вправо">
+                </div>
+                <!-- раздел поиск - конец -->
+                <!-- раздел сортировка объявлений - начало -->
+                <div class="main-container__sort-area d-flex jc-sb">
+
+                    <!-- <div class="main-container__sort-name d-flex jc-sb"> -->  <!-- текст с картинкой обернул в отдельный div, чтобы потом всё содержимое родителя расположить флексами -->
+                    <span class="main-container__sort-title">Название объявления</span>
+                    <img class="main-container__sort-arrows-icon" src="images/sort-icon.svg" alt="Сортировка по названию">
+                    <!-- </div> -->
+
+                    <span class="main-container__category">Категория</span>
+                    <span class="main-container__date">Дата публикации</span>
+                    <span class="main-container__added">Публикация</span>
+                </div>
+                <!-- раздел сортировка объявлений - конец -->
+                 <!-- раздел список - начало -->
+                <section class="main-container__list d-flex fd-col">
+
+                    <!-- <div class="main-container__list-items"> --> <!-- пока закоменчу этот контейнер, скорее всего он избыточный -->
+                    <div class="main-container__list-item"><!-- для себя - использую комбинацию ".main-container__list-item*8>p*4+img" чтобы создать 8 одинаковых элементов -->
+                        <span>Чепчик</span>
+                        <span>Одежда</span>
+                        <span>12 сентября 2020</span>
+                        <span>Да</span>
+                        <img src="images/edit-dots-icon.svg" alt="Редактировать">
+                    </div>
+
+                    <div class="main-container__list-item">
+                        <span>Самовар</span>
+                        <span></span>
+                        <span>13 сентября 2020</span>
+                        <span>Да</span>
+                        <img src="images/edit-dots-icon.svg" alt="Редактировать">
+                    </div>
+
+                    <div class="main-container__list-item">
+                        <span>Стиральная машина LG</span>
+                        <span></span>
+                        <span>14 сентября 2020</span>
+                        <span>Да</span>
+                        <img src="images/edit-dots-icon.svg" alt="Редактировать">
+                    </div>
+
+                    <div class="main-container__list-item">
+                        <span>Часы Rolex</span>
+                        <span></span>
+                        <span>15 сентября 2020</span>
+                        <span>Да</span>
+                        <img src="images/edit-dots-icon.svg" alt="Редактировать">
+                    </div>
+
+                    <div class="main-container__list-item">
+                        <span>Lada Kalina</span>
+                        <span></span>
+                        <span>12 сентября 2020</span>
+                        <span>Да</span>
+                        <img src="images/edit-dots-icon.svg" alt="Редактировать">
+                    </div>
+
+                    <div class="main-container__list-item">
+                        <span>Спортивный велосипед</span>
+                        <span></span>
+                        <span>12 сентября 2020</span>
+                        <span>Да</span>
+                        <img src="images/edit-dots-icon.svg" alt="Редактировать">
+                    </div>
+
+                    <div class="main-container__list-item">
+                        <span>Ботинки поношенные</span>
+                        <span></span>
+                        <span>12 сентября 2020</span>
+                        <span>Да</span>
+                        <img src="images/edit-dots-icon.svg" alt="Редактировать">
+                    </div>
+
+                    <div class="main-container__list-item">
+                        <span>Приставка Dendy</span>
+                        <span></span>
+                        <span>12 сентября 2020</span>
+                        <span>Да</span>
+                        <img src="images/edit-dots-icon.svg" alt="Редактировать">
+                    </div>
+                   <!--  </div> -->
+                </section>
+                <!-- раздел список - конец -->
+            </section>
+            <!-- правая секция конец -->
+        </div>
+    </main>
+    <!-- все содержимое между шапкой и подвалом - конец -->
+    <!-- подвал начало -->
+    <footer> <!-- для него задать фон -->
+        <div class="footer-container d-flex fd-col"> <!-- а тут уже флексить содержимое -->
+            <div class="footer-container__top d-flex jc-sb">
+                <img class="footer-container__logo" src="images/hibrain-footer-logo.svg" alt="Логотип hiBrain">
+                <p class="footer-container__logo-description">Доска объявлений</p>
+                <div class="footer-container__links d-flex jc-sb">
+                    <a href=""><img src="images/fb-icon.svg" alt="facebook-icon"></a>
+                    <a href=""><img src="images/insta-icon.svg" alt="instagram-icon"></a>
+                    <a href=""><img src="images/vk-icon.svg" alt="vk-icon"></a>
+                </div>
+            </div>         
+            <div class="footer-container__bottom d-flex jc-sb">
+                <span class="footer-container__copyright">&copy; ООО «Доска диджитал», 2022</span>
+                <a class="footer-container__policy" href="">Политика конфиденциальности</a>
+                <address>
+                    <a class="footer-container__email" href="mailto:support@hibrain.pro">support@hibrain.pro</a>
+                </address>
+                <a class="footer-container__tel" href="tel:+78000000000">8 800 000 00 00</a>            
+            </div>
+        </div>
+    </footer>
+    <!-- подвал конец -->
+</body>
+</html>

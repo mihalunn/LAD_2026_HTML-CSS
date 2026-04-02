@@ -1,0 +1,212 @@
+.container-main {
+    width: 1200px;
+    margin: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* header start */
+
+.header, .content {
+    font-family: "Roboto Regular";
+}
+
+.header {
+    font-size: 14px;
+    font-style: 'Medium';
+}
+
+.header-logo {
+    margin-top: 26px;
+    margin-right: 936px; /* ??? не могу разобраться, докуда считается внешний отступ в этом случае, по сути до края секции header, до есть вправо до упора?? */
+}
+
+.logo-img { 
+    margin-top: 26px;
+    margin-right: 23px;
+    margin-bottom: 28px;
+    width: 206px;
+    height: 43px;
+}
+
+.logo-description {
+    color: #434A5C;
+    font-weight: 400;
+    font-style: 'regular'; 
+    margin-top: 47px;
+    margin-bottom: 32px;
+    margin-left: 23px;
+    width: 132px;
+    height: 18px;
+}
+
+/* обратная связь начало */
+.header-feedback {
+    margin-top: 43px;
+    margin-bottom: 36px;
+    margin-left: 903px;
+    width: 239px;
+    height: 18px;
+}
+
+.feedback-button {
+    color: #576698;
+}
+
+.feedback-phone {
+    color: #484848; 
+    text-decoration: none;
+}
+/* обратная связь end */
+
+/* nav start */
+.menu-left-list {
+    width: 608px;
+    height: 18px;
+    margin-top: 24px; /* считал до края до полосы, но пока в HTML у меня ее нет */
+    margin-right: 922px;
+    margin-bottom: 36px;
+}
+
+.menu-left-list a {
+    color: #7A7A7A; /* присвоил сначала общий цвет всем пунктам списка, потом для одного присвою другой цвет */
+}
+
+.menu-left-list .special a {
+    color: #141414; /* нагуглил возможный способ выделения одного из пунктов списка другим цветом - присвоил пункту класс special */
+} 
+
+.menu-right-list {
+    width: 300px;
+    height: 18px;
+    margin-top: 24px;/* считал до края до полосы, но пока в HTML у меня ее нет */
+    margin-bottom: 36px;
+    margin-left: 842px;
+    color: #7A7A7A; 
+}
+/* nav end */
+
+.section-large-img {
+    margin-top: 36px;
+    margin-bottom: 25px;
+}
+/* header end */
+
+
+
+/* content start */
+.content {
+   font-family: 'Roboto', sans-serif;/*??? почему при вводе Roboto нет подсказки и приходится писать название шрифта в кавычках, причем семейства нет и sans-serif я добавляю вручную? Уже весь гугл перерыл в поисках ответа, но видимо не то спрашиваю... */
+   height: 1927px; /* беру высоту от горизонтальной полосы после шапки и до полосы над подвалом */
+   /* ??? нужно ли вообще для этой большой секции указывать высоту почти во всю страницу, если внутри нее есть элементы с конкретными параметрами??? */
+}
+
+.content-header {
+    color: #141414;
+    font-size: 64px;
+    font-weight: 600;
+    font-style: 'SemiBold';
+    width: 735px;
+    height: 164px;
+    margin-top: 27px;
+    margin-right: 406px;
+    margin-bottom: 32px;
+}
+
+/* секция развлечения start */
+.content-entertainment {
+    color: #141414; /* для заголовка секции ниже пропишу отдельный цвет */
+    height: 927px;
+}
+
+.entertainment-header, .living-header {
+    color: #BF6024;
+    font-size: 28px;
+    font-weight: 600;
+    font-style: 'SemiBold';
+    margin-top: 32px;
+    margin-bottom: 33px;
+}
+
+.entertainment-item {
+    width: 555px;
+    height: 300px;
+/* !!!!!ВОПРОС!!!!!!
+???  никак не могу разобраться, как для этих и других контейнеров с одним классом задать разные отступы - внутренние, внешние. Кучу времени просидел за поисками ответа, уже и в нейронки пытался запрос писать, но как-будто всё становится еще хуже - полная неразбериха и уже начинаю сомневаться, а нужны ли тут margin или padding вовсе.
+Огромная просьба за занятии если не прямо, то хотя бы косвенно помочь, а то руки опускаются
+!!!!
+*/
+}
+
+.content-entertainment p {
+    margin-top: 12px; /* ??? совсем запутался нужны ли здесь вообще внешние отступы, чтобы простй текст был под картинкой??? И если нужны, то докуда их считать??? */
+}
+/* секция развлечения end */
+
+/* секция проживание start */
+
+.content-living {
+    height: 809px;
+}
+
+.living-header {
+    margin-top: 67px;
+    margin-bottom: 31px;
+}
+
+h3 {
+    color: #141414;
+    font-size: 24px;
+    font-weight: 600;
+    font-style: 'SemiBold';
+}
+
+.living-item-left {
+    width: 550px;
+    height: 600px;
+    margin-top: 134px; 
+    margin-right: 587px;
+    margin-bottom: 75px;
+    /* ???опять та же проблема с отступами, запутался, чем дальше иду, тем чаще возвращаюсь назад, исправляю, но не уверен, что правильно. Нужно больше понимания отступов и относительно чего их считать... */
+}
+.living-item-left h3 {
+    color: #FFFFFF;
+    margin-top: 489px;
+    margin-right: 299px;
+    margin-bottom: 80px;
+    margin-left: 32px;
+}
+
+.living-item-left p {
+    color: #E5C6B2;
+    font-size: 14px;
+    font-style: 'Medium';
+}
+
+#book {
+    margin: 544px 376px 28px 34px; /* сокращаю, тк не хватает времени */
+    padding: 5px 13px; /* 5 - верх/них, 13 - право/лево */
+    background-color: #BF6024;
+}
+
+#see {
+    margin: 544px 238px 28px 197px;
+    padding: 5px 13px;
+    border: 1px solid 
+}
+
+/* !!!!!! К сожалению остальное уже не успеваю закончить, пока отправлю, что готово!!!!!! */
+
+
+
+/* секция проживание end */
+
+/* content end */
+
+
+
+/* footer start */
+/* footer end */

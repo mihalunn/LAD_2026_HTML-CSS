@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hiBrain_v3</title>
+    <link rel="stylesheet" href="style_v3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- секция ШАПКА начало -->
+    <header class="header">
+        <div class="header-container">
+            <img class="logo-img" src="images/header/hibrain-logo.svg" alt="логотип hiBrain">
+            <a class="search-icon" href=""><img src="images/header/search-icon.svg" alt="Поиск"></a>
+            <a class="apply-btn" href="">Разместить объявление</a>
+            <img class="login-icon" src="images/header/login-icon.svg" alt="Войти">
+            <a class="login-link" href="">Войти</a>
+        </div>
+    </header>
+    <!-- секция ШАПКА конец -->
+<!-- весь контент страницы - начало -->    
+    <div class="container-main">
+
+        <!-- секция ДОСКА ОБЩАЯ ИНФО начало -->
+        <section class="feed_info"> <!-- думаю, здесь все же быстрее и логичнее сверстать на флексах, предварительно разбив большую секцию на две -->
+            <div class="feed_flex-container">
+                <h1>Доска объявлений</h1>
+                <p>Обо всех важных событиях IT и Digital мира: дайджесты курсов, полезные ресурсы, митапы, конференции, хакатоны и новости от команды HiBrain</p>
+                <div class="feed_search-area">
+                    <input id="search-area_input" type="text" placeholder="Поиск">
+                </div>
+            </div>
+        </section>
+        <!-- секция ДОСКА ОБЩАЯ ИНФО конец -->
+
+        <!-- секция ЛЕНТА начало -->
+        <section class="feed">
+            <div class="feed_container">
+                <!--  МЕНЮ В ЛЕНТЕ начало -->
+                <nav class="feed_nav-menu">
+                    <ul class="feed_menu-list">
+                        <li><a href="">Вся доска</a></li>
+                        <li><a href="">Бытовая техника</a></li>
+                        <li><a href="">Одежда</a></li>
+                        <li><a href="">Автомобили</a></li>
+                        <li><a href="">Телефоны</a></li>
+                    </ul>
+                </nav>
+            </div>
+                <!-- МЕНЮ В ЛЕНТЕ конец -->
+                
+            <h2>Вся лента</h2>
+
+            <!-- блок ОБЪЯВЛЕНИЯ начало -->
+            <div class="board_items"> 
+
+                <div class="item"> <!-- блок 1 -->
+                    <div class="title title-1">
+                        <p>Техника</p><!-- картинку здесь не вставляю, передам ее через background-image -->
+                    </div>
+                    <div class="item-body item-body-1">
+                        <h3>Стиральная машинка Bosch</h3>
+                        <p>Уходящий год для айтишников прошёл под девизом: «Work hard, learn more».</p>
+                        <p>1000 Р</p>
+                        <div class="item_footer">
+                            <p>14 апреля 2021</p>
+                            <img src="images/message-feed-main/views-icon.svg" alt="Просмотры">
+                            <p>356</p>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <div class="item"> <!-- блок 2 -->
+                    <div class="title title-2">
+                        <p>Одежда</p>
+                    </div>
+                    <div class="item-body item-body-2">
+                        <h3>Шапочка</h3>
+                        <p>Уходящий год для айтишников прошёл под девизом: «Work hard, learn more».</p>
+                        <div class="item_footer">
+                            <p>14 апреля 2021</p>
+                            <img src="images/message-feed-main/views-icon.svg" alt="Просмотры">
+                            <p>356</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item"> <!-- блок 3 -->
+                    <div class="title title-3">
+                        <p>Одежда</p>
+                    </div>
+                    <div class="item-body item-body-3">
+                        <h3>Шапочка</h3>
+                        <p>Уходящий год для айтишников прошёл под девизом: «Work hard, learn more».</p>
+                        <div class="item_footer">
+                            <p>14 апреля 2021</p>
+                            <img src="images/message-feed-main/views-icon.svg" alt="Просмотры">
+                            <p>356</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item"> <!-- блок 4 -->
+                    <div class="title title-4">
+                        <p>Статьи</p>
+                    </div>
+                    <div class="item-body item-body-4">
+                        <h3>Дайджест IT-вакансий за март 2021</h3>
+                        <p>Актуальные вакансии Intern и Junior IT-разработчикам в Нижнем Новгороде. Предложения работы от партнёров платформы подготовки и трудоустройства IT-специалистов HiBrain.</p>
+                        <div class="item-footer">
+                            <p>14 апреля 2021</p>
+                            <img src="images/message-feed-main/views-icon.svg" alt="Просмотры">
+                            <p>356</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item"> <!-- блок 5 -->
+                    <div class="title title-5">
+                        <p>Статьи</p>
+                    </div>
+                    <div class="item-body item-body-5">
+                        <h3>С Новым 2021 годом!</h3>
+                        <p>Уходящий год для айтишников прошёл под девизом: «Work hard, learn more».</p>
+                        <div class="item_footer">
+                            <p>14 апреля 2021</p>
+                            <img src="images/message-feed-main/views-icon.svg" alt="Просмотры">
+                            <p>356</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item"> <!-- блок 6 -->
+                    <div class="title title-6">
+                        <p>Статьи</p>
+                    </div>
+                    <div class="item-body item-body-6">
+                        <h3>С Новым 2021 годом!</h3>
+                        <p>Уходящий год для айтишников прошёл под девизом: «Work hard, learn more».</p>
+                        <div class="item_footer">
+                            <p>14 апреля 2021</p>
+                            <img src="images/message-feed-main/views-icon.svg" alt="Просмотры">
+                            <p>356</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item"> <!-- блок 7 -->
+                    <div class="title title-7">
+                        <p>Статьи</p>
+                    </div>
+                    <div class="item-body item-body-7">
+                        <h3>Дайджест IT-вакансий за март 2021</h3>
+                        <p>Актуальные вакансии Intern и Junior IT-разработчикам в Нижнем Новгороде. Предложения работы от партнёров платформы подготовки и трудоустройства IT-специалистов HiBrain.</p>
+                        <div class="item-footer">
+                            <p>14 апреля 2021</p>
+                            <img src="images/message-feed-main/views-icon.svg" alt="Просмотры">
+                            <p>356</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item"> <!-- блок 8 -->
+                    <div class="title title-8">
+                        <p>Статьи</p>
+                    </div>
+                    <div class="item-body item-body-8">
+                        <h3>С Новым 2021 годом!</h3>
+                        <p>Уходящий год для айтишников прошёл под девизом: «Work hard, learn more».</p>
+                        <div class="item_footer">
+                            <p>14 апреля 2021</p>
+                            <img src="images/message-feed-main/views-icon.svg" alt="Просмотры">
+                            <p>356</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item"> <!-- блок 9 -->
+                    <div class="title title-9">
+                        <p>Статьи</p>
+                    </div>
+                    <div class="item-body item-body-9">
+                        <h3>С Новым 2021 годом!</h3>
+                        <p>Уходящий год для айтишников прошёл под девизом: «Work hard, learn more».</p>
+                        <div class="item_footer">
+                            <p>14 апреля 2021</p>
+                            <img src="images/message-feed-main/views-icon.svg" alt="Просмотры">
+                            <p>356</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+            <!-- блок ОБЪЯВЛЕНИЯ конец -->
+
+            <button type="button" class="btn-with-icon">
+                <img src="images/message-feed-main/load-more.svg" alt="Загрузить еще">
+                Загрузить еще
+            </button>
+        </section>
+        <!-- секция ЛЕНТА конец -->
+
+        <!-- секция ПОДВАЛ начало -->
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="footer-top_general">
+                    <img src="images/footer/hibrain-logo.svg" alt="Логотип hiBrain">
+                    <p>Платформа подготовки и трудоустройства IT-специалистов</p>
+                </div>
+                <div class="footer-top_social-links">
+                    <a href=""><img src="images/footer/fb.svg" alt="facebook-icon"></a>
+                    <a href=""><img src="images/footer/insta.png" alt="instagram-icon"></a> <!-- почему-то иконка инсты не экспортируется нормально ни в svg, ни в png - её тупо не видно -->
+                    <a href=""><img src="images/footer/vk.svg" alt="vk-icon"></a>
+                </div>
+            </div>
+
+            <div class="footer-center">
+                <nav class="center_nav-menu">
+                    <ul class="footer_menu-list">
+                        <li><a href="">Курсы</a></li>
+                        <li><a href="">Трудоустройство</a></li>
+                        <li><a href="">Сотрудничество</a></li>
+                        <li><a href="">O Hibrain</a></li>
+                        <li><a href="">Новости</a></li>
+                        <li><a href="">Контакты</a></li>
+                    </ul>
+
+                </nav>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; ООО «Лад Ай Ти», 2020</p>
+                <a href="">Политика конфиденциальности</a>
+                <address>
+                    <a href="mailto:support@hibrain.pro">support@hibrain.pro</a>
+                </address>
+                <a href="tel:+78000000000">8 800 000 00 00</a>
+            </div>
+
+        </footer>
+        <!-- секция ПОДВАЛ конец -->
+    </div>
+<!-- весь контент страницы - конец -->        
+</body>
+</html>

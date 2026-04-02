@@ -1,0 +1,365 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* шрифты общие начало */
+.btn-with-icon, h1, h2 {
+    font-family: 'Roboto Slab';
+    font-weight: 700;
+}
+
+h3 {
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+}
+/* шрифты общие конец */
+
+/* шапка начало */
+header {
+    border-bottom: 1px solid #2A2F371F;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1172px;
+    height: 70px;
+    margin: auto;
+    font-family: 'Roboto';
+    font-weight: 400;
+}
+
+.header-logo-img,
+.search-icon img {
+    margin-right: 310px;
+}
+
+.apply-btn {
+    background-color: #1E3DAF;
+    color: #FFFFFF;
+    font-size: 16px;
+    width: 216px;
+    padding: 8px 16px 8px 16px;
+    margin-right: 80px;
+}
+
+.login-icon {
+    margin-right: 8px;
+}
+
+/* шапка конец */
+
+
+/* секция с рупором начало */
+.grid-container_feed {  
+    display: grid;
+    grid-template-columns: repeat(2,466px);
+    justify-content: space-between;
+    width: 1172px;    
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 120px;
+}
+
+.feed-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    font-family: 'Roboto';
+    font-weight: 400; 
+}
+
+.feed-left h1, 
+.feed-left p {
+    margin-bottom: 40px;
+}
+
+.search-area_input {
+    background-color: #2A2F3705;
+    background-image: url(images/search-icon.svg); /* хоть и получилось, но чувствую, что иконка фоном - это костыль. Но другие варианты вообще не нахожу...ИЩИ!  */
+    background-repeat: no-repeat;
+    background-position: calc(100% - 16px) center;
+    height: 50px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 16px;
+    border-color: #2A2F3714;
+}
+
+.feed-right {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+/* секция с рупором конец */
+
+/* секция main (серый фон) начало */
+main {
+    background-color: #2A2F370A;
+    font-family: 'Roboto'; /* для h2 потом задай RobotoSlab */
+}
+
+.section_feed {
+    width: 1172px;
+    margin: auto;
+}
+
+.feed_nav-menu {
+    padding-bottom: 40px; /* 19:50 - ПРОВЕРЬ НУЖЕН ЛИ ОТСТУП и удали если что */
+}
+
+.feed_menu-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 0;
+    padding-top: 40px;
+    list-style-type: none;
+}
+
+.feed_menu-list li:first-child a {
+    padding: 8px 16px;
+}
+
+.feed_menu-list a {
+    color: #2A2F37;
+}
+
+.feed_menu-list li:first-child a {
+    color: #FFFFFF;
+    background-color: #1E3DAF;
+}
+
+
+.feed_menu-list li:first-child {
+    margin-right: 16px;
+}
+
+.feed_menu-list li:nth-child(2) {
+    margin-right: 32px;
+    background-color: #2A2F370F;
+    padding: 8px 16px;
+
+}
+
+.feed_menu-list li:nth-child(3),
+.feed_menu-list li:nth-child(4) {
+    margin-right: 48px;
+}
+
+
+/* карточки начало */
+.cards-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+    gap: 40px;
+}
+
+.cards-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 448px;
+}
+
+.item p {
+    display: inline-block;
+    margin-bottom: 16px;
+    margin-left: 16px;
+    margin-top: 152px;
+    color: #FFFFFF;
+    background-color: #1E3DAF;
+    padding: 4px 12px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-left: auto;
+}
+
+.title-1,
+.title-4,
+.title-7 {
+    background-image: url(images/earphones.jpg);
+    background-repeat: no-repeat;
+    height: 200px;
+}
+
+.title-2,
+.title-3,
+.title-5,
+.title-6,
+.title-8,
+.title-9 {
+    background-image: url(images/fireworks.jpg);
+    background-repeat: no-repeat;
+    height: 200px;
+}
+
+.item-body {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    font-size: 14px;
+    flex-grow: 1; /* только так получилось сделать, чтобы нижняя часть карточки заполнила всё свободное место в контейнере до картинки, просто передача высоты не сработала, может оно и лучше с точки зрения гибкости верстки? */
+    padding: 24px 24px;
+}
+
+.item-body p {
+    color: #2a2f37bb;
+}
+
+.item-body h3 {
+    margin: 0;
+}
+
+.item-body-1 h3,
+.item-body-4 h3,
+.item-body-7 h3 {
+    color: #1E3DAF;
+}
+
+.item_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    height: 24px;
+}
+.item_footer p {
+    color: #2a2f3765;
+}
+
+.eye {
+    margin-left: 160px;
+}
+/* карточки конец */
+
+/* кнопка еще начало */
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 248px;
+    margin-top: 40px;
+}
+
+.btn-with-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 4px;
+    padding: 12px 48px;
+    background: none;
+    
+}
+
+/* кнопка еще конец */
+
+/* секция main (серый фон) конец */
+
+
+/* подвал начало */
+footer {
+    background-color: #2A2F37;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 1172px;
+    margin: auto;
+    padding: 48px 0;
+    color: #FFFFFF;
+    font-family: 'Roboto';
+}
+
+.footer-top {
+    display: flex;
+    /* justify-content: space-between; */  /* попробую без этого раскидать элементы по оси отступами согласно макету...UPD: ПОЛУЧИЛОСЬ!  */
+    align-items: center;
+}
+
+.footer-logo {
+    padding-right: 40px;
+    margin-right: 40px;
+    border-right: 1px solid #ffffff79;
+}
+
+.footer-top p {
+    /* margin-left: 40px; */  /* ??? фигня какая-то, только убрав левый маржин, получилось сделать согласно макету...А в чем логика - не пойму */
+    margin-right: auto;
+    font-size: 12px;
+    width: 250px;
+    color: #ffffff9b;
+
+}
+
+.footer-top_social-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-center {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 130px;
+    border-bottom: 1px solid #ffffff89;
+}
+
+.center_nav-menu {
+    display: flex;
+    width: 100%;    
+}
+
+.footer_menu-list {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  list-style: none; /* убирает маркеры */
+  padding: 0;
+  margin: 0;
+}
+
+
+.footer_menu-list a {
+    color: #FFFFFF;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    color: #ffffff9b;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.footer-bottom a {
+    color: #ffffff9b;
+    text-decoration: none;
+    font-style: normal;
+}
+
+#policy {
+    text-decoration: underline;
+}
+
+
+
+
+
+/* подвал конец */

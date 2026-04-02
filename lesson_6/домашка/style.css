@@ -1,0 +1,296 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* переиспользуемые стили начало */ 
+        /* !!! Пока что сложно прописывать их сразу на этапе описания структуры HTML документа. Чтобы избежать ошибок, сначала опишу структуру HTML, потом уже туда допишу переиспользуемые классы*/
+.d-flex {
+    display: flex;
+}
+
+.d-grid {
+    display: grid;
+}
+
+.jc-sb {
+    justify-content: space-between;
+}
+
+.fd-col {
+    flex-direction: column;
+}
+/* переиспользуемые стили конец */
+
+/* шрифты общие - начало */
+* {
+    font-family: 'Roboto';
+    color: #2A2F37; /* потом точечно задай opacity или поменяй */
+}
+
+p,
+a,
+button {
+    font-size: 14px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+a {
+    text-decoration: none;
+}
+/* шрифты общие - конец */
+
+/* секция шапка - начало */
+.header {
+    align-items: center;
+    width: 1170px;
+    height: 70px;
+    margin: auto;
+    font-weight: 400;
+}
+
+.header__logo {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.header__login-area {
+    align-items: center;
+}
+
+.header__login-icon {
+    margin-right: 8px;
+}
+
+.header__login-link {
+    margin-right: 24px;
+}
+/* секция шапка - конец */
+
+/* секция main - начало */
+
+/* секиця сайдбар - начало*/
+    /* верхняя часть начало */
+main {
+    padding-top: 40px;
+    background-color: #2A2F370A;
+}
+
+.main-container {
+    grid-template-columns: 263px 867px;
+    width: 1170px;
+    margin: auto;
+}
+
+.main-container__sidebar {
+    background-color: #FFFFFF;
+}
+
+.main-container__sidebar-top {
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 24px;
+    border-bottom: 1px solid rgba(42, 47, 55, 0.1);
+}
+
+.main-container__a-letter-box {
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(42, 47, 55, 0.08);
+}
+
+.main-container__a-letter-box span {
+    font-family: 'Roboto Slab';
+    font-size: 24px;
+    font-weight: 700;    
+    opacity: 0.4;
+}
+
+.main-container__user-name-area {
+    justify-content: center;
+}
+
+.main-container__user-name {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.main-container__personal-account {
+    font-weight: 400;
+    font-size: 12px;
+    opacity: 0.6;
+}
+    /* верхняя часть начало */
+
+    /* нижняя часть начало */
+.main-container__sidebar-bottom {
+    flex-grow: 1; /* !!!! АЛЛИЛУЙЯ!!! Я МИНУТ 20 НЕ МОГ РОДИТЬ СВОЙСТВО, ЧТОБЫ СТРОЧКИ РАЗБЕЖАЛИСЬ ВВЕРХ И ВНИЗ ЭТОГО ПУСТОГО КОНТЕЙНЕРА! А оказалось вон оно че, надо было дать контейнеру занять все оставшееся свободное место! И не нужна фиксированная высота. Сам вспомнил, даже не гуглил :-) */
+    padding-top: 24px;
+    padding-bottom: 40px;
+}
+
+.main-container__ads-line,
+.main-container__logout-line {
+    align-items: center;
+}
+
+.main-container__ads-line {
+    padding-left: 22px;
+    height: 40px;
+    border-left: 2px solid #1E3DAF;
+}
+
+.main-container__sidebar-bottom img {
+    margin-right: 12px;
+}
+
+.main-container__ads-line span {
+    font-weight: 400;
+    color: rgba(30, 61, 175, 1);
+}
+
+.main-container__logout-line {
+    padding-left: 24px;
+}
+    /* нижняя часть конец */
+/* секиця сайдбар - конец */
+
+/* секция ОБЪЯВЛЕНИЯ - начало */
+    /* шапка сеции - начало */
+
+.main-container__head {
+    align-items: flex-start;
+    height: 88px;
+    border-bottom: 1px solid rgba(42, 47, 55, 0.1);
+}
+
+.main-container__head-left {
+    align-items: flex-start;
+    row-gap: 0.5em;
+}
+
+h1 {
+    margin: 0;
+}
+
+.main-container__head-left span {
+    opacity: 0.6;
+}
+
+.main-container__head-btn {
+    align-items: center;
+
+}
+
+.main-container__btn {
+    align-items: center;
+    height: 40px;
+    width: 133px;
+    padding: 8px 16px 8px 16px;
+    border: none;
+    background-color: #1E3DAF;
+    color: #FFFFFF;
+}
+
+    /* шапка секции - конец */
+
+
+    /* поиск - начало */
+.main-container__search {
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.main-container__search-input {
+    height: 40px;
+    width: 420px;
+    margin-right: 12px;
+    padding: 8px 16px 8px 16px;
+    background-image: url(images/search-icon.svg); 
+    background-repeat: no-repeat;
+    background-position: calc(100% - 16px) center;
+    border: none;
+}
+
+.main-container__filter-btn {
+    align-items: center;
+    width: 159px;
+    margin-right: 122px;
+    height: 40px;
+    padding: 8px 16px 8px 16px;
+    font-weight: 500;
+    border: none;
+    background-color: rgba(42, 47, 55, 0.08);
+}
+
+.main-container__count {
+    width: 70px;
+    margin-right: 16px;
+}
+
+.main-container__arrow-left {
+    margin-right: 16px;
+}
+    /* поиск - конец */
+
+    /* сортировка объявлений - начало */
+.main-container__sort-area {
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 24px;
+    font-size: 12px;/* сначала в HTML вместо спанов были p, которым я тут пытался задать нужынй размер, но не получалось, поскольку у меня уже выше есть правило p { font-size: 14px; }, которое имеет высокую специфичность и переопределяет font-size: 12px на родительском контейнере .main-container__sort-area. Поменял p на span без дефолтного font-size, чтобы не лепить костыльный !important :-). Так-то и с ним работало, но всё-таки это как-то кривовато было */
+    font-weight: 700;
+    background-color: #FFFFFF;
+    opacity: 0.6;
+}
+
+/* .main-container__sort-title {
+
+} */
+
+.main-container__sort-arrows-icon {
+    margin-right: 128px;
+}
+
+.main-container__category {
+    margin-right: 143px;
+}
+
+.main-container__date {
+    margin-right: 102px;
+}
+
+.main-container__added {
+    margin-right: 92px;
+}
+    /* сортировка объявлений - конец */
+
+    /* раздел список объявлений - начало */
+.main-container__list {
+    grid-template-columns: 187px 139px 264px 105px 147px;
+    grid-template-rows: repeat(8, 80px);
+    align-items: center;
+    row-gap: 8px;
+}
+
+.main-container__list-item {
+    display: contents; /* я уже час ломаю голову, у меня вроде бы правильная сетка (всё проверяю в инспекторе) заполнялась не полностью, а только 8 ячеек из 40 (надо 8 строк*5 колонок). Ничего не получалось и я уже начал насиловать нейронку. Помогла отчасти, подсказала использовать вот это свойство. Теперь вроде все встало на свои места, но что ведь это уже не грид...И получается, что свойство display: contents удаляет элемент из визуальной модели браузера — он как бы становится "прозрачным" инспектора. И получается, что внутри объявление я уже на флексах гне сделаю! Посмотрим, как пойдет дальше, если это поломает мне дальнейшую верстку, то брошу. Наверное, перепишу на флексах уже и всё  */
+    height: 80px;
+    padding-left: 24px;
+
+}
+    /* раздел список объявлений - конец */
+
+   
+/* секция ОБЪЯВЛЕНИЯ - конец */
+
+/* секиця main - конец */

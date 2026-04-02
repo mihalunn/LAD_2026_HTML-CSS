@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СИНИЙ ЛУГ</title>
+    <!-- 05.03.2026 21:09 - стили пока отключаю, чтобы заново описать структуру корректно, подключу стили позже -->
+    <link rel="stylesheet" href="style.css">
+    <!-- шрифты начало -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- шрифты конец -->
+            <!-- насколько смог понять, гугл фонтс выдает ссылку сразу на Робото И Монсерат (видно из текста ссылки), оставлю так, чтобы не нагромождать-->
+</head>
+<body>
+    <div class="container-main">
+        <!-- секция ШАПКА начало -->
+        <header class="header">
+            <div class="header-top"> 
+                <div class="header-logo">  
+                    <img class="logo-img" src="images/logo.svg" alt="Логотип Синий луг" width="206" height="43">
+                    <span class="logo-description">твой лучший курорт</span>
+                </div>
+
+                <div class="header-feedback"> 
+                    <a class="feedback-button" href="">ОБРАТНАЯ СВЯЗЬ</a>
+                    <a class="feedback-phone"href="tel:88007703030">8 800 770 30 30</a>
+                </div>
+            </div>    
+            <!-- здесь в css надо будет сделать нижнюю рамку  -->
+
+            <div class="header-bottom">
+                <nav class="menu-left">     
+                    <ul class="menu-left-list">
+                        <li><a href="">КУРОРТ</a></li>
+                        <li><a href="">ЧЕМ ЗАНЯТЬСЯ</a></li>
+                        <li><a href="">КУПИТЬ ОНЛАЙН</a></li>
+                        <li ><a id="special" href="">АФИША МЕРОПРИЯТИЙ</a></li> 
+                        <li><a href="">ПРОЖИВАНИЕ</a></li>
+                    </ul>
+                </nav>    
+
+                <nav class="menu-right"> 
+                    <ul class="menu-right-list">
+                        <li><a href="">ПРОГРАММА ЛОЯЛЬНОСТИ</a></li>
+                        <li><a href="">ДЛЯ БИЗНЕСА</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+
+        </header> 
+
+        <!-- секция РАЗВЛЕЧЕНИЯ начало -->
+        <section class="content-entertainment"> 
+            <div class="image-mountain">
+                <img src="images/mountains.jpg" alt="Горный пейзаж">
+            </div>
+            <h1>ОТДЫХАЙ НА КУРОРТЕ СИНИЙ ЛУГ</h1>
+            <h2>Развлечения</h2> <!-- попробую не присваивать заголовкам классы, а стили передавать через ".content-living h2" и тд  -->
+            <div class="entertainment-items">
+                <div class="entertainment-item">
+                    <img src="images/sport.jpg" alt="спорт">
+                    <p>СПОРТИВНЫЕ РАЗВЛЕЧЕНИЯ</p>
+                </div>
+
+                <div class="entertainment-item">
+                    <img src="images/entertain.jpg" alt="развлечения">
+                    <p>РАЗВЛЕКАТЕЛЬНЫЕ МЕРОПРИЯТИЯ</p>
+                </div>
+
+                <div class="entertainment-item">
+                    <img src="images/hiking.jpg" alt="пешие походы">
+                    <p>ПЕШИЕ ТУРЫ</p>
+                </div>
+
+                <div class="entertainment-item">
+                    <img src="images/spa.jpg" alt="спа">
+                    <p>СПА</p>
+                </div> 
+            </div>
+        </section>  
+        <!-- секция ПРОЖИВАНИЕ начало -->
+        <section class="content-living">
+                <h2>Проживание на курорте</h2> 
+                <div class="living-items"> 
+                    <div class="living-item-lux">
+                        <img src="images/lux-apartment.jpg" alt="апартаменты люкс">
+                        <h3>Апартаменты люкс</h3>
+                        <div class="lux-links">
+                            <a href="">ЗАБРОНИРОВАТЬ</a> <!-- 100% это всё же должны быть не ссылки, а кнопки, но у меня нет доказательств :-) пока не успел разобраться, как сделать эти "кнопки" такими же, как в макете, но думаю это будут костыли и все же нужны именно кнопки -->
+                            <a href="">ПОСМОТРЕТЬ</a>
+                        </div> 
+                    </div>
+
+                    <div class="living-items-right">
+                        <div class="living-item-choose">
+                            <h3>Подберите отель по выгодной цене</h3>
+                            <a href="">ПОДОБРАТЬ</a>
+                        </div>
+
+                        <div class="living-item-loyalty">
+                            <h3>Программа лояльности</h3>
+                            <p>Покупайте услуги курорта со скидкой до 20% и получите до 300 баллов за регистрацию!</p>
+                            <div class="loyalty-links">
+                                <a href="">УЧАСТВОВАТЬ</a>
+                                <a href="">ПОДРОБНЕЕ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>     
+        <!-- секция ПОДВАЛ начало -->
+        <footer class="footer">
+            <div class="container-footer">
+                <div class="footer-copyright">
+                    <p class="footer-weight-600">&copy; 2001-2020 Синий луг</p>
+                    <p>Официальный сайт Курорта Синий Луг</p>
+                    <p>Политика конфиденциальности</p>
+                </div>
+
+                <div class="footer-feedback">
+                    <a class="footer-weight-600" href="" target="_blank">Обратная связь</a>
+                    <p>Россия,<br>Москва, 113337, ул. Советская, д. 42</p>
+                </div>
+
+                <div class="footer-offer">
+                    <p>Указанные на сайте цены не являются публичной офертой (ст.435 ГК РФ). Стоимость и возможность предоставления услуг необходимо уточнять в кассах</p>
+                </div> 
+            </div>     
+        </footer>
+    </div>
+</body>
+</html>

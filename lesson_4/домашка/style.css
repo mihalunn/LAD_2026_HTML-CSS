@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 1920px;;
+}
+
+.header {
+    width: 1920px;    
+    font-family: 'Roboto';
+    font-weight: 400;
+}
+
+
+.container-main {
+    max-width: 1172px;
+    margin: 0 auto;
+    font-family: 'Roboto';
+    font-weight: 400;
+}
+
+/* шрифты общие начало */
+.btn-with-icon, h1, h2 {
+    font-family: 'Roboto Slab';
+    font-weight: 700;
+}
+
+h3 {
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+}
+/* шрифты общие конец */
+
+/* шапка начало*/
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1172px;
+    height: 70px;
+    padding-right: 423px;
+    padding-left: 375px;
+    border-bottom: 1px solid #2A2F371F;
+}
+
+.logo-img, .search-icon img {
+    margin-right: 310px;
+}
+
+.apply-btn {
+    background-color: #1E3DAF;
+    color: #FFFFFF;
+    font-size: 16px;
+    width: 216px;
+    padding: 8px 16px 8px 16px;
+    margin-right: 80px;
+}
+
+.login-icon {
+    margin-right: 8px;
+}
+
+                                                            
+/* шапка конец */
+
+/* ДОСКА ОБЩАЯ ИНФО начало */
+
+.feed_info {
+    background-image: url(images/message-feed-about/loudspeaker.jpg);
+    background-repeat: no-repeat;
+    background-position: right calc(100% - 120px);
+}
+
+.feed_flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch; /* не уверен что это что-то дает, через инспектора не вижу */
+    width: 466px;
+    margin-top: 96px;
+    color: #2A2F37;
+    gap: 40px;
+}
+/* вот тут надо разобраться почему элементы родительского контейнера не занимают всю его ширину, как на макете */
+.feed_flex-container h1 {
+    font-size: 48px;
+    margin: 0;
+    width: fit-content;
+}
+
+.feed_flex-container p {
+    font-size: 16px;
+    margin: 0;
+    width: fit-content;
+}
+
+.feed_search-area {
+    margin: 0;
+    width: 100% ;
+    position: relative; /* 17:55 */
+    display: inline-block;
+}
+
+#search-area_input {
+    width: 100%;
+    background-color: #2A2F3705;
+    background-image: url(images/message-feed-about/search-icon.svg);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 16px) center;
+    height: 50px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 16px;
+    border-color: #2A2F3714;
+    margin-bottom: 152px;
+}
+/* ДОСКА ОБЩАЯ ИНФО конец */
+
+/* секция ЛЕНТА начало */
+
+.feed {
+    background-color: #2A2F370A;
+    background-size: 1920px;
+}
+
+
+.feed_nav-menu {
+    padding-bottom: 40px;
+}
+
+.feed_menu-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 0;
+    padding-top: 40px;
+    list-style-type: none;
+}
+
+.feed_menu-list li:first-child a {
+    padding: 8px 16px;
+}
+
+.feed_menu-list a {
+    color: #2A2F37;
+}
+
+.feed_menu-list li:first-child a {
+    color: #FFFFFF;
+    background-color: #1E3DAF;
+}
+
+
+.feed_menu-list li:first-child {
+    margin-right: 16px;
+}
+
+.feed_menu-list li:nth-child(2) {
+    margin-right: 32px;
+    background-color: #2A2F370F;
+    padding: 8px 16px;
+
+}
+
+.feed_menu-list li:nth-child(3),
+.feed_menu-list li:nth-child(4) {
+    margin-right: 48px;
+}
+
+
+/* сетка из 9 блоков начало */
+
+/* сетка из 9 блоков конец */
+
+/* секция ЛЕНТА конец */
+
+

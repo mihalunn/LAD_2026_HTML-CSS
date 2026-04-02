@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таск-трекер</title>
+</head>
+<body>
+    <div class="tasks-container"> <!-- с неймингом туговато... -->
+        <!-- блок сайдбар - начало -->
+        <aside class="sidebar">
+            <div class="sidebar__search-top">
+                <input class="sidebar__search-input" name="search" type="search" placeholder="Поиск"> <!-- лупу добавлю фоном, чтобы не перегружать HTML -->
+            </div>
+            <!-- большой раздел с фильтрами - начало -->
+            <div class="sidebar__filter">
+                <!-- участники - начало -->
+                <div class="sidebar__members">
+                    <label class="sidebar__members-label" for="sidebar__members-id">УЧАСТНИКИ</label>
+                    <select id="sidebar__members-id" name="members"> <!-- указал id, а выше ссылка на него for -->
+                        <option value="" disabled selected>Выберите...</option>
+                        <option value="Долгов М.">Долгов М.</option>
+                        <option value="Федоров Д.">Федоров Д.</option>
+                        <option value="Семенова Н.">Семенова Н.</option>
+                        <option value="Веселов А.">Веселов А.</option>
+                    </select>
+                </div>
+                <!-- участники - конец -->
+
+                <!-- статус - начало -->
+                <div class="sidebar__status-checkbox">
+                    <span class="sidebar__status-title">СТАТУС</span>
+                    <div class="sidebar__status-options">
+                        <label>
+                        <input type="checkbox" name="status" value="created">
+                        <span class="sidebar__status-label">Создана</span>
+                        <span class="sidebar__badge">16</span> <!-- использую badge, чтобы не костылить картинки - нагуглил вот такой инструмент, посмотрим дальше, как он себя поведет -->
+                        </label>
+
+                        <label>
+                        <input type="checkbox" name="status" value="in_progress">
+                        <span class="sidebar__status-label">В работе</span>
+                        <span class="sidebar__badge">26</span>
+                        </label>
+
+                        <label>
+                        <input type="checkbox" name="status" value="paused">
+                        <span class="sidebar__status-label">Приостановлена</span>
+                        <span class="sidebar__badge">4</span>
+                        </label>
+
+                        <label>
+                        <input type="checkbox" name="status" value="completed">
+                        <span class="sidebar__status-label">Завершена</span>
+                        <span class="sidebar__badge">86</span>
+                        </label>
+                    </div>
+                </div>                
+                <!-- статус - конец -->
+
+                <!-- метки - начало -->
+                <div class="sidebar__tags-search">
+                    <label class="sidebar__tags-label" for="sidebar__tags-id">МЕТКА</label>
+                    <div class="sidebar__tags-search">
+                        <input class="sidebar__tags-input" type="search" name="" id="sidebar__tags-id" placeholder="Поиск...">
+                        <button class="sidebar__add-btn" type="button">
+                            <img class="sidebar__add-icon" src="images/add-tag-btn-icon.svg" alt=""> <!-- пока вставлю картинку здесь. Если потом не понравится, вставлю фоном в CSS -->
+                        </button>
+                    </div>
+                    <div class="sidebar__chips"> <!-- нашел информацию, что такие штуки с тегами называются чипами -->
+                        <span class="sidebar__chip">
+                            Microsoft
+                            <button class="sidebar__remove-btn" type="button">
+                                <img class="sidebar__remove-icon" src="images/cross-green-icon.svg" alt=""> <!-- если не пойдет, вставлю фоном в стилях -->
+                            </button>
+                        </span>
+                        <span class="sidebar__chip">
+                            Apple
+                            <button class="sidebar__remove-btn" type="button">
+                                <img class="sidebar__remove-icon" src="images/cross-green-icon.svg" alt=""> <!-- если не пойдет, вставлю фоном в стилях -->
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <!-- метки - конец -->
+
+                <!-- другие - начало -->
+                <div class="sidebar__other-checkbox">
+                    <span class="sidebar__other-title">ДРУГИЕ</span>
+                    <div class="sidebar__other-options">
+                        <label>
+                            <input type="checkbox" name="other" value="other">
+                            <span>С вложениями</span> <!-- вообще и без спана вроде работает, но боюсь, что будут проблемы с версткой - поэтому оберну -->
+                        </label>
+                    </div>
+                </div>
+                <!-- другие - конец -->
+                 
+                <!-- степень готовности - начало -->
+                    <!-- !!! посмотри, как в радиоточках убрать стандартную круглую точку и сделать выделение всего label синим фоном-->
+                <div class="sidebar__readiness-radio"> <!-- fieldset и legend семантически больше подходят, но я пока не стал бежать вперед паровоза, т.к. и за базой-то не успеваю :-) -->
+                    <span class="sidebar__readiness-title">СТЕПЕНЬ ГОТОВНОСТИ</span>
+                    <div class="sidebar__readiness-options">
+                        <label class="sidebar__readiness-option" for="readiness-0"> <!-- id и for использую, чтобы каждый label имел свой input и клик по тексту выбирал radio-точку -->
+                            <input type="radio" name="readiness" value="0%" id="readiness-0">
+                            0%
+                        </label>
+                        <label class="sidebar__readiness-option" for="readiness-10">
+                            <input type="radio" name="readiness" value="10%+" id="readiness-10">
+                            10%+
+                        </label>
+                        <label class="sidebar__readiness-option" for="readiness-20">
+                            <input type="radio" name="readiness" value="20%+" id="readiness-20">
+                            20%+
+                        </label>
+                    </div>                    
+                </div>
+                <!-- степень готовности - конец -->
+
+                <!-- приоритет - начало -->
+                <div class="sidebar__priority-checkbox">
+                    <span class="sidebar__priority-title">ПРИОРИТЕТ</span>
+                    <div class="sidebar__priority-options">
+                        <label>
+                            <span>Высокий</span>
+                            <input type="checkbox" name="priority" value="high"> 
+                        </label> 
+                    </div>                   
+                </div>
+                <!-- приоритет - конец -->
+
+            </div>
+            <!-- большой раздел с фильтрами - конец -->
+
+            <button class="sidebar__clear-filter-btn">Очистить фильтры</button>
+
+        </aside>
+        <!-- блок сайдбар - конец -->
+        
+        <!-- секция main - начало -->
+        <main> <!-- я не стал задавать класс мейну, это просто общая секция, которая включает в себя уже два основных блока, в которых будут элементы -->
+            <div class="header"> <!-- мне не оч нравится такое название класса, но я выбирал между ним и title и решил остановится всё же на header, думаю сойдет --> 
+                <div class="title__top"></div>
+                <div class="title__filter"></div>
+            </div>
+
+            <div class="tasks">
+                <div class="tasks__incoming"></div>
+                <div class="tasks__in-process"></div>
+                <div class="tasks__completed"></div>
+            </div>
+        </main>
+        <!-- секция main - конец -->
+    </div>
+    
+</body>
+</html>

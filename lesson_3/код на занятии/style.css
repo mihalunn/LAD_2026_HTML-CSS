@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+}
+
+.container {
+    width: 1200px;
+    margin: auto;
+}
+
+header {
+    display: flex; /* сначала гибкую версту включаем */
+    justify-content: space-between;/*   выравнивание по горизонтали */
+    align-items: center;/*  выравнивание по вертикали */
+    height: 50px;
+    background-color: blueviolet;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.top-menu-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+    background-color: bisque;
+}
+
+.container-section-aside {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section-content {
+    width: 900px;
+    padding: 10px;
+    background-color: aqua;
+}
+
+.sidebar-right {
+    width: 300px;
+    padding: 10px;
+    background-color: brown;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-item {
+    flex: 1;
+    padding: 10px;
+}

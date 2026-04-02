@@ -1,0 +1,102 @@
+.accommodation {
+  margin-bottom: 58px;
+}
+
+.accommodation__title {
+  margin-bottom: 32px;
+  color: var(--color-text-accent);
+}
+
+.accommodation {
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--color-divider-muted);
+}
+
+.accommodation__content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.accommodation__content-right {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  justify-content: space-between;
+}
+
+.offer {
+  display: flex;
+  flex-direction: column;
+  width: 555px;
+  height: 285px;
+  padding: 65px 73px 73px;
+  background-color: var(--color-offer-bg);
+}
+
+.offer--lux {
+  justify-content: end;
+  height: 600px;
+  padding: 34px 28px;
+  background-image: url("../../images/offers/luxury-apartments.jpg");
+}
+
+.offer--hotel {
+  padding-top: 84px;
+}
+
+.offer__title {
+  margin-bottom: 24px;
+}
+
+.offer__title--lux {
+  color: var(--color-text-on-dark);
+}
+
+.offer__title--loyalty {
+  margin-bottom: 11px;
+}
+
+.offer__text {
+  max-width: 262px;
+  margin-bottom: 24px;
+}
+
+.offer__actions {
+  display: flex;
+  column-gap: 18px;
+  justify-content: space-between;
+  max-width: 247px;
+}
+
+.offer__actions--lux {
+  max-width: 283px;
+}
+
+.offer__button {
+  min-height: 28px;
+  padding: 5px 13px;
+  color: var(--color-btn-filled-text);
+  background-color: var(--color-btn-filled-bg);
+  border-radius: 50px;
+}
+
+.offer__link {
+  display: flex;
+  column-gap: 10px;
+  min-height: 28px;
+  padding: 5px 13px;
+  color: var(--color-btn-outline-text);
+  border: 1px solid var(--color-btn-outline-border);
+  border-radius: 50px;
+}
+
+.offer__link--lux {
+  color: var(--color-btn-outline-text-on-dark);
+  border: 1px solid var(--color-btn-outline-border-on-dark);
+}
+
+.offer__actions-arrow {
+  width: 26px;
+}

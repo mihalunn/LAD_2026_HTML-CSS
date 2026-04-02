@@ -1,0 +1,289 @@
+.container-main {
+    width: 1200px;
+    margin: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* шрифты начало */
+
+header, section {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 500;
+}
+
+footer {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 400;
+}
+/* шрифты конец */
+
+/* заголовки начало */
+h1 {
+    font-size: 64px;
+    font-weight: 600;
+    color: #141414;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #BF6024;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #141414; /* пока сделал все h3 черными, чтобы на белом полотне не потерялся заголовок АПАРТАМЕНТЫ ЛЮКС, потом поменяю на белый */
+}
+/* заголовки конец */
+
+/* всё содержимое container-main начало */
+.container-main {
+    display: flex;
+    flex-direction: column; /* изменил направление главной оси контейнера, чтобы все его дочерние блоки расположились сверху вниз */
+}
+/* всё содержимое container-main конец */
+
+/* шапка начало */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    border-bottom: 1px solid #7A7A7A;
+}
+
+.logo-description {
+    color: #434A5C;
+    margin-left: 20px;
+
+}
+
+.feedback-button {
+    color: #576698;
+    margin-right: 20px;
+}
+
+.feedback-phone {
+    color: #484848;
+    text-decoration: none;
+}
+
+
+.header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px; 
+}
+
+.menu-left-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+#special {
+    color: #141414;
+}
+
+.menu-right-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 0;
+    list-style-type: none;  
+}
+
+.menu-left-list li {
+    padding-left: 18px; /* а можно сделать отступы между элементами с помощью column-gap:? */
+}
+
+.menu-right-list li {
+    padding-left: 18px;
+}
+
+.header-bottom a {
+    color: #7A7A7A;
+    text-decoration: none;
+}
+/* шапка конец */
+
+
+/* горный пейзаж начало */
+.image-mountain {
+    border-bottom: 1px solid #7A7A7A;
+}
+
+.image-mountain img {
+    width: 1200px;
+    height: auto;
+    margin-bottom: 30px;
+}
+/* горный пейзаж конец */
+
+/* ОТДЫХАЙ НА КУРОРТЕ СИНИЙ ЛУГ начало */
+h1 {
+    width: 735px;
+    height: auto;
+    margin: 30px 0 30px 0;
+}
+/* ОТДЫХАЙ НА КУРОРТЕ СИНИЙ ЛУГ конец */
+
+h3 {
+    margin: 30px 0 30px 0;
+}
+
+/* развлечения начало */
+.entertainment-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 70px 30px; 
+    color: #141414;
+    /* 1) в итоге gap по вертикали все равно почти в 2 раза больше, чем в макете, 
+    т.к. и ширина в макете меньше - 1140px против 1200px у меня$
+    2) надо разобраться, как сделать отступ по горизональной оси таким же, как в макете!  */
+}
+.content-entertainment {
+    border-bottom: 1px solid #7A7A7A;
+    padding-bottom: 90px;
+}
+/* развлечения конец */
+
+/* проживание начало */
+.living-items {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px 30px;
+}
+
+.living-item-lux {
+    position: relative;
+    width: 555px;
+    height: 600px;
+    }
+
+.living-item-lux img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.living-item-lux h3 {
+    position: absolute;
+    left: 30px;
+    bottom: 80px;
+    color: #FFFFFF;
+    font-style: 'SemiBold';
+}
+
+.lux-links {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+}
+
+.lux-links a {
+    color: #E5C6B2;
+    text-decoration: none;
+
+}
+
+.living-items-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.living-item-choose, .living-item-loyalty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 70px;
+    width: 540px;
+    height: 285px;
+    background-color: #EAEDF2;
+}
+
+.living-item-choose h3 {
+    width: 200px;
+    height: 60;
+}
+
+.living-item-choose a {
+    width: 144px;
+    height: 28px;
+    color: #BF6024;
+    text-decoration: none;
+}
+
+.living-item-loyalty h3 {
+    width: 269px;
+    height: 31px;
+}
+
+.living-item-loyalty p {
+    color: #141414;
+    width: 262px;
+    height: 64px;
+}
+
+.living-item-loyalty a {
+    width: 125px;
+    height: 28px;
+    color: #BF6024;
+    text-decoration: none;
+}
+
+.content-living {
+    border-bottom: 1px solid #7A7A7A;
+    padding-bottom: 70px;
+}
+/* проживание конец */
+
+/* подвал начало */
+.container-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+    color: #424242;
+}
+
+.footer-copyright {
+    width: 361px;
+}
+
+.footer-feedback {
+    width: 247px;
+}
+
+.footer-offer {
+    width: 340px;
+}
+
+.footer-weight-600 {
+    font-weight: 600;
+}
+
+.footer-feedback a {
+    color: #424242;
+}
+
+/* подвал конец */

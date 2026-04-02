@@ -1,0 +1,39 @@
+.container {
+    width: 1200px;
+    margin: auto;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.b-bottom {
+    border-bottom: 1px solid #ccc;
+}
+
+header {
+    background-color: rgb(243, 89, 89);
+}
+
+.container-sa {
+    display: flex;
+    background-color: aquamarine;
+}
+
+.top-menu {
+    border-bottom: 1px solid #ccc;
+}
+
+.top-menu-list {
+    justify-content: space-between;
+    padding-left: 0;
+}
+
+.top-menu-list li {
+    list-style-type: none;
+}
+
+footer {
+    background-color: black;
+    color: white;
+}
