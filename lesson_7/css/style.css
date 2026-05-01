@@ -1,0 +1,1102 @@
+:root {
+/* Цвета - иду по UI-kit */
+  --blue: #0062FF;
+  --blue-hover: rgba(0, 91, 238, 1); /* для + НОВАЯ ЗАДАЧА */
+  --light-blue: #50B5FF;
+  --light-blue-10: rgba(80, 181, 255, 0.1); /* прозрачный */
+  --salad: #82C43C;
+  --salad-10: rgba(130, 196, 60, 0.1); /* тоже прозрачный */
+  --green: #3DD598;
+  --red: #FC5A5A;
+  --red-5: rgba(255, 11, 55, 0.05); /* прозрачный */
+  --purple: #A461D8; 
+  --yellow: #FFC542;  
+  --orange: #FF974A;
+  --white: #ffffff;
+  --grey-100: #fafafb;
+  --grey-200: #f1f1f5;
+  --grey-300: #e2e2ea;
+  --grey-400: #d5d5dc;
+  --grey-500: #b5b5be;
+  --grey-600: #92929d;
+  --grey-700: #696974;
+  --grey-800: #44444f;
+  --grey-900: #171725;
+
+/* Типографика */
+  --font-primary: "Inter";
+  --font-secondary: "Roboto";
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-size-h1: 32px;
+  --font-size-h2: 18px; /* не соотв. UI-kit, но я вижу h2 иначе, чем дизайнер */
+  --font-size-text-regular: 14px; /* основной текст */
+  --font-size-text-small: 12px; /* в зеленых кнопках и др элементах */
+  --font-size-text-large: 16px; /* названия задач В ПРОЦЕССЕ и ВЫПОЛНЕНО */
+}
+
+
+/* БАЗОВЫЕ СТИЛИ */
+* {
+  box-sizing: border-box;
+}
+
+*::before, /* это я добавил сюда чуть позже походу написания CSS, решил, что лучше их поместить в самый вверх документа */
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-text-regular);
+  font-weight: var(--font-weight-regular);
+  color: var(--grey-800); /* основной цвет текста, остальные буду применять по месту переменными */
+  background-color: var(--grey-100);
+}
+
+/* ОБЩИЕ СТИЛИ ПОВТОРЯЮЩИХСЯ ЭЛЕМЕНТОВ */
+
+h1 {
+  font-size: var(--font-size-h1) !important; /* чтобы перебить normalize.css */
+  font-weight: var(--font-weight-bold);
+  line-height: 40px;
+}
+
+h2 {
+  margin-left: 17px;
+  font-size: var(--font-size-h2) !important;
+  font-weight: var(--font-weight-medium);
+  line-height: 24px;
+  color: var(--grey-600);
+}
+
+.btn--green {
+  width: 92px;
+  height: 32px;
+  padding: 8px 16px;
+  border-radius: 16px;
+  border: none;
+  font-size: var(--font-size-text-small);
+  font-weight: var(--font-weight-bold);
+  background-color: var(--green);
+  color: #FFFFFF;
+  }
+
+.btn--purple {
+  padding: 8px 16px;
+  border-radius: 16px;
+  border: none;
+  font-size: var(--font-size-text-small);
+  font-weight: var(--font-weight-bold);
+  background-color: var(--purple);
+  color: #FFFFFF;
+}
+
+.sidebar__remove-btn {
+  padding: 4px 8px 4px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--salad);
+  border-radius: 16px;
+  font-size: var(--font-size-text-small);
+  font-weight: var(--font-weight-medium);
+  background-color: #FFFFFF;
+  color: var(--salad);
+}
+
+.btn--salad-10 {
+  padding: 4px 8px 4px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--salad);
+  border-radius: 16px;
+  font-size: var(--font-size-text-small);
+  font-weight: var(--font-weight-medium);
+  background-color: var(--salad-10);
+  color: var(--salad);
+}
+
+.btn--blue-10 {
+  padding: 4px 8px 4px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--light-blue);
+  border-radius: 16px;
+  font-size: var(--font-size-text-small);
+  font-weight: var(--font-weight-medium);
+  background-color: var(--light-blue-10);
+  color: var(--light-blue);
+}
+
+.btn--red-10 {
+  padding: 4px 8px 4px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--red);
+  border-radius: 16px;
+  font-size: var(--font-size-text-small);
+  font-weight: var(--font-weight-medium);
+  background-color: var(--red-5);
+  color: var(--red);
+}
+
+.incoming,
+.in-process,
+.ready {
+  display: flex;
+  flex-direction: column;
+  padding-right: 8px;
+  padding-left: 8px;
+  padding-bottom: 16px;
+  border: 1px solid #DCDCE0;
+  border-radius: 16px;
+}
+
+.task {
+  height: 79px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  border: none;
+  background-color: #fff;
+
+}
+
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+/*   max-width: 636px;
+ */  color: var(--grey-600);
+}
+
+
+/* ВЕСЬ КОНТЕНТ tasks-container */
+.tasks-container {
+  display: grid;
+  grid-template-columns: 250px auto;
+/*   gap: 37px;
+ */}
+
+/* ASIDE */
+.sidebar {
+  height: 100%; /* Не уверен, что это лучший выбор, но всё же попробую */
+  display: flex; /* не вижу тут явной сетки, чтобы отступы были одинаковые между ВСЕМИ элементами, проще на флексах подвинуть отступами каждый элементы, их не так уж много */
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 40px;
+  padding-right: 20px;
+  padding-left: 16px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: inset -1px 0px 0px 0px #E2E2EA;
+}
+
+.sidebar__search-top {
+  margin-bottom: 41px;
+}
+
+.sidebar__search-input {
+  height: 38px;
+  max-width: 214px;
+  padding-left: 43px;
+  border-radius: 8px;
+  border: 1px solid var(--grey-300);
+  background-color: var(--grey-100);
+  background-image: url(../images/search-icon.svg);
+  background-repeat: no-repeat;
+  background-position: 13px center;
+  color: var(--grey-800);
+}
+
+.sidebar__search-input::placeholder {
+  color: var(--grey-500);
+}
+
+.sidebar__search-input::-webkit-search-cancel-button { /* искал, как заменить дефолтный крестик очистки поля поиска на нужный, нашел несколько, этот самый простой и работает без JS */
+  -webkit-appearance: none;
+  background-image: url(../images/cross-search-icon.svg);
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.sidebar__filter {
+  max-width: 214px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+
+/* УЧАСТНИКИ */
+.sidebar__members {
+  height: 65px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.sidebar__members label {
+  font-size: var(--font-size-text-small);
+  font-weight: var(--font-weight-bold);
+}
+
+.sidebar__members select {
+  height: 38px;
+  padding-left: 0;
+  border: none;
+  border-bottom: 1px solid #E2E2EA;
+}
+
+#sidebar__members-id:required:invalid { /* признаюсь - этот способ "покраски" плейсхолдера выклянчал у ИИшки, но принцип работы уловил */
+  color: #B5B5BE;
+}
+
+#sidebar__members-id {
+  appearance: none; /* круто, до этого не знал, как заменять дефолтную стрелку */
+  background-image: url(../images/dropdown-icon.svg);
+  background-repeat: no-repeat;
+  background-position: 194px center;
+}
+
+
+/* СТАТУС */
+.sidebar__status-checkbox {
+  height: 164px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+}
+
+.sidebar__status-title {
+  font-size: var(--font-size-text-small);
+  font-weight: var(--font-weight-bold);
+}
+
+.sidebar__status-options {
+  height: 132px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar__status-options label {
+  height: 24px;
+  display: grid;
+  grid-template-columns: 20px 123px 1fr 26px;
+  align-items: center;
+}
+
+.sidebar__status-input {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  background-image: url(../images/checkbox-empty-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.sidebar__status-input:checked {
+  background-image: url(../images/checkbox-checked-icon-2.svg); 
+}
+
+.sidebar__status-option {
+  margin-left: 8px;
+}
+
+.sidebar__badge {
+  width: 26px;
+  height: 24px;
+
+  grid-column: 4; /* badge в 4-й колонке справа */
+  justify-self: end; /* прижимаю к правому краю колонки */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  border-radius: 4px;
+  background-color: var(--grey-200) ;
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--grey-600);
+}
+
+/* МЕТКА */
+.sidebar__tags-search {
+  height: 103px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* там не совсем такие гэпы, но я сделал оба одинаковыми, визуально не заметно */
+}
+
+.sidebar__tags-label {
+  font-size: var(--font-size-text-small);
+  font-weight: var(--font-weight-bold);
+}
+
+.sidebar__tags-input {
+  width: 208px;
+  height: 38px;
+  border: none;
+  border-bottom: 1px solid #E2E2EA;
+  background-image: url(../images/add-tag-btn-icon.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+  color: var(--grey-800);
+}
+
+.sidebar__tags-input::placeholder {
+  color: var(--grey-500);
+}
+
+.sidebar__tags-input::-webkit-search-cancel-button { /* здесь не получилось сдвинуть серый крестик влево от иконки, наверное из-за того, что он фактически на его месте заякорился. Пока не буду терять время, пойду дальше */
+  -webkit-appearance: none;
+  background-image: url(../images/cross-search-icon.svg);
+  background-position: right center;
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.sidebar__chips {
+  display: flex;
+  gap: 12px;
+}
+
+
+/* ДРУГИЕ */
+.sidebar__other-checkbox {
+  height: 54px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sidebar__other-options label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar__other-title {
+  font-size: var(--font-size-text-small);
+  font-weight: var(--font-weight-bold);
+
+}
+
+.sidebar__other-input {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  background-image: url(../images/checkbox-empty-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sidebar__other-input:checked {
+  background-image: url(../images/checkbox-checked-icon-2.svg); 
+}
+
+
+
+/* СТЕПЕНЬ ГОТОВНОСТИ */
+
+.sidebar__readiness-radio {
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar__readiness-options {
+  height: 32px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid var(--grey-200);
+  border-radius: 8px;
+
+}
+
+.sidebar__readiness-option {
+  color: var(--grey-800);
+}
+
+.sidebar__readiness-option input {
+  appearance: none;
+  /* Размер и форма кнопки */
+  /* width: 68px; 
+  height: 28px; */
+  border-radius: 8px;
+}
+
+/* Состояние ВЫБРАНО */
+.sidebar__readiness-option input:checked {
+  background-color: var(--blue);
+  border-color: var(--blue);
+}
+
+/* Текст становится белым при выборе */
+.sidebar__readiness-option input:checked + span {  
+  font-weight: 400;
+  background-color: var(--blue);
+  color: white !important; 
+}
+
+.sidebar__readiness-title {
+  font-size: var(--font-size-text-small);
+  font-weight: var(--font-weight-bold);
+}
+
+
+
+
+
+
+/* ПРИОРИТЕТ */
+.sidebar__priority-checkbox {
+  height: 54px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sidebar__priority-title {
+  font-size: var(--font-size-text-small);
+  font-weight: var(--font-weight-bold);
+}
+
+.sidebar__priority-options label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: var(--font-weight-regular);
+}
+
+
+.sidebar__priority-options input {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  background-image: url(../images/checkbox-empty-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sidebar__priority-options input:checked {
+  background-image: url(../images/checkbox-checked-icon-2.svg); 
+}
+
+
+/* ОЧИСТИТЬ ФИЛЬТРЫ */
+.sidebar__clear-filter-btn {
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 91px;
+  margin-right: 12px;
+  margin-left: 12px;
+  border: 1px solid var(--grey-400);
+  border-radius: 8px;
+  background-color: white;
+}
+
+.sidebar__clear-filter-btn p {
+  font-size: var(--font-size-text-regular);
+  font-weight: var(--font-weight-regular);
+  color: var(--grey-700);
+}
+
+
+
+/* main  */
+main {
+  max-width: 1351px;
+  padding-right: 38px;
+  padding-left: 38px;
+
+}
+
+.main-content {
+  max-width: 1275px;
+  display: grid !important; /* перебиваю normalize.css */
+  grid-template-rows: 120px auto;
+/*   padding-top: 24px;*/
+}
+
+/* header */
+.header {
+  max-width: 1270px;
+  height: 97px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 27px;
+  margin-bottom: 28px ;
+}
+
+.header__left {
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header__filter-btns {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header__all-btn,
+.header__for-me-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  border: none;
+  background-color: var(--grey-100);
+  padding: 5px 27px 7px 10px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.header__all-btn {
+  border: none;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0px 1px 4px 0px rgba(68, 68, 79, 0.1);
+}
+
+.header__all-btn:active, /* фон при нажатии, пытался сделать так, чтобы после нажатия кнопка оставалась нужного цвета, но тогда наверное надо было использовать radio, а дальше видимо JS - пока оставлю так, чтобы хотя бы визуально на макет было похоже */
+.header__for-me-btn:active {
+  background-color: white !important;
+}
+
+.header__right {
+  height: 34px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 13px;
+  margin-top: 23px;
+}
+
+.header__right-dropdown-icon {
+  width: 11px;
+  height: 7px;
+}
+
+
+/* ЗАДАЧИ */
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+/*   max-width: 1275px;
+ */  margin-top: 31px; /* опять где-то навертел, не могу никак сделать отступ между хедером и блоком задач под ним, уже весь мозг сломал */
+/*   margin-right: 38px;
+ */}
+
+
+/* ВХОДЯЩИЕ */
+
+.incoming__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.incoming__label {
+  font-weight: 300;
+  color: var(--grey-600);
+}
+
+.incoming__sort-area {
+  border: none;
+  background-color: var(--grey-100);
+  font-weight: 600;
+  appearance: none; /* круто, до этого не знал, как заменять дефолтную стрелку */
+  background-image: url(../images/dropdown-icon.svg);
+  background-repeat: no-repeat;
+  background-position: right center;
+
+}
+
+.incoming__tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.incoming__task-2 {
+  padding-left: 24px;
+}
+
+
+
+.incoming__drag-handle-btn {
+  width: 24px;
+  height: 24px;
+ 
+  background-image: url(../images/drag-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+  border: none;
+}
+
+.incoming__task-title {
+  width: 320px;
+  margin-right: 24px;
+  font-weight: 600;
+}
+
+.ready__task-details {
+  width: 636px;
+}
+
+
+.incoming__attach {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  width: 45px;
+  height: 26px;
+  margin-right: 8px;
+}
+
+.incoming__progress {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  width: 50px;
+  height: 26px;
+  margin-right: 24px;
+}
+
+.incoming__status {
+  margin-right: 24px;
+}
+
+.incoming__deadline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 104px;
+  height: 24px;
+  margin-right: 24px;
+}
+
+.incoming__priority {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 75px;
+  height: 16px;
+  margin-right: 24px;
+}
+
+.incoming__tags {
+  height: 56px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 4px;
+}
+
+.incoming__members {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 116px; 
+  height: 32px;
+  margin-right: 45px;
+  
+}
+
+.incoming__more-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 25px;
+}
+
+.incoming__add-task {
+  width: 348px;
+  height: 16px;
+  margin-top: 16px;
+  margin-left: 24px;
+  font-size: var(--font-size-text-small);
+  font-weight: var(--font-weight-bold);
+  color: var(--blue);
+}
+
+.incoming__pagination {
+  height: 32px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.incoming__page-summary {
+  margin-right: 27px;
+
+}
+
+.incoming__pagination button {
+  height: 32px;
+  width: 32px;
+}
+
+.incoming__page-prev-btn,
+.incoming__page-next-btn {
+  border: 1px solid var(--grey-300);
+  border-radius: 8px;
+  background-color: var(--grey-100);
+}
+
+.incoming__page-prev-btn {
+  margin-right: 15px;
+  background-image: url(../images/arrow-left-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.incoming__page-next-btn {
+  margin-right: 15px;
+  background-image: url(../images/arrow-right-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.incoming__page-btn {
+  border: none;
+  background-color: var(--grey-100);
+  color: var(--grey-600);
+}
+
+.incoming__page-btn_active {
+  font-weight: var(--font-weight-bold);
+  color: var(--blue);
+}
+
+.incoming__page-goto {
+  max-width: 61px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--grey-300);
+  border-radius: 8px;
+  background-color: var(--grey-100);
+  position: relative;
+}
+
+.incoming__page-goto-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  color: var(--grey-600);
+}
+
+/* .incoming__page-selected {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  width: 32px;
+  margin-right: 2px;
+} */
+
+.incoming__page-separator {
+  position: absolute;
+  left: 30px;
+}
+
+.incoming__page-dropdown-btn {
+  border-left: 1px solid var(--grey-300);
+  border: none;
+  border-radius: 8px;
+  background-color: var(--grey-100);
+  background-image: url(../images/dropdown-pages-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+/* В РАБОТЕ */
+.in-process__task {
+  padding-left: 24px;
+}
+
+.in-process__task-title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 376px;
+  margin-right: 41px;
+  font-size: 16px;
+  font-weight: var(--font-weight-medium);
+}
+
+.in-process__title-top {
+  height: 24px;
+}
+
+.in-process__title-bottom {
+  height: 26px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-text-regular);
+  color: var(--grey-600);
+}
+
+.in-process__attach {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  width: 45px;
+  height: 26px;
+  margin-right: 24px;
+}
+
+.in-process__progress {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  width: 50px;
+  height: 26px;
+}
+
+.in-process__task-details {
+  width: 438px;
+  margin-right: 171px;
+}
+
+.in-process__status {
+  margin-right: 24px;
+}
+
+.in-process__deadline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 104px;
+  height: 24px;
+  margin-right: 24px;
+}
+
+.in-process__priority {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 75px;
+  height: 16px;
+  margin-right: 24px;
+}
+
+/* .in-process__tag-urgent {
+} */
+
+
+.in-process__members {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 116px; 
+  height: 32px;
+  margin-right: 45px;
+  
+}
+
+.in-process__more-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 25px;
+}
+
+
+.in-process__save-task {
+  width: 500px;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  margin-left: 32px;
+}
+
+.in-process__input {
+  width: 294px;
+  height: 48px;
+  padding-left: 30px;
+  border: none;
+  border-bottom: 1px solid var(--grey-600);
+  background-color: var(--grey-100);
+  background-image: url(../images/assignments-icon.svg);
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.in-process__save-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: 197px;
+  height: 32px;
+}
+
+.in-process__save-btn,
+.in-process__cancel-btn {
+  width: 98px;
+  height: 32px;
+  font-size: var(--font-size-text-small);
+  font-weight: var(--font-weight-bold);
+
+}
+
+.in-process__save-btn {
+  border: none;
+  border-radius: 8px;
+  background-color: var(--blue);
+  color: white;
+}
+
+.in-process__cancel-btn {
+  border: 1px solid var(--grey-400);
+  border-radius: 8px;
+  background-color: var(--grey-100);
+  color: var(--grey-700);
+}
+
+
+/* ВЫПОЛНЕННЫЕ */
+
+.ready__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ready__label {
+  font-weight: 300;
+  color: var(--grey-600);
+}
+
+.ready__header-right {
+  width: 267px;
+}
+
+.ready__sort-area {
+  width: 140px;
+  border: none;
+  background-color: var(--grey-100);
+  font-weight: 600;
+  appearance: none; /* круто, до этого не знал, как заменять дефолтную стрелку */
+  background-image: url(../images/dropdown-icon.svg);
+  background-repeat: no-repeat;
+  background-position: right center;
+
+}
+
+.ready__tasks {
+  display: flex; 
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ready__task-1,
+.ready__task-2 {
+  padding-left: 24px;
+}
+
+.ready__task-title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 376px;
+  margin-right: 41px;
+  font-size: 16px;
+  font-weight: var(--font-weight-medium);
+  color: var(--grey-700);
+}
+
+.ready__title-top {
+  height: 24px;
+}
+
+.ready__title-bottom {
+  height: 26px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-text-regular);
+  color: var(--grey-600);
+}
+
+.ready__attach {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  width: 45px;
+  height: 26px;
+  margin-right: 24px;
+}
+
+.ready__progress {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  width: 50px;
+  height: 26px;
+}
+
+.ready__task-details {
+  width: 430px;
+  gap: 24px;
+  margin-right: 179px;
+}
+
+.ready__members {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 116px; 
+  height: 32px;
+  margin-right: 45px;
+  
+}
+
+

@@ -1,0 +1,817 @@
+:root {
+/* Цвета */
+    --blue-main: #186FD4;
+    --blue-login-text: #117FE3;
+    --blue-bgc: #F6F8FB;
+    --grey-border-main: #EDF0F2;
+    --grey-border-fields: #EBEEF0; /* хз честно говоря зачем, мог бы и одним цветом, они же одинаковые! */
+
+
+/* Цвет шрифтов */
+    --h1: #2C333D;
+    --region-contact-label: #011120;
+    --delivery-title: #2C333D;
+    --delivery-info: #62676F;
+    --contact-input: #ADB1B7;
+    --cart-item-title: #2C333D;
+    --cart-item-sku: #A8ADB2;
+    --cart-item-price: #003B73;
+/* Типографика */
+    --font-primary: "Inter";
+    --font-weight-regular: 400;
+    --font-weight-medium: 550;
+    --font-weight-bold: 700;    
+    --font-size-h1: 48px;
+    --font-size-h2: 28px;
+    --font-size-fields-main: 15px;
+}
+
+
+
+/* БАЗОВЫЕ СТИЛИ */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+*::before, /* это я добавил сюда чуть позже походу написания CSS, решил, что лучше их поместить в самый вверх документа */
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+    font-family: 'Inter';
+}
+
+
+/* ОБЩИЕ СТИЛИ ПОВТОРЯЮЩИХСЯ ЭЛЕМЕНТОВ */
+.form__control--bordered {
+    border: 1px solid var(--grey-border-fields);
+    border-radius: 7px;
+    /* убираю браузерный фокус */
+    outline: none; 
+    box-shadow: none;
+}
+
+.form__control--bordered:focus {
+    border: 1px solid #186FD4;
+    border-radius: 7px;
+    /* убираю браузерный фокус */
+    outline: none;
+    box-shadow: none;
+}
+
+a {
+    color: var(--blue-main);
+}
+
+
+/* Верстка */
+
+/* верстка общая - начало */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    /* gap: 30px; */
+    width: 100%;
+    max-width: 1620px;
+    margin: 0 auto;
+    padding: 0 10px; /* чтобы не прилипал к краям экрана. Пока что закомменчу */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+/* левая часть - начало */
+main {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    max-width: 1034px;
+    /* padding: 10px 40px 40px 40px;  */ 
+    border: 1px solid var(--grey-border-main);
+    border-radius: 8px;
+}
+
+h1 {
+    margin: 0;
+    margin-bottom: 30px;
+    /* padding-left: 40px; */
+    line-height: 54px;
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-medium);
+    color: var(--h1);
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 63px;
+    padding-left: 40px;
+    border-bottom: 1px solid var(--grey-border-main);
+}
+
+.login__text {
+    font-size: 16px;
+    font-weight: var(--font-weight-regular);
+}
+
+.login__btn {
+    width: 84px;
+    height: 43px;
+    font-size: var(--font-size-fields-main);
+    font-weight: var(--font-weight-medium);
+    border: none;
+    border-radius: 8px;
+    background-color: var(--blue-bgc);
+    color: var(--blue-login-text);
+}
+
+.login__btn:focus {
+    border: 1px solid #186FD4;
+    border-radius: 7px;
+    /* убираю браузерный фокус */
+    outline: none;
+    box-shadow: none;
+}
+
+.sidebar__order-btn:focus {
+    border: 1px solid #186FD4;
+    border-radius: 7px;
+    /* убираю браузерный фокус */
+    outline: none;
+    box-shadow: none;
+}
+
+
+/* Форма - начало */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 40px 40px 40px;
+}
+
+.form__delivery-container {
+    padding: 0 !important;
+    border: none;
+}
+
+.delivery-legend {
+    padding-left: 0;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: var(--font-weight-regular);
+}
+
+.delivery-region {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    height: 77px;
+    margin-bottom: 15px;
+}
+
+/* .form__select {
+    width: 470px;
+    height: 61px;
+    padding-left: 20px;
+}
+
+.form__select {
+    padding-right: 20px; 
+} */
+
+.form__select {
+    width: 470px;
+    height: 61px;
+    padding-left: 20px;
+    padding-right: 40px;
+    
+    /* скрываю стандартную стрелку и рисуем свою - нагуглил, как это сделать */
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: calc(100% - 20px) center; /* стрелка на 10px левее края */
+    background-repeat: no-repeat;
+    background-size: 16px;
+}
+
+.delivery-options {
+    display: grid;
+    grid-template-columns: repeat(3,308px);
+    grid-template-rows: 207px;
+    align-items: center;
+    gap: 15px;
+}
+
+/* .form__radio-option:focus {
+    border: 1px solid #186FD4;
+    border-radius: 7px;
+    /* убираю браузерный фокус */
+    /* outline: none;
+    box-shadow: none; */
+/* } */
+
+
+/* делаю карточку-радиокнопку */
+.form__radio-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 207px;
+    padding: 20px 20px 20px 59px;
+}
+
+/* Скрываю дефолтную радиокнопку браузера */
+.form__delivery-input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+}
+
+/* Делю кликабельной всю карточку. Работает потому, что это label */
+.form__radio-option-label {
+    cursor: pointer;
+}
+
+/* делаю позиционирование для текста, чтобы слева шлепнуть точку */
+.form__radio-option-title {
+    position: relative;
+    font-size: 16px;
+    font-weight: var(--font-weight-regular);
+    color: var(--delivery-title);
+}
+
+/* ставлю нейтральную иконку радиокнопки */
+.form__radio-option-title::before {
+    content: "";
+    position: absolute;
+    left: -38px;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    transform: translateY(-50%);
+    background: url(../images/radio-btn-ic.svg) no-repeat center / contain;
+}
+
+/* делаю так, чтобы когда input был выбран, иконка менялась на активную */
+.form__delivery-input:checked + .form__radio-option-label .form__radio-option-title::before {
+    background-image: url(../images/radio-btn-active-ic.svg);
+}
+
+.form__radio-option-about {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    color: var(--delivery-info);
+}
+
+.form__radio-option-address {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 62px;
+    padding-left: 38px;
+    /* margin-bottom: 20px; */
+    border: none;
+    border-radius: 7px;
+    background-color: var(--blue-bgc);
+    font-size: 16px;
+    font-weight: var(--font-weight-regular);
+    color: #393C40;
+}
+
+.form__radio-option-address::before {
+    content: url(../images/map-ic.svg);
+    position: absolute;
+    left: 11px;
+    top: 20px;
+    width: 15px;
+    height: 17px;
+    transform: translateY(-50%);
+}
+
+/* секция Оплата - начало */
+.form_payment-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: none;
+}
+
+.payment-legend {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: var(--font-weight-regular);
+    line-height: 28px;
+    color: #000000;
+}
+
+.payment-option__label {
+    font-size: 16px;
+    font-weight: var(--font-weight-regular);
+    line-height: 22px;
+    color: var(--cart-item-title); /* при анализе макета не увидел, что этот текст тоже такого цвета, использую переменную не оч подходящим именем, но цвет тот */
+}
+
+/* .payment-option__link link {
+    color: var(--blue-main);
+} */
+
+/* снова меняю браузерную радиоточку - скопировал код сверху с небольшими правками */
+.payment-option__input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.payment-option__label {
+    position: relative;
+    display: block;
+    padding-left: 38px;
+    cursor: pointer;
+}
+
+.payment-option__label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 18px;
+    height: 18px;
+    background: url(../images/radio-btn-ic.svg) no-repeat center / contain;
+}
+
+.payment-option__input:checked + .payment-option__label::before {
+    background-image: url(../images/radio-btn-active-ic.svg);
+}
+
+/* Промокод */
+.promocode {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding-left: 20px;
+    border: none;
+    border-radius: 7px;
+    background-color: var(--blue-bgc);
+    font-size: var(--font-size-fields-main);
+    font-weight: var(--font-weight-regular);
+
+}
+
+.promocode span {
+    margin-right: 5px;
+    color: var(--cart-item-title);
+}
+
+/* Секция Персональные данные */
+.form__contact-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0;
+    max-width: 954px;
+    border: none;
+}
+
+/* шрифты */
+.form__contact-container label {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+}
+
+.form__contact-container input {
+    font-size: var(--font-size-fields-main);
+    font-weight: var(--font-weight-regular);
+    color: var(--region-contact-label); 
+}
+
+.form__control--bordered::placeholder {
+    color: #ADB1B7;
+    opacity: 1;
+}
+
+/* верстаю секцию */
+
+/* имя и фамилия - начало */
+.form__name-area,
+.form__email {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.form__first-name,
+.form__last-name {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form__first-name-input,
+.form__last-name-input {
+    width: 464px;
+    height: 61px;
+    padding-left: 20px;   
+}
+
+.form__first-name-label,
+.form__last-name-label,
+.form__company-label,
+.form__email-label,
+.form__tel-label {
+    font-size: 14px;
+    font-weight: var(--font-weight-regular);
+    color: #2C333D;
+}
+
+.form__required {
+    color: #e53935;
+}
+
+/* компания - начало */
+.form__company {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form__company-input {
+    height: 61px;
+    width: 954px;
+    padding-left: 20px;
+}
+
+/* телефон и почта - начало */
+.form__contacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.form__email,
+.form__tel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form__email-input,
+.form__tel-input {
+    width: 465px;
+    height: 61px;
+    padding-left: 20px;
+}
+
+/* создать аккаунт */
+.form__create-acc {
+    height: 24px;
+}
+
+/* Прячу стандартный чекбокс, но оставляю его рабочим */
+.form__create-acc {
+    position: relative;
+}
+
+.form__create-acc input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.form__label--checkbox {
+    position: relative;
+    display: block;
+    padding-left: 34px; 
+    cursor: pointer;
+}
+
+.form__label--checkbox::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+    background: url(../images/checkbox-ic.png) no-repeat center / contain;
+}
+
+.form__create-acc input:checked + .form__label--checkbox::before {
+    background: var(--blue-main); 
+    background-image: none;
+    border-radius: 4px;
+}
+
+/* Рисую белую галочку поверх синего квадрата */
+.form__create-acc input:checked + .form__label--checkbox::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    width: 6px;
+    height: 10px;
+
+  /* рисую две линии, из которых получается галочка */
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+
+  /* поворачиваю линию, чтобы она стала похожа на галочку */
+    transform: translateY(-60%) rotate(45deg);
+}
+
+
+
+
+/* Поле для комментариев - начало */
+.form__comment {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form__comment-textarea {
+    height: 89px;
+    resize: vertical; /* разрешаю менять размер только вверх-вниз */
+    max-width: 100%;  /* не даю разъезжаться по ширине */
+    padding-top: 25px;
+    padding-left: 20px;
+}
+
+
+
+/* РАБОТА НАД ОШИБКАМИ */
+/* понимаю, что это не оч правильно, но мне проще сейчас сюда исправление запихать */
+.form__radio-option {
+    position: relative;
+    padding: 0 !important;
+}
+
+.form__radio-option-dot,
+.form__radio-option-content,
+.form__radio-option-address {
+    position: relative;
+    z-index: 2; /* контент остается "наверху" */
+}
+
+.form__radio-option-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    z-index: 1;
+    margin: 0;
+    padding: 20px 20px 20px 59px;
+    display: block; /*  */
+}
+
+
+/* Базовая рамка для всех карточек доставки */
+.form__radio-option.form__control--bordered {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: border-color 0.2s;
+}
+
+/* Рамка для выбранной карточки */
+.form__radio-option:has(.form__delivery-input:checked) {
+    border: 1px solid #186FD4 !important;
+    border-radius: 7px;
+}
+
+/* Фокус при клике */
+.form__delivery-input:focus + .form__radio-option-label {
+    outline: 2px solid #186FD4;
+    border-radius: 7px;
+}
+
+/* Добавьте эти стили в конец вашего CSS файла */
+
+/* Hover для всех кнопок */
+.login__btn:hover,
+.sidebar__order-btn:hover {
+    background-color: #0f5eb5 !important; /* Более тёмный синий */
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.login__btn:hover,
+.sidebar__order-btn:hover {
+    filter: brightness(0.85);
+}
+
+/* Hover для всех ссылок */
+a:hover,
+.link:hover,
+.payment-option__link:hover {
+    color: #0f5eb5 !important; /* тороплюсь, поэтому задал любой более темный цвет, без привязки к макету... */
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.form__radio-option-label:hover,
+.payment-option__label:hover,
+.form__label--checkbox:hover,
+.sidebar__checkbox-label:hover {
+    cursor: pointer;
+}
+
+/* Общий hover для интерактивных элементов формы */
+.form__radio-option.form__control--bordered:hover {
+    border-color: #0f5eb5;
+    transition: border-color 0.2s ease;
+}
+
+.login__btn:hover,
+.sidebar__order-btn:hover {
+    color: white !important;
+}
+
+
+
+
+
+
+/* САЙДБАР */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 40px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 19px 0 #171B2012;
+}
+
+/* общие стили элементов */
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar__item-info {
+    max-width: 277px;
+    display: flex;
+    flex-direction: column;
+    align-self: self-start;
+    gap: 5px; 
+    margin-left: 10px; 
+}
+
+.sidebar__item-info p {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--cart-item-title);
+    margin: 0; 
+}
+
+.sidebar__item-info span {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--cart-item-sku);
+}
+
+.sidebar__price span {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--cart-item-price);
+    margin: 0;
+    white-space: nowrap; /* накостылил запрет переноса рубля :-) */
+}
+
+
+.sidebar__order-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sidebar__sum-title {
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+}
+
+.sidebar__sum-amount {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--cart-item-price);
+    white-space: nowrap;
+}
+
+.total {
+    font-size: 22px;
+
+}
+
+.sidebar__agree-terms {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.sidebar__checkbox-label {
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    color: #696D70;
+}
+
+.sidebar__agree-terms {
+    position: relative;
+}
+
+.sidebar__checkbox-input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.sidebar__checkbox-label {
+    position: relative;
+    display: block;
+    padding-left: 34px; 
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: var(--font-weight-regular);
+    color: #696D70;
+}
+
+.sidebar__checkbox-label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+    background: url(../images/checkbox-ic.png) no-repeat center / contain;
+}
+
+.sidebar__checkbox-input:checked + .sidebar__checkbox-label::before {
+    background: var(--blue-main); 
+    background-image: none;
+    border-radius: 4px;
+}
+
+/* Белая галочка при выборе */   
+/* этот способ отрисовки галочки я надыбал в нейронке, сам не смог придумать, как нарисовать, а в макете не было иконки для импорта */
+.sidebar__checkbox-input:checked + .sidebar__checkbox-label::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    width: 6px;
+    height: 10px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: translateY(-60%) rotate(45deg);
+}
+
+.sidebar__order-btn {
+    height: 64px;
+    border: none;
+    border-radius: 8px;
+    background-color: #186FD4;
+    font-size: 13px;
+    font-weight: var(--font-weight-bold);
+    color: white;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+
+

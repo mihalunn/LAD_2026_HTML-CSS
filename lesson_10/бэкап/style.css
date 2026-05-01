@@ -1,0 +1,323 @@
+:root {
+    /* основные цвета */
+    --blue-primary-default: #1BA2B1;
+    --blue-primary-hover: #188E9A;
+    --red-secondary: #EF1839;
+
+    /* цвета текста */
+    --text-main-black: #010101;
+    --text-primary-grey: #6A6A6A;
+    --text-button-white-default: #FFFFFF;
+
+    /* типографика */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-size-small: 12px;
+    --font-size-regular: 14px;
+    --font-size-medium: 18px;
+    --font-size-large: 24px;
+    
+    --font-weight-300: 300;
+    --font-weight-400: 400;
+    --font-weight-500: 500;
+    --font-weight-600: 600;
+    --font-weight-700: 700;
+
+    --font-style-medium: Medium;
+    --font-style-regular: Regular;
+    --font-style-semibold: SemiBold;
+    --font-style-bold: Bold;
+    --font-style-light: Light;
+
+    /* цвета фона */
+    --primary-grey-900: #F5F7F8;
+    --primary-grey-1000: #FAFAFA;
+    --shadow-grey: rgba(192, 192, 192, 0.25); 
+}
+
+/* ОБЩИЕ ПРАВИЛА */
+
+html {
+    font-family: var(--font-primary);
+    font-size: 14px; /* базовый размер под мобилку */
+    line-height: 130%;
+    color: var(--text-main-black);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* общий контейнер для контента */
+.wrapper {
+    padding: 16px 16px 24px 16px;
+    margin: 0 auto;
+    max-width: 375px; /* явно под 375px, смогу позже расширить до нужных устройств */
+    width: 100%;
+}
+
+/* ОБЩИЕ СТИЛИ ПОВТОРЯЮЩИХСЯ ЭЛЕМЕНТОВ */
+.header__search-btn,
+.hero__gotomain-link,
+.navigation__catalog-btn {
+    border: none;
+    background-color: var(--blue-primary-default);
+    color: var(--text-button-white-default);
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* блок HEADER - начало */
+.header-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.header__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__top a {
+    font-style: var(--font-style-medium);
+    font-weight: var(--font-weight-500);
+    line-height: 120%;
+    color: var(--text-main-black);
+}
+
+.header__search-form {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+}
+
+.header__search-input {
+    flex: 1 1 0; /* flex-grow: 1  flex-shrink: 1  flex-basis: 0 */
+    min-width: 0;
+    padding: 13px 8px;
+    height: 40px;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-400);
+    line-height: 120%;
+    border: 2px solid var(--blue-primary-default);
+    border-radius: 4px;
+    color: var(--text-main-black);
+    appearance: none; /* а как убрать дефолтный крестик для сброса текста? */
+}
+
+.header__search-input::placeholder {
+    color: var(--text-primary-grey);
+}
+
+.header__search-btn {
+    flex: 0 0 auto; /* не растягивается и не сжимается */
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--blue-primary-default);
+    color: var(--text-button-white-default);
+}
+
+
+/* блок HERO начало */
+
+
+.hero__error {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-height: 610px;
+}
+
+/* .hero__error-text {
+
+} */
+
+.hero__error-title {
+    margin: 0;
+    font-size: var(--font-size-large);
+    font-style: var(--font-style-semibold);
+    font-weight: var(--font-weight-600);
+}
+
+.hero__error-info {
+    font-size: var(--font-size-regular);
+    font-style: var(--font-style-regular);
+    font-weight: var(--font-weight-400);
+}
+
+.hero__error-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.hero__gotomain-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 185px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.hero__promo-link {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* расстояние 15px между словом и стрелкой */
+    color: var(--text-main-black);
+    text-decoration: none;
+    font-style: var(--font-style-medium);
+    font-weight: var(--font-weight-500);
+}
+
+.hero__promo-link-arrow {
+    width: 16px;
+    height: 16px;
+    background: url(../images/arrow-right-ic.svg) no-repeat center;
+    background-size: contain;
+    display: inline-block;
+}
+
+/* блок НАВИГАЦИЯ - начало */
+.navigation-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 13px 16px;
+    border: 1px solid var(--primary-grey-900);
+    box-shadow: 0 1px 34px 0 rgba(192, 192, 192, 0.25);
+    background-color: #ffffff;
+    z-index: 999;
+}
+
+/* чтобы контент навигации жил в том же 375px‑контейнере */
+.navigation-wrapper .wrapper {
+    max-width: 375px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.navigation__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 23px;
+    height: 58px;
+}
+
+.navigation__catalog-btn {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 12px;
+    background-image: url(../images/navigation-catalog-ic.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.nav-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    line-height: 1;
+}
+
+.navigation__user img {
+    width: 16px;
+    height: 20px;
+}
+
+.navigation__favourite img {
+    width: 20px;
+    height: 17px;
+}
+
+.navigation__cart img {
+    width: 24px;
+    height: 24px;
+}
+
+.navigation__favourite .navigation__item-count {
+    position: absolute;
+    top: -20%;
+    right: 16%;
+}
+
+.navigation__cart .navigation__item-count {
+    position: absolute;
+    top: -10%;
+    right: 10%; 
+}
+
+.navigation__item-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 20px;
+    padding-right: 8px;
+    padding-left: 8px;
+
+    border: none;
+    border-radius: 8px 8px 8px 0;
+
+    font-size: var(--font-size-small);
+    font-style: var(--font-style-bold);
+    font-weight: var(--font-weight-700);
+    line-height: 100%;
+
+    background-color: var(--red-secondary);
+    color: var(--text-button-white-default);
+}
+
+.navigation__item-title {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-400);
+    font-style: var(--font-size-regular);
+    line-height: 120%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* focus, hover и тп */
+*:focus {
+    border: 2px solid var(--blue-primary-hover);
+    border-radius: 5px; 
+    outline: none;
+    /* пока так, не нашел в макете ориентир, сам задал все параметры на глаз */
+}
+

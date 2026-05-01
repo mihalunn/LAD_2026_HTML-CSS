@@ -2,23 +2,37 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- попробую заменить content="width=device-width" на "1600px" UPD: вернул назад-->
     <title>Таск-трекер</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
 </head>
 <body>
     <div class="tasks-container"> <!-- с неймингом туговато... -->
         <!-- блок сайдбар - начало -->
         <aside class="sidebar">
+
             <div class="sidebar__search-top">
                 <input class="sidebar__search-input" name="search" type="search" placeholder="Поиск"> <!-- лупу добавлю фоном, чтобы не перегружать HTML -->
             </div>
+
             <!-- большой раздел с фильтрами - начало -->
             <div class="sidebar__filter">
+
                 <!-- участники - начало -->
                 <div class="sidebar__members">
                     <label class="sidebar__members-label" for="sidebar__members-id">УЧАСТНИКИ</label>
-                    <select id="sidebar__members-id" name="members"> <!-- указал id, а выше ссылка на него for -->
-                        <option value="" disabled selected>Выберите...</option>
+                    <select id="sidebar__members-id" name="members" required> <!-- указал id, а выше ссылка на него for -->
+                        <option value="" disabled selected>Выберите...</option> <!-- признаюсь - этот способ "покраски" плейсхолдера выклянчал у ИИшки, но принцип работы уловил -->
                         <option value="Долгов М.">Долгов М.</option>
                         <option value="Федоров Д.">Федоров Д.</option>
                         <option value="Семенова Н.">Семенова Н.</option>
@@ -29,29 +43,32 @@
 
                 <!-- статус - начало -->
                 <div class="sidebar__status-checkbox">
-                    <span class="sidebar__status-title">СТАТУС</span>
+
+                    <span class="sidebar__status-title">СТАТУС</span> <!-- что-то я не понял, почему все названия разделов я задал как LABEL, а тут тупо SPAN...Но заметил уже поздно, сейчас не буду править, чтобы наломать дров :-) -->
+
                     <div class="sidebar__status-options">
+
                         <label>
-                        <input type="checkbox" name="status" value="created">
-                        <span class="sidebar__status-label">Создана</span>
+                        <input class="sidebar__status-input" type="checkbox" name="status" value="created">
+                        <span class="sidebar__status-option">Создана</span>
                         <span class="sidebar__badge">16</span> <!-- использую badge, чтобы не костылить картинки - нагуглил вот такой инструмент, посмотрим дальше, как он себя поведет -->
                         </label>
 
                         <label>
-                        <input type="checkbox" name="status" value="in_progress">
-                        <span class="sidebar__status-label">В работе</span>
+                        <input class="sidebar__status-input" type="checkbox" name="status" value="in_progress">
+                        <span class="sidebar__status-option">В работе</span>
                         <span class="sidebar__badge">26</span>
                         </label>
 
                         <label>
-                        <input type="checkbox" name="status" value="paused">
-                        <span class="sidebar__status-label">Приостановлена</span>
+                        <input class="sidebar__status-input" type="checkbox" name="status" value="paused">
+                        <span class="sidebar__status-option">Приостановлена</span>
                         <span class="sidebar__badge">4</span>
                         </label>
 
                         <label>
-                        <input type="checkbox" name="status" value="completed">
-                        <span class="sidebar__status-label">Завершена</span>
+                        <input class="sidebar__status-input" type="checkbox" name="status" value="completed">
+                        <span class="sidebar__status-option">Завершена</span>
                         <span class="sidebar__badge">86</span>
                         </label>
                     </div>
@@ -60,23 +77,26 @@
 
                 <!-- метки - начало -->
                 <div class="sidebar__tags-search">
+
                     <label class="sidebar__tags-label" for="sidebar__tags-id">МЕТКА</label>
-                    <div class="sidebar__tags-search">
+
+                    <div class="sidebar__tags-search-area">
                         <input class="sidebar__tags-input" type="search" name="" id="sidebar__tags-id" placeholder="Поиск...">
-                        <button class="sidebar__add-btn" type="button">
-                            <img class="sidebar__add-icon" src="images/add-tag-btn-icon.svg" alt=""> <!-- пока вставлю картинку здесь. Если потом не понравится, вставлю фоном в CSS -->
-                        </button>
+                        <!-- <button class="sidebar__add-btn" type="button">
+                            <img class="sidebar__add-icon" src="images/add-tag-btn-icon.svg" alt="">
+                        </button> -->
                     </div>
+
                     <div class="sidebar__chips"> <!-- нашел информацию, что такие штуки с тегами называются чипами -->
                         <span class="sidebar__chip">
-                            Microsoft
-                            <button class="sidebar__remove-btn" type="button">
+                            <button class="sidebar__remove-btn" type="button"> <!-- добавил доп класс, чтобы потом через переменную задать цвет -->
+                                Microsoft
                                 <img class="sidebar__remove-icon" src="images/cross-green-icon.svg" alt=""> <!-- если не пойдет, вставлю фоном в стилях -->
                             </button>
                         </span>
                         <span class="sidebar__chip">
-                            Apple
                             <button class="sidebar__remove-btn" type="button">
+                                Apple
                                 <img class="sidebar__remove-icon" src="images/cross-green-icon.svg" alt=""> <!-- если не пойдет, вставлю фоном в стилях -->
                             </button>
                         </span>
@@ -86,10 +106,11 @@
 
                 <!-- другие - начало -->
                 <div class="sidebar__other-checkbox">
-                    <span class="sidebar__other-title">ДРУГИЕ</span>
+
+                    <span class="sidebar__other-title">ДРУГИЕ</span>                    
                     <div class="sidebar__other-options">
                         <label>
-                            <input type="checkbox" name="other" value="other">
+                            <input class="sidebar__other-input" type="checkbox" name="other" value="other">
                             <span>С вложениями</span> <!-- вообще и без спана вроде работает, но боюсь, что будут проблемы с версткой - поэтому оберну -->
                         </label>
                     </div>
@@ -99,21 +120,23 @@
                 <!-- степень готовности - начало -->
                     <!-- !!! посмотри, как в радиоточках убрать стандартную круглую точку и сделать выделение всего label синим фоном-->
                 <div class="sidebar__readiness-radio"> <!-- fieldset и legend семантически больше подходят, но я пока не стал бежать вперед паровоза, т.к. и за базой-то не успеваю :-) -->
+
                     <span class="sidebar__readiness-title">СТЕПЕНЬ ГОТОВНОСТИ</span>
+
                     <div class="sidebar__readiness-options">
                         <label class="sidebar__readiness-option" for="readiness-0"> <!-- id и for использую, чтобы каждый label имел свой input и клик по тексту выбирал radio-точку -->
                             <input type="radio" name="readiness" value="0%" id="readiness-0">
-                            0%
+                            <span>0%+</span>
                         </label>
                         <label class="sidebar__readiness-option" for="readiness-10">
                             <input type="radio" name="readiness" value="10%+" id="readiness-10">
-                            10%+
+                            <span>10%+</span>
                         </label>
                         <label class="sidebar__readiness-option" for="readiness-20">
                             <input type="radio" name="readiness" value="20%+" id="readiness-20">
-                            20%+
+                            <span>20%+</span>
                         </label>
-                    </div>                    
+                    </div> 
                 </div>
                 <!-- степень готовности - конец -->
 
@@ -132,26 +155,453 @@
             </div>
             <!-- большой раздел с фильтрами - конец -->
 
-            <button class="sidebar__clear-filter-btn">Очистить фильтры</button>
+            <button class="sidebar__clear-filter-btn">
+                <p>Очистить фильтры</p>
+            </button>
 
         </aside>
         <!-- блок сайдбар - конец -->
         
         <!-- секция main - начало -->
-        <main> <!-- я не стал задавать класс мейну, это просто общая секция, которая включает в себя уже два основных блока, в которых будут элементы -->
-            <div class="header"> <!-- мне не оч нравится такое название класса, но я выбирал между ним и title и решил остановится всё же на header, думаю сойдет --> 
-                <div class="title__top"></div>
-                <div class="title__filter"></div>
-            </div>
+        <main> <!-- обертка для фона и общей ширины -->
+            <section class="main-content">
+                <section class="header"> <!-- мне не оч нравится такое название класса, но я выбирал между ним и title и решил остановится всё же на header, думаю сойдет --> 
 
-            <div class="tasks">
-                <div class="tasks__incoming"></div>
-                <div class="tasks__in-process"></div>
-                <div class="tasks__completed"></div>
-            </div>
+                    <div class="header__left">
+                        <h1>Задачи</h1>
+
+                        <div class="header__filter-btns">
+                            <button class="header__all-btn" type="button">
+                                <img class="header__all-icon" src="images/tasks-all-icon.svg" alt="">
+                                Все
+                            </button>
+                            <button class="header__for-me-btn" type="button">
+                                <img class="header__for-me-icon" src="images/tasks-for-me-icon.svg" alt="">
+                                Назначенные мне
+                            </button> 
+                        </div>                   
+                    </div>                 
+
+                    <div class="header__right">
+                        <img class="header__right-icon" src="images/user-icon.svg" alt="">
+                        <img class="header__right-dropdown-icon" src="images/dropdown-icon.svg" alt="">
+                    </div>
+
+                </section>
+
+                <!-- общий раздел ЗАДАЧИ - начало -->
+                <section class="tasks"> <!-- это не блок, а просто секция, группирующая содержимое по смыслу, класс использую для общих стилей. Три дива внутри секции - это уже самостоятельные блоки -->
+                    <!-- раздел ВХОДЯЩИЕ - начало -->
+
+                    <div class="incoming">
+                        <div class="incoming__header">
+                            <h2>Входящие</h2>
+                            <div class="incoming__header-sort">
+                                <span class="incoming__label">Упорядочить по:</span>
+                                
+                                <select class="incoming__sort-area" name="sort">
+                                    <option value="created">дате создания</option> <!-- сделал выпадающий список, чтобы уж не тупо картинка была -->
+                                    <option value="status">статусу</option>
+                                    <option value="priority">приоритету</option>
+                                    <option value="deadline">дедлайну</option>
+                                    <option value="finished-date">дате завершения</option>
+                                </select>                            
+                            </div>
+                        </div>
+
+                        <div class="incoming__tasks">
+                            <!-- Задача 1 - начало -->
+                            <div class="incoming__task-1 task">
+
+                                <button class="incoming__drag-handle-btn" type="button"></button> 
+
+                                <div class="incoming__task-title task-1">
+                                    <p>Презентация новой системы взаимо- действия продуктивного рабочего дня ...</p>
+                                </div>
+
+                                <div class="incoming__task-details details">
+                                    <div class="incoming__attach">
+                                        <img src="images/attachment-icon.svg" alt="">
+                                        <span>13</span>
+                                    </div>
+
+                                    <div class="incoming__progress">
+                                        <img src="images/assignments-icon.svg" alt="">
+                                        <span>4/5</span>
+                                    </div>
+
+                                    <div class="incoming__status">
+                                        <button class="incoming__status-btn btn--green" type="button">
+                                            В РАБОТЕ
+                                        </button>
+                                    </div>
+
+                                    <div class="incoming__deadline">
+                                        <img src="images/schedule-icon.svg" alt="">
+                                        <span>21 авг 2020</span>
+                                    </div>
+
+                                    <div class="incoming__priority">
+                                        <img src="images/ellipse-icon.svg" alt="">
+                                        <span>Высокий</span>
+                                    </div>
+
+                                    <div class="incoming__tags">
+                                        <div class="incoming__tag-eco">
+                                            <button class="incoming__remove-btn btn--salad-10" type="button">
+                                                Эко
+                                                <img class="incoming__remove-icon" src="images/cross-green-icon.svg" alt="">
+                                            </button>
+                                        </div>
+
+                                        <div class="incoming__tag-important">
+                                            <button class="incoming__remove-btn btn--blue-10" type="button">
+                                                Важно
+                                                <img src="images/cross-blue-icon.svg" alt="">
+                                            </button>
+                                        </div>
+
+                                        <div class="incoming__tag-urgent">
+                                            <button class="incoming__remove-btn btn--red-10" type="button">
+                                                Срочно
+                                                <img src="images/cross-red-icon.svg" alt="">
+                                            </button>
+                                        </div>
+
+                                        <span>+2</span>
+                                    </div>
+                                </div>
+
+                                <div class="incoming__members">
+                                    <img src="images/initial-ka-icon.svg" alt="">
+                                    <img src="images/Initial-rr-icon.svg" alt="">
+                                    <img src="images/initial-more-icon.svg" alt="">
+                                </div>
+
+                                <img class="incoming__more-icon" src="images/more-icon.svg" alt="">
+                        
+                            </div>
+                            <!-- Задача 1 - конец -->
+
+                            <!-- Задача 2 - начало -->
+                            <div class="incoming__task-2  task">
+
+                                <!-- <button class="incoming__drag-handle-btn" type="button">
+                                    <img src="images/drag-icon.svg" alt="">
+                                </button>  -->
+
+                                <div class="incoming__task-title">
+                                    <p>Презентация новой системы взаимо- действия продуктивного рабочего дня ...</p>
+                                </div>
+
+                                <div class="incoming__task-details details">
+
+                                    <div class="incoming__attach">
+                                        <img src="images/attachment-icon.svg" alt="">
+                                        <span>13</span>
+                                    </div>
+
+                                    <div class="incoming__progress">
+                                        <img src="images/assignments-icon.svg" alt="">
+                                        <span>4/5</span>
+                                    </div>
+
+                                    <div class="incoming__status">
+                                        <button class="incoming__status-btn btn--green" type="button">
+                                            В РАБОТЕ
+                                        </button>
+                                    </div>
+
+                                    <div class="incoming__deadline">
+                                        <img src="images/schedule-icon.svg" alt="">
+                                        <span>21 авг 2020</span>
+                                    </div>
+
+                                    <div class="incoming__priority">
+                                        <img src="images/ellipse-icon.svg" alt="">
+                                        <span>Высокий</span>
+                                    </div>
+
+                                    <div class="incoming__tags">
+
+                                        <div class="incoming__tag-eco">
+                                            <button class="incoming__remove-btn btn--salad-10" type="button">
+                                                Эко
+                                                <img class="incoming__remove-icon" src="images/cross-green-icon.svg" alt="">
+                                            </button>
+                                        </div>
+
+                                        <div class="incoming__tag-important">
+                                            <button class="incoming__remove-btn btn--blue-10" type="button">
+                                                Важно
+                                                <img src="images/cross-blue-icon.svg" alt="">
+                                            </button>
+                                        </div>
+
+                                        <div class="incoming__tag-urgent">
+                                            <button class="incoming__remove-btn btn--red-10" type="button">
+                                                Срочно
+                                                <img src="images/cross-red-icon.svg" alt="">
+                                            </button>
+                                        </div>
+
+                                        <span>+2</span>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="incoming__members">
+                                    <img src="images/initial-ka-icon.svg" alt="">
+                                    <img src="images/Initial-rr-icon.svg" alt="">
+                                    <img src="images/initial-more-icon.svg" alt="">
+                                </div>
+
+                                <img class="incoming__more-icon" src="images/more-icon.svg" alt="">
+
+                            </div>
+                            <!-- Задача 2 - конец -->
+                        </div>
+
+                        <div class="incoming__add-task">
+                            <span>+ НОВАЯ ЗАДАЧА</span>
+                        </div>
+
+                        <!-- блок СТРАНИЦЫ - начало -->
+                        <div class="incoming__pagination">
+
+                            <span class="incoming__page-summary">1-4 из 121</span>
+                            
+                            <button class="incoming__page-prev-btn" type="button">
+                                <!-- <img src="images/arrow-left-icon.svg" alt=""> -->
+                            </button>
+                            
+                            <div class="incoming__pages">
+                                <button class="incoming__page-btn incoming__page-btn_active" type="button">1</button> <!-- доп. класс с модификатором, говорящим о том, что эта страница выбрана -->
+                                <button class="incoming__page-btn" type="button">2</button>
+                                <button class="incoming__page-btn" type="button">3</button>
+                                <button class="incoming__page-btn" type="button">4</button>
+                                <button class="incoming__page-btn" type="button">5</button>
+                                <button class="incoming__page-btn" type="button">...</button>
+                                <button class="incoming__page-btn" type="button">19</button>
+                            </div>
+                            
+                            <button class="incoming__page-next-btn" type="button">
+                                <!-- <img src="images/arrow-right-icon.svg" alt=""> -->
+                            </button>
+                            
+                            <div class="incoming__page-goto">
+                                <div class="incoming__page-goto-left">
+                                    <span class="incoming__page-selected">10</span>
+                                </div>
+                                <img class="incoming__page-separator" src="images/Separator.svg" alt="">
+                                <button class="incoming__page-dropdown-btn" type="button">
+                                <!-- <img src="images/dropdown-pages-icon.svg" alt=""> -->
+                                </button>
+                            </div>   
+
+                        </div>
+                        <!-- блок СТРАНИЦЫ - конец -->
+                    </div>
+                    <!-- раздел ВХОДЯЩИЕ - конец -->
+
+                    <!-- раздел В РАБОТЕ - начало -->
+                    <div class="in-process">
+
+                        <div class="in-process__header">
+                            <h2>В работе</h2>
+                        </div>
+                        
+                        <div class="in-process__task  task">
+                            <div class="in-process__task-title">
+                                <div class="in-process__title-top">
+                                    <p>Презентация новой системы взаимодействия</p>
+                                </div>
+
+                                <div class="in-process__title-bottom">
+                                    <div class="in-process__attach">
+                                        <img src="images/attachment-icon.svg" alt="">
+                                        <span>13</span>
+                                    </div>
+                                    
+                                    <div class="in-process__progress">
+                                        <img src="images/assignments-icon.svg" alt="">
+                                        <span>4/5</span>
+                                    </div>
+                                </div>                            
+                            </div>
+
+                            <div class="in-process__task-details details">
+                                <div class="in-process__status">
+                                    <button class="in-process__status-btn btn--green" type="button">
+                                        В РАБОТЕ
+                                    </button>
+                                </div>
+
+                                <div class="in-process__deadline">
+                                    <img src="images/schedule-icon.svg" alt="">
+                                    <span>21 авг 2020</span>
+                                </div>
+
+                                <div class="in-process__priority">
+                                    <img src="images/ellipse-icon.svg" alt="">
+                                    <span>Высокий</span>
+                                </div>
+
+                                <div class="in-process__tag-urgent">
+                                    <button class="in-process__remove-btn btn--red-10" type="button">
+                                        Срочно
+                                        <img src="images/cross-red-icon.svg" alt="">
+                                    </button>
+                                </div>                         
+                            </div>
+
+                            <div class="in-process__members">
+                                <img src="images/initial-ka-icon.svg" alt="">
+                                <img src="images/Initial-rr-icon.svg" alt="">
+                                <img src="images/initial-more-icon.svg" alt="">
+                            </div>
+
+                            <img class="incoming__more-icon" src="images/more-icon.svg" alt="">
+                        </div>
+
+                        <div class="in-process__save-task">
+                            <!-- <div class="in-process__input-area"> -->
+                                <!-- <img src="images/projects-input-icon.svg" alt=""> -->
+                            <input class="in-process__input" type="text" placeholder="Введите название задачи">
+                            <!-- </div> -->
+                            <div class="in-process__save-btns">
+                                <button class="in-process__save-btn" type="button">Сохранить</button>
+                                <button class="in-process__cancel-btn" type="button">Отменить</button>
+                            </div>                          
+                        </div>
+                    </div>
+                    <!-- раздел В РАБОТЕ - конец -->
+
+                    <!-- раздел ЗАВЕРШЕНО - начало -->
+                    <div class="ready"> 
+
+                        <div class="ready__header">
+                            <h2>Завершено</h2>
+                            <div class="ready__header-right">
+                                <span class="ready__label">Упорядочить по:</span>
+                                
+                                <select class="ready__sort-area" name="sort">
+                                    <option value="finished-date">дате завершения</option>
+                                    <option value="created">дате создания</option> 
+                                    <option value="status">статусу</option>
+                                    <option value="priority">приоритету</option>
+                                    <option value="deadline">дедлайну</option>
+                                </select>                            
+                            </div>
+                        </div>
+
+                        <div class="ready__tasks">
+                            <div class="ready__task-1  task">
+                                <div class="ready__task-title">
+                                    <div class="ready__title-top">
+                                        <p>Презентация новой системы взаимодействия</p>
+                                    </div>
+
+                                    <div class="ready__title-bottom">
+                                        <div class="ready__attach">
+                                            <img src="images/attachment-icon.svg" alt="">
+                                            <span>13</span>
+                                        </div>
+                                        
+                                        <div class="ready__progress">
+                                            <img src="images/assignments-icon.svg" alt="">
+                                            <span>4/5</span>
+                                        </div>
+                                    </div>                            
+                                </div>
+
+                                <div class="ready__task-details details">
+                                    
+                                    <div class="ready__status">
+                                        <button class="ready__status-btn btn--purple" type="button">
+                                            ВЫПОЛНЕНА
+                                        </button>
+                                    </div>
+
+                                    <div class="ready__tag-urgent">
+                                        <button class="ready__remove-btn btn--red-10" type="button">
+                                            Срочно
+                                            <img src="images/cross-red-icon.svg" alt="">
+                                        </button>
+                                    </div>   
+                                    
+                                    <div class="ready__progress-bar">
+                                        <img src="images/bar-icon.svg" alt="">
+                                        <span>45%</span>
+                                    </div>
+                                </div>
+
+                                <div class="ready__members">
+                                    <img src="images/initial-ka-icon.svg" alt="">
+                                    <img src="images/Initial-rr-icon.svg" alt="">
+                                    <img src="images/initial-more-icon.svg" alt="">
+                                </div>
+
+                                <img class="incoming__more-icon" src="images/more-icon.svg" alt="">                       
+                            </div>
+
+                            <div class="ready__task-2  task">
+                                <div class="ready__task-title">
+                                    <div class="ready__title-top">
+                                        <p>Презентация новой огромной мегавыдающе ...</p>
+                                    </div>
+
+                                    <div class="ready__title-bottom">
+                                        <div class="ready__attach">
+                                            <img src="images/attachment-icon.svg" alt="">
+                                            <span>13</span>
+                                        </div>
+                                        
+                                        <div class="ready__progress">
+                                            <img src="images/assignments-icon.svg" alt="">
+                                            <span>4/5</span>
+                                        </div>
+                                    </div>                            
+                                </div>
+
+                                <div class="ready__task-details details">
+                                    <div class="ready__status">
+                                        <button class="ready__status-btn btn--purple" type="button">
+                                            ВЫПОЛНЕНА
+                                        </button>
+                                    </div>
+
+                                    <div class="ready__tag-urgent">
+                                        <button class="ready__remove-btn btn--red-10" type="button">
+                                            Срочно
+                                            <img src="images/cross-red-icon.svg" alt="">
+                                        </button>
+                                    </div>   
+                                    
+                                    <div class="ready__progress-bar">
+                                        <img src="images/bar-icon.svg" alt="">
+                                        <span>45%</span>
+                                    </div>
+                                </div>
+
+                                <div class="ready__members">
+                                    <img src="images/initial-ka-icon.svg" alt="">
+                                    <img src="images/Initial-rr-icon.svg" alt="">
+                                    <img src="images/initial-more-icon.svg" alt="">
+                                </div>
+
+                                <img class="incoming__more-icon" src="images/more-icon.svg" alt="">                       
+                            </div>
+                        </div>
+                    </div>
+                    <!-- раздел ЗАВЕРШЕНО - конец -->
+                </section>
+            </section>
+            <!-- общий раздел ЗАДАЧИ - конец -->
         </main>
         <!-- секция main - конец -->
     </div>
-    
+       
 </body>
 </html>

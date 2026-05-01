@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа</title>
+    <link rel="stylesheet" href="../lesson_9/css/style.css">
+    <link rel="stylesheet" href="../lesson_9/css/normalize.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper"> <!-- общая обертка содержимого, чтобы заголовок не вставлять в форму-->
+        <h1>Оформление заказа</h1>
+        <!-- форма - начало -->
+        <div class="container">
+            <main> 
+                <div class="login">
+                    <p class="login__text">Уже есть аккаунт?</p>
+                    <button class="login__btn" type="button">Войти</button>
+                </div>
+                <form class="form" action="#" method="post">
+                    <fieldset class="form__delivery-container">
+                        <legend class="delivery-legend">Доставка</legend>
+                        <!-- секция Регион и Город - начало -->
+                        <div class="delivery-region"> 
+                            <select class="form__select form__control--bordered" name="region" id="region">
+                                <option value="moscow">Москва</option>
+                                <option value="saint-petersburg">Санкт‑Петербург</option>
+                                <option value="tatarstan">Республика Татарстан (Татарстан)</option>
+                                <option value="krasnodar">Краснодарский край</option>
+                                <option value="sverdlovsk">Свердловская область</option>
+                                <option value="nizhny-novgorod">Нижегородская область</option>
+                                <option value="voronezh">Воронежская область</option>
+                                <option value="krasnoyarsk">Красноярский край</option>
+                                <option value="chelyabinsk">Челябинская область</option>
+                                <option value="tyumen">Тюменская область</option>
+                                <option value="cherkessky" selected>Городской округ Черкесский</option>
+                            </select>                            
+                            <select class="form__select form__control--bordered" name="city" id="city">
+                                <option value="moscow">Москва</option>
+                                <option value="saint-petersburg">Санкт‑Петербург</option>
+                                <option value="kazan">Казань</option>
+                                <option value="krasnodar">Краснодар</option>
+                                <option value="yekaterinburg">Екатеринбург</option>
+                                <option value="nizhny-novgorod">Нижний Новгород</option>
+                                <option value="voronezh">Воронеж</option>
+                                <option value="krasnoyarsk">Красноярск</option>
+                                <option value="chelyabinsk">Челябинск</option>
+                                <option value="tyumen">Тюмень</option>
+                                <option value="cherkessk" selected>Черкесск</option>
+                            </select>                            
+                        </div>
+                        <!-- секция Способы доставки -->
+                        <div class="delivery-options">
+                            <!-- самовывоз -->
+                            <div class="form__radio-option form__control--bordered">
+                                <input class="form__delivery-input" id="pickup" name="delivery" type="radio" value="pickup" checked>
+                                <label class="form__radio-option-label" for="pickup">
+                                    <span class="form__radio-option-dot"></span> <!-- синюю точку попробую сделать псевдоэлементом ну или стилизую инпут-->
+                                    <div class="form__radio-option-content">
+                                        <span class="form__radio-option-title">Самовывоз</span>
+                                        <p class="form__radio-option-about">К вашему приезду заказ будет скомплектован и готов к выдаче.</p>
+                                    </div>
+                                    <div class="form__radio-option-address">
+                                        <span class="form__radio-option-pin"></span>
+                                        <p>г. Черкесск, ул. Октябрьская, д. 301</p>
+                                    </div>
+                                </label>
+                            </div>
+                            <!-- доставка магазина -->
+                            <div class="form__radio-option form__control--bordered">
+                                <input class="form__delivery-input" id="courier" name="delivery" type="radio" value="courier">
+                                <label class="form__radio-option-label" for="courier">
+                                    <span class="form__radio-option-dot"></span> <!-- синюю точку попробую сделать псевдоэлементом ну или стилизую инпут-->
+                                    <div class="form__radio-option-content">
+                                        <span class="form__radio-option-title">Доставка магазина</span>
+                                        <p class="form__radio-option-about">Если же вам нужна будет доставка к определенному времени, то укажите это в поле для комментариев к заказу.</p>
+                                    </div>
+                                </label>
+                            </div>
+                            <!-- СДЭК -->
+                            <div class="form__radio-option form__control--bordered">
+                                <input class="form__delivery-input" id="sdek" name="delivery" type="radio" value="sdek">
+                                <label class="form__radio-option-label" for="sdek">
+                                    <span class="form__radio-option-dot"></span> <!-- синюю точку попробую сделать псевдоэлементом ну или стилизую инпут-->
+                                    <div class="form__radio-option-content">
+                                        <span class="form__radio-option-title">СДЭК</span>
+                                        <p class="form__radio-option-about">Доставка через сервис СДЭК до ПВЗ или курьером до двери.</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- секция Оплата - начало (филдсет не делаю, т.к. здесь как бы одно "поле")-->
+                    <fieldset class="form_payment-container">
+                        <legend class="payment-legend">Оплата</legend>
+                        <div class="payment-option"> <!-- не знаю, противоречит ли это БЭМ, но для ОПЛАТЫ я не использую в названии классов отсылку на блок FORM, он мне видится совсем другим и стили у него другие -->
+                            <input class="payment-option__input" id="card" name="payment" type="radio" value="card" checked>
+                            <label class="payment-option__label" for="card">Картой на сайте</label>
+                        </div>
+                        <div class="payment-option">
+                            <input class="payment-option__input" id="store" name="payment" type="radio" value="store">
+                            <label class="payment-option__label" for="store">Оплата в кассе</label>
+                        </div>
+                        <div class="payment-option">
+                            <input class="payment-option__input" id="credit" name="payment" type="radio" value="credit">
+                            <label class="payment-option__label" for="credit">
+                                <span class="payment-option_title">Кредит от ОТП банка</span>
+                                <a class="payment-option__link link" href="#">Условия предоставления</a>
+                            </label>
+                        </div>
+                        <div class="payment-option">
+                            <input class="payment-option__input" id="sber" name="payment" type="radio" value="sber">
+                            <label class="payment-option__label" for="sber">
+                                <span class="payment-option__title">Покупай со Сбером (оформление покупки в кредит)</span>
+                                <a class="payment-option__link link" href="#">Условия предоставления</a>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <div class="promocode">
+                        <span>Есть промокод?</span>
+                        <a class="link" href="#">Нажмите здесь, чтобы ввести его</a> <!-- задал всего один класс, чтобы сразу стилизовать эту ссылку вместе с двумя выше -->
+                    </div>
+                
+                    <!-- секция Персональные данные - начало -->
+                    <fieldset class="form__contact-container">
+                        <div class="form__name-area">
+                            <div class="form__first-name">
+                            <label class="form__first-name-label" for="first-name">
+                                Ваше имя <span class="form__required">*</span>:
+                            </label>
+                            <input class="form__first-name-input form__control--bordered" type="text" name="first-name" id="first-name" placeholder="Как вас зовут" autocomplete="given-name" required>
+                            </div>
+
+                            <div class="form__last-name">
+                            <label class="form__last-name-label" for="last-name">
+                                Фамилия <span class="form__required">*</span>:
+                            </label>
+                            <input class="form__last-name-input form__control--bordered" type="text" name="last-name" id="last-name" placeholder="Введите вашу фамилию" autocomplete="family-name" required>
+                            </div>
+                        </div>
+
+                        <div class="form__company">
+                            <label class="form__company-label" for="company">Название компании:</label>
+                            <input class="form__company-input form__control--bordered" type="text" name="company" id="company" placeholder="Введите название вашей компании">
+                        </div>
+
+                        <div class="form__contacts">
+                            <div class="form__email">
+                                <label class="form__email-label" for="email">
+                                    Email <span class="form__required">*</span>:
+                                </label>
+                                <input class="form__email-input form__control--bordered" type="email" name="email" id="email" placeholder="Введите ваш email адрес" autocomplete="email" required>
+                            </div>
+
+                            <div class="form__tel">
+                                <label class="form__tel-label" for="tel">
+                                    Номер телефона <span class="form__required">*</span>:
+                                </label>
+                                <input class="form__tel-input form__control--bordered" type="tel" name="tel" id="tel" placeholder="+7 (___) ___ - ___ - ___" autocomplete="tel" required>
+                            </div>
+                        </div>
+
+                        <div class="form__create-acc">
+                            <input id="create-account" name="create-account" type="checkbox">
+                            <label class="form__label form__label--checkbox" for="create-account">Создать аккаунт</label>
+                        </div>
+
+                        <div class="form__comment">
+                            <label class="form__comment-label" for="comment">Комментарий к заказу:</label>
+                            <textarea class="form__comment-textarea form__control--bordered" name="comment" id="comment" placeholder="Текстовое поле"></textarea>
+                        </div>
+                    </fieldset>
+                </form>
+            </main>
+            <!-- форма - конец -->
+            <!-- сайдбар Ваш заказ - начало -->
+            <!-- товары в корзине - начало -->
+            <aside class="sidebar">
+                <h2>Ваш заказ</h2>
+                <div class="sidebar__item-1 order-item">
+                    <img src="images/item-1-ic.jpg" alt="">
+                    <div class="sidebar__item-info">
+                        <p>Перфоратор универсальный Wander X645-46 GF 1450W</p>
+                        <span>Артикул: XJ89YHGO</span>
+                    </div>
+                    <div class="sidebar__price">
+                        <span>7 899 ₽</span>
+                    </div>
+                </div>
+                <div class="sidebar__item-2 order-item">
+                    <img src="images/item-2-ic.jpg" alt="">
+                    <div class="sidebar__item-info">
+                        <p>Перфоратор универсальный Wander X645-46 GF 1450W</p>
+                        <span>Артикул: XJ89YHGO</span>
+                    </div>
+                    <div class="sidebar__price">
+                        <span>20 000 ₽</span>
+                    </div>
+                </div>
+                <div class="sidebar__item-3 order-item">
+                    <img src="images/item-3-ic.jpg" alt="">
+                    <div class="sidebar__item-info">
+                        <p>Перфоратор универсальный Wander X645-46 GF 1450W</p>
+                        <span>Артикул: XJ89YHGO</span>
+                    </div>
+                    <div class="sidebar__price">
+                        <span>4 756 ₽</span>
+                    </div>
+                </div>
+                <div class="sidebar__item-4 order-item">
+                    <img src="images/item-2-ic.jpg" alt="">
+                    <div class="sidebar__item-info">
+                        <p>Перфоратор универсальный Wander X645-46 GF 1450W</p>
+                        <span>Артикул: XJ89YHGO</span>
+                    </div>
+                    <div class="sidebar__price">
+                        <span>20 000 ₽</span>
+                    </div>
+                </div>
+
+                <!-- сумма заказа - начало -->
+                <div class="sidebar__order-summary">
+                    <div class="sidebar__sum summary-item">
+                        <span class="sidebar__sum-title">Сумма</span>
+                        <span class="sidebar__sum-amount">43 829 ₽</span>
+                    </div>
+                    <div class="sidebar__delivery summary-item">
+                        <span class="sidebar__sum-title">Доставка</span>
+                        <span class="sidebar__sum-amount">0 ₽</span>
+                    </div>
+                    <div class="sidebar__total summary-item">
+                        <span class="sidebar__sum-title">Итого</span>
+                        <span class="sidebar__sum-amount">43 829 ₽</span>
+                    </div>
+                </div>
+
+                <!-- согласие на обработку данных -->
+                <div class="sidebar__agree-terms">
+                    <input class="sidebar__checkbox-input" id="agree" name="agree" type="checkbox"> 
+                    <label class="sidebar__checkbox-label" for="agree">Согласен с обработкой персональных данных в соответствии с политикой конфиденциальности</label>
+                </div>
+
+                <button class="sidebar__order-btn" type="submit">Оформить заказ</button>
+
+            </aside>
+        </div>        
+    </div> 
+    <script src="../lesson_9/js/inputmask.min.js"></script>
+    <script src="../lesson_9/js/js.js"></script>
+</body>
+</html>

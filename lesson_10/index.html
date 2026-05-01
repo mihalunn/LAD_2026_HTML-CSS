@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Белая техника</title>
+    <link rel="stylesheet" href="../lesson_10/css/style.css">
+    <link rel="stylesheet" href="../lesson_10/css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
+</head>
+<body>
+    <header class="header">
+        <div class="wrapper header-wrapper">
+            <div class="header__top">
+                <img src="images/logo_draft.svg" alt="logo">
+                <a href="tel:+73512207752">+7 (351) 220 77 52</a>
+            </div>
+
+            <form class="header__search-form" role="search">
+                <label class="header__search-label-hidden" for="search"></label>
+                <input class="header__search-input" id="search" placeholder="Поиск техники" type="search">
+                <button class="header__search-btn" type="submit">
+                <img class="header__search-icon" src="images/search-ic.svg" alt="">
+                </button>
+            </form>
+        </div>
+    </header>
+
+    <main class="main"> <!-- задаю секцию для всего основного содержимого страницы между header и footer -->
+        <div class="wrapper main-wrapper"> <!-- это пока под вопросом, каких-то стилей этому диву задавать не планирую ПОКА ЧТО! Типа задел на будущее  :-) -->
+            <div class="hero"> <!-- не хочу завязывать hero на main, поэтому пока сделаю его отдельным блоком, чуйка подсказывает, что так лучше -->
+                <div class="hero__error">
+                    <div class="hero__error-text"> 
+                        <h2 class="hero__error-title">Упс... <br>Мы не смогли найти страницу по вашей ссылке</h2> <!-- Алейксей говорил, что заголовки надо называть в порядке их появления, но в макете у этого заголовка h2, как тогда быть? -->
+                        <div class="hero__error-info">
+                            <p>Попробуйте найти нужный товар в нашем каталоге или воспользоваться строкой поиска выше. А еще у нас есть вкусные акции.</p>
+                            <div class="hero__error-links">
+                                <a class="hero__gotomain-link" href="#">Перейти на главную</a>
+                                <a class="hero__promo-link" href="#">
+                                    Акции
+                                    <span class="hero__promo-link-arrow"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="hero__error-img" src="images/404-img.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="wrapper navigation-wrapper">
+        <nav class="navigation">
+            <div class="navigation__container">
+                <div class="navigation__catalog nav-item">
+                    <button class="navigation__catalog-btn btn" type="button"></button>    
+                </div>
+                <button class="navigation__user nav-item" type="button">
+                    <img src="images/navigation-profile-ic2.svg" alt="">
+                    <span>Профиль</span>
+                </button>
+                <button class="navigation__favourite nav-item" type="button">
+                    <img src="images/navigation-fav-ic2.svg" alt="">
+                    <span class="navigation__item-count">12</span>
+                    <span class="navigation__item-title">Избранное</span>
+                </button>
+                <button class="navigation__cart nav-item" type="button">
+                    <img src="images/navigation-cart-ic.svg" alt="">
+                    <span class="navigation__item-count">12</span>
+                    <span class="navigation__item-title">Корзина</span>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <footer class="footer">
+        <div class="wrapper footer-wrapper">
+            <div class="footer__copyright">
+                <img class="footer__logo" src="images/logo_draft.svg" alt="">
+                <p class="footer__logo-legend">Интернет-магазин Белая Техника — российская розничная торговая сеть по продаже современной электроники</p>
+                <span>2012-2023 &copy; Белая Техника</span>
+            </div>
+
+            <div class="footer__contacts">
+                <h6>Контакты</h6> <!-- можем мы сразу писать h6, если до этого не было h3,h4,h5? Просто в макете h6 и как будто не просто так... -->
+                <div class="footer__tel">
+                    <a href="tel:+78126146065">+7 812 614-60-65</a>
+                    <span>Ежедневно 10:00-20:00</span>
+                </div> 
+                <div class="footer__messengers">
+                    <span>Пишите, отвечаем быстро</span>
+                    <div class="messengers">
+                        <button class="footer__telegram" type="button">
+                            <span>Telegram</span>
+                            <img src="images/telegram-ic.svg" alt="" aria-hidden="true">
+                        </button>
+                        <button class="footer__whatsapp" type="button">
+                            <span>WhatsApp</span>
+                            <img src="images/whatsapp-ic.svg" alt="" aria-hidden="true">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__catalog">
+                <h6>Каталог</h6>
+                <ul class="footer__list-items">
+                    <li class="footer__list-item">
+                        <a href="#">Смартфоны и гаджеты</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="#">Ноутбуки и компьютеры</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="#">Наушники и аудио</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="#">Техника для дома</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="#">Автоаксессуары</a>
+                    </li>
+                </ul>
+                <button class="footer__catalog-btn more-btn" type="button">Показать еще</button>
+            </div>
+
+            <div class="footer__info">
+                <h6>Информация</h6>
+                <ul class="footer__list-items">
+                    <li class="footer__list-item">
+                        <a href="#">Гарантия</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="#">Доставка</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="#">Оплата</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="#">Бонусная система</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="#">Акции</a>
+                    </li>
+                </ul>
+                <button class="footer__info-btn more-btn" type="button">Показать еще</button>
+            </div>
+
+            <div class="footer__policy">
+                <a class="footer__policy-link" href="#">Политика конфиденциальности</a>
+            </div>
+
+            <div class="footer__social">
+                <span>Мы в социальных сетях:</span>
+                <button class="footer__social-btn youtube-btn" type="button">
+                    <img src="images/youtube-ic2.svg" alt="" aria-hidden="true">
+                </button>
+                <button class="footer__social-btn vk-btn" type="button">
+                    <img src="images/vk-ic2.svg" alt="" aria-hidden="true">
+                </button>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
