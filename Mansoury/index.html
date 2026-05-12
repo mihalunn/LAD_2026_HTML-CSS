@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mansoury</title>
+    <link rel="stylesheet" href="../Mansoury/css/style.css">
+    <link rel="stylesheet" href="../Mansoury/css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- создаю контейнер-обертку для всего контента -->
+        <header class="header header--fullwidth">
+            <div class="container">
+                <div class="header__top">
+                    <div class="header__social header__social--hidden">
+                        <span>Follow us:</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="24" height="24" rx="12" fill="#F6F6F6"/>
+                            <path d="M14.9578 12.8458L15.2874 10.6982H13.2267V9.30455C13.2267 8.71701 13.5146 8.1443 14.4375 8.1443H15.3743V6.31586C15.3743 6.31586 14.5242 6.17078 13.7113 6.17078C12.0143 6.17078 10.9051 7.19938 10.9051 9.06142V10.6982H9.01868V12.8458H10.9051V18.0374H13.2267V12.8458H14.9578Z" fill="#666666"/>
+                        </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="24" height="24" rx="12" fill="#F6F6F6"/>
+                            <path d="M11.9752 9.38347C10.5419 9.38347 9.38585 10.5396 9.38585 11.9729C9.38585 13.4062 10.5419 14.5623 11.9752 14.5623C13.4085 14.5623 14.5646 13.4062 14.5646 11.9729C14.5646 10.5396 13.4085 9.38347 11.9752 9.38347ZM11.9752 13.6563C11.049 13.6563 10.2918 12.9013 10.2918 11.9729C10.2918 11.0444 11.0468 10.2894 11.9752 10.2894C12.9037 10.2894 13.6587 11.0444 13.6587 11.9729C13.6587 12.9013 12.9015 13.6563 11.9752 13.6563V13.6563ZM15.2745 9.27755C15.2745 9.61334 15.0041 9.88152 14.6706 9.88152C14.3348 9.88152 14.0666 9.61108 14.0666 9.27755C14.0666 8.94402 14.337 8.67358 14.6706 8.67358C15.0041 8.67358 15.2745 8.94402 15.2745 9.27755ZM16.9895 9.89053C16.9512 9.08149 16.7664 8.36484 16.1737 7.7744C15.5833 7.18395 14.8666 6.99915 14.0576 6.95859C13.2237 6.91126 10.7245 6.91126 9.89065 6.95859C9.08386 6.9969 8.36722 7.1817 7.77452 7.77214C7.18182 8.36259 6.99928 9.07923 6.95871 9.88828C6.91139 10.7221 6.91139 13.2214 6.95871 14.0552C6.99702 14.8642 7.18182 15.5809 7.77452 16.1713C8.36722 16.7618 9.08161 16.9466 9.89065 16.9871C10.7245 17.0345 13.2237 17.0345 14.0576 16.9871C14.8666 16.9488 15.5833 16.764 16.1737 16.1713C16.7642 15.5809 16.9489 14.8642 16.9895 14.0552C17.0368 13.2214 17.0368 10.7244 16.9895 9.89053V9.89053ZM15.9123 14.9499C15.7365 15.3916 15.3962 15.7319 14.9523 15.9099C14.2874 16.1736 12.7099 16.1127 11.9752 16.1127C11.2406 16.1127 9.66079 16.1713 8.99823 15.9099C8.55652 15.7341 8.21622 15.3938 8.03819 14.9499C7.77452 14.2851 7.83536 12.7075 7.83536 11.9729C7.83536 11.2382 7.77677 9.65841 8.03819 8.99585C8.21397 8.55414 8.55427 8.21385 8.99823 8.03581C9.66304 7.77214 11.2406 7.83299 11.9752 7.83299C12.7099 7.83299 14.2897 7.7744 14.9523 8.03581C15.394 8.21159 15.7343 8.55189 15.9123 8.99585C16.176 9.66066 16.1151 11.2382 16.1151 11.9729C16.1151 12.7075 16.176 14.2873 15.9123 14.9499Z" fill="#666666"/>
+                        </svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="24" height="24" rx="12" fill="#F6F6F6"/>
+                            <path d="M17.737 9.72015C17.7444 9.82264 17.7444 9.92516 17.7444 10.0276C17.7444 13.1539 15.3649 16.756 11.016 16.756C9.67622 16.756 8.4316 16.3679 7.38464 15.6944C7.57501 15.7163 7.75802 15.7237 7.95571 15.7237C9.06121 15.7237 10.0789 15.3503 10.8916 14.7133C9.85194 14.6914 8.98069 14.0105 8.68051 13.0733C8.82695 13.0953 8.97337 13.1099 9.12713 13.1099C9.33944 13.1099 9.55178 13.0806 9.74944 13.0294C8.66589 12.8097 7.85319 11.858 7.85319 10.7085V10.6793C8.168 10.855 8.5341 10.9648 8.9221 10.9794C8.28514 10.5548 7.86784 9.82996 7.86784 9.00997C7.86784 8.57069 7.98496 8.16802 8.18997 7.81659C9.35407 9.25158 11.1039 10.1887 13.066 10.2912C13.0294 10.1155 13.0074 9.93248 13.0074 9.74944C13.0074 8.44623 14.0617 7.38464 15.3722 7.38464C16.0531 7.38464 16.6681 7.67018 17.1001 8.13142C17.6345 8.02893 18.147 7.83124 18.6009 7.56036C18.4252 8.10947 18.0518 8.57072 17.5613 8.86355C18.0372 8.81233 18.4984 8.68051 18.9231 8.4975C18.601 8.96604 18.1983 9.38334 17.737 9.72015Z" fill="#666666"/>
+                        </svg>
+                    </div>
+                    <div class="header__promo">
+                        <span>Winter is coming! 50% off for new year</span>
+                    </div>
+                    <div class="header__contacts header__contacts--hidden">
+                        <div class="header__tel">
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_2060_21)">
+                                <path d="M3.42596 1.24525C3.37062 1.17406 3.30076 1.11545 3.22103 1.07334C3.1413 1.03122 3.05352 1.00655 2.96352 1.00096C2.87352 0.995374 2.78337 1.009 2.69904 1.04094C2.61471 1.07287 2.53815 1.12238 2.47443 1.18619L1.50508 2.15647C1.05228 2.61021 0.885414 3.25238 1.08322 3.81581C1.9042 6.14787 3.23968 8.26516 4.9906 10.0107C6.7361 11.7616 8.85338 13.097 11.1854 13.9181C11.7488 14.1159 12.391 13.949 12.8447 13.4962L13.8141 12.5268C13.8779 12.4631 13.9274 12.3866 13.9593 12.3022C13.9913 12.2179 14.0049 12.1277 13.9993 12.0377C13.9937 11.9477 13.969 11.86 13.9269 11.7802C13.8848 11.7005 13.8262 11.6306 13.755 11.5753L11.5923 9.89347C11.5162 9.83448 11.4277 9.79354 11.3336 9.77372C11.2394 9.75391 11.1419 9.75575 11.0485 9.7791L8.99547 10.2919C8.72143 10.3604 8.43432 10.3568 8.1621 10.2814C7.88988 10.2059 7.64182 10.0613 7.44208 9.8616L5.13966 7.55822C4.93976 7.35857 4.79497 7.11055 4.7194 6.83833C4.64383 6.5661 4.64004 6.27894 4.70842 6.00482L5.22215 3.95174C5.2455 3.85837 5.24734 3.76091 5.22753 3.66671C5.20772 3.57252 5.16677 3.48406 5.10778 3.40801L3.42596 1.24525ZM1.76664 0.479327C1.93069 0.315222 2.12778 0.187894 2.34481 0.1058C2.56185 0.0237061 2.79386 -0.0112762 3.02545 0.00317621C3.25705 0.0176286 3.48291 0.081185 3.68806 0.189625C3.8932 0.298065 4.07293 0.448908 4.21531 0.632136L5.89713 2.79396C6.20556 3.19051 6.31431 3.70706 6.19244 4.19455L5.67964 6.24762C5.65313 6.35396 5.65456 6.46535 5.6838 6.57097C5.71303 6.67659 5.76909 6.77286 5.84651 6.85042L8.14987 9.1538C8.22753 9.23138 8.32396 9.28753 8.42976 9.31677C8.53556 9.34601 8.64713 9.34736 8.7536 9.32067L10.8057 8.80787C11.0463 8.74772 11.2974 8.74305 11.54 8.79421C11.7827 8.84537 12.0105 8.95102 12.2063 9.10318L14.3681 10.785C15.1453 11.3897 15.2165 12.5381 14.5209 13.2328L13.5516 14.2021C12.8579 14.8959 11.821 15.2005 10.8545 14.8602C8.38066 13.9898 6.13457 12.5736 4.28281 10.7166C2.42595 8.86507 1.00973 6.6193 0.139187 4.1458C-0.200177 3.1802 0.104501 2.14241 0.798229 1.44868L1.76757 0.479327H1.76664Z" fill="white"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_2060_21">
+                                <rect width="15" height="15" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                            <a href="tel:+982531189">+(98) 253-1189</a>
+                        </div>
+                        <div class="header__email">
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_2060_27)">
+                                <path d="M-0.000457764 3.75C-0.000457764 3.25272 0.197086 2.77581 0.548717 2.42417C0.900348 2.07254 1.37726 1.875 1.87454 1.875H13.1245C13.6218 1.875 14.0987 2.07254 14.4504 2.42417C14.802 2.77581 14.9995 3.25272 14.9995 3.75V11.25C14.9995 11.7473 14.802 12.2242 14.4504 12.5758C14.0987 12.9275 13.6218 13.125 13.1245 13.125H1.87454C1.37726 13.125 0.900348 12.9275 0.548717 12.5758C0.197086 12.2242 -0.000457764 11.7473 -0.000457764 11.25V3.75ZM1.87454 2.8125C1.6259 2.8125 1.38744 2.91127 1.21163 3.08709C1.03581 3.2629 0.937042 3.50136 0.937042 3.75V3.95344L7.49954 7.89094L14.062 3.95344V3.75C14.062 3.50136 13.9633 3.2629 13.7875 3.08709C13.6116 2.91127 13.3732 2.8125 13.1245 2.8125H1.87454ZM14.062 5.04656L9.60142 7.72312L14.062 10.4194V5.0475V5.04656ZM14.0302 11.4947L8.6911 8.26875L7.49954 8.98406L6.30704 8.26875L0.968917 11.4938C1.02254 11.6929 1.14034 11.8688 1.30406 11.9942C1.46779 12.1196 1.6683 12.1876 1.87454 12.1875H13.1245C13.3307 12.1876 13.5311 12.1198 13.6948 11.9946C13.8585 11.8694 13.9764 11.6937 14.0302 11.4947V11.4947ZM0.937042 10.4194L5.39767 7.72312L0.937042 5.04656V10.4184V10.4194Z" fill="white"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_2060_27">
+                                <rect width="15" height="15" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                            <a href="mailto:pigmentagency@gmail.com">pigmentagency@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__bottom">
+                    <div class="header__logo">
+                        <div class="header__menu-logo">
+                            <svg class="header__menu-btn header__menu-btn--hidden" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 9.33337H28" stroke="#438DB8" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M4 16H28" stroke="#438DB8" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M4 22.6666H28" stroke="#438DB8" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            <span>Mansoury.</span>             
+                        </div>                      
+                    </div>
+                    <nav class="header__nav-menu nav-menu--hidden">
+                        <ul class="header__menu-list">
+                            <li class="header__menu-item">
+                                <a href="">Home</a>
+                            </li>
+                            <li class="header__menu-item">
+                                <a href="">Products</a>
+                            </li>
+                            <li class="header__menu-item">
+                                <a href="">Pages</a>
+                            </li>
+                            <li class="header__menu-item">
+                                <a href="">About us</a>
+                            </li>
+                            <li class="header__menu-item">
+                                <a href="">Contact us</a>
+                            </li>
+                        </ul>
+                    </nav>                    
+                    <div class="header__auth">
+                        <button class="header__auth-btn" type="button">
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.5 8.75C9.22589 8.75 10.625 7.35089 10.625 5.625C10.625 3.89911 9.22589 2.5 7.5 2.5C5.77411 2.5 4.375 3.89911 4.375 5.625C4.375 7.35089 5.77411 8.75 7.5 8.75ZM7.5 8.75C4.73858 8.75 2.5 10.4289 2.5 12.5M7.5 8.75C10.2614 8.75 12.5 10.4289 12.5 12.5" stroke="#666666" stroke-linecap="round"/>
+                            </svg>
+                            Register / Login
+                        </button>
+                        <button class="header__cart-btn" type="button">
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.875 2.5H2.25395C2.89184 2.5 3.4274 2.98031 3.49658 3.61444L4.00342 8.26056C4.0726 8.89469 4.60816 9.375 5.24605 9.375H10.6538C11.2252 9.375 11.7238 8.98755 11.865 8.43389L12.7275 5.05194C12.929 4.26159 12.3319 3.49306 11.5162 3.49306H4.125M4.14047 11.6406H4.60922M4.14047 12.1093H4.60922M11.0155 11.6406H11.4842M11.0155 12.1093H11.4842M5 11.875C5 12.2202 4.72018 12.5 4.375 12.5C4.02982 12.5 3.75 12.2202 3.75 11.875C3.75 11.5298 4.02982 11.25 4.375 11.25C4.72018 11.25 5 11.5298 5 11.875ZM11.875 11.875C11.875 12.2202 11.5952 12.5 11.25 12.5C10.9048 12.5 10.625 12.2202 10.625 11.875C10.625 11.5298 10.9048 11.25 11.25 11.25C11.5952 11.25 11.875 11.5298 11.875 11.875Z" stroke="#666666" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <button class="header__search-btn" type="button">
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_2060_61)">
+                                <path d="M14.8131 15.5202C15.0083 15.7155 15.3249 15.7155 15.5202 15.5202C15.7154 15.325 15.7154 15.0084 15.5202 14.8131L14.8131 15.5202ZM12.1666 6.83334C12.1666 9.77886 9.77881 12.1667 6.83329 12.1667V13.1667C10.3311 13.1667 13.1666 10.3311 13.1666 6.83334H12.1666ZM6.83329 12.1667C3.88777 12.1667 1.49996 9.77886 1.49996 6.83334H0.499959C0.499959 10.3311 3.33549 13.1667 6.83329 13.1667V12.1667ZM1.49996 6.83334C1.49996 3.88782 3.88777 1.5 6.83329 1.5V0.5C3.33549 0.5 0.499959 3.33553 0.499959 6.83334H1.49996ZM6.83329 1.5C9.77881 1.5 12.1666 3.88782 12.1666 6.83334H13.1666C13.1666 3.33553 10.3311 0.5 6.83329 0.5V1.5ZM10.6464 11.3536L14.8131 15.5202L15.5202 14.8131L11.3535 10.6465L10.6464 11.3536Z" fill="#666666"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_2060_61">
+                                <rect width="15" height="15" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero hero--fullwidth">
+                <h1>Enhance Your Home with convenience and Style</h1>
+            <!-- переключатели слайдера не делаю пока -->
+        </section>
+
+        <main class="main main--fullwidth">
+            <div class="container">
+                <!-- Карусель - начало -->
+                <section class="carousel">
+                    <div class="carousel__deals">
+                        <div class="carousel__deals-heading">
+                            <p>Discover Hot Deals for Your Home!</p>
+                            <svg class="carousel__blue-line" width="60" height="5" viewBox="0 0 60 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="60" height="5" rx="2.5" fill="#438DB8"/>
+                            </svg>
+                        </div>
+                        <div class="carousel__deals-info">
+                            <p>In Mansoury, daily you can find the highest discounts across all categories and products available on the website.</p>
+                        </div>
+                        <button class="carousel__deals-btn">
+                            Show All Products
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.25 3.75L9.55806 7.05806C9.80214 7.30214 9.80214 7.69786 9.55806 7.94194L6.25 11.25" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <svg class="carousel__arrow-left carousel__arrow-left--hidden" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23.3333 10L14.5118 18.8215C13.861 19.4724 13.861 20.5276 14.5118 21.1785L23.3333 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+
+                    <div class="carousel__items">
+                        <!-- товар 1 -->
+                        <article class="carousel__item carousel__item--product product-card">
+                            <!-- Элементы блока carousel__item -->
+                            <div class="carousel__item-image carousel__item-image-1 ">
+                                <div class="carousel__item-badge carousel__item-badge--discount">50%</div>
+                                <button class="carousel__item-favorite" type="button">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99486 4.93011C8.49535 3.18259 5.99481 2.71251 4.11602 4.31271C2.23723 5.91291 1.97273 8.58837 3.44815 10.4809C4.67486 12.0545 8.38733 15.3732 9.60407 16.4473C9.7402 16.5675 9.80827 16.6276 9.88766 16.6512C9.95695 16.6718 10.0328 16.6718 10.1021 16.6512C10.1815 16.6276 10.2495 16.5675 10.3857 16.4473C11.6024 15.3732 15.3149 12.0545 16.5416 10.4809C18.017 8.58837 17.7848 5.89608 15.8737 4.31271C13.9626 2.72935 11.4944 3.18259 9.99486 4.93011Z" stroke="#737373" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel__item-info">
+                                <span class="carousel__item-title">Bosch 300 Series SHEM63W55N</span>
+                                <div class="carousel__item-footer">
+                                    <div class="carousel__price-bar">
+                                        <span class="carousel__item-price carousel__item-price--current">998$</span>
+                                        <span class="carousel__item-discount carousel__item-price--old">1200$</span>
+                                    </div>
+                                    <button class="carousel__cart-btn" type="button">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- <rect width="24" height="24" rx="4" fill="#438DB8"/> -->
+                                            <path d="M6.375 7H6.75395C7.39184 7 7.9274 7.48031 7.99658 8.11444L8.50342 12.7606C8.5726 13.3947 9.10816 13.875 9.74605 13.875H15.1538C15.7252 13.875 16.2238 13.4876 16.365 12.9339L17.2275 9.55194C17.429 8.76159 16.8319 7.99306 16.0162 7.99306H8.625M8.64047 16.1406H9.10922M8.64047 16.6093H9.10922M15.5155 16.1406H15.9842M15.5155 16.6093H15.9842M9.5 16.375C9.5 16.7202 9.22018 17 8.875 17C8.52982 17 8.25 16.7202 8.25 16.375C8.25 16.0298 8.52982 15.75 8.875 15.75C9.22018 15.75 9.5 16.0298 9.5 16.375ZM16.375 16.375C16.375 16.7202 16.0952 17 15.75 17C15.4048 17 15.125 16.7202 15.125 16.375C15.125 16.0298 15.4048 15.75 15.75 15.75C16.0952 15.75 16.375 16.0298 16.375 16.375Z" stroke="white" stroke-linecap="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- товар 2 -->
+                        <article class="carousel__item carousel__item--product product-card">
+                            <!-- Элементы блока carousel__item -->
+                            <div class="carousel__item-image carousel__item-image-2">
+                                <div class="carousel__item-badge carousel__item-badge--discount">50%</div>
+                                <button class="carousel__item-favorite" type="button">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99486 4.93011C8.49535 3.18259 5.99481 2.71251 4.11602 4.31271C2.23723 5.91291 1.97273 8.58837 3.44815 10.4809C4.67486 12.0545 8.38733 15.3732 9.60407 16.4473C9.7402 16.5675 9.80827 16.6276 9.88766 16.6512C9.95695 16.6718 10.0328 16.6718 10.1021 16.6512C10.1815 16.6276 10.2495 16.5675 10.3857 16.4473C11.6024 15.3732 15.3149 12.0545 16.5416 10.4809C18.017 8.58837 17.7848 5.89608 15.8737 4.31271C13.9626 2.72935 11.4944 3.18259 9.99486 4.93011Z" stroke="#737373" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel__item-info">
+                                <span class="carousel__item-title">Bosch 300 Series SHEM63W55N</span>
+                                <div class="carousel__item-footer">
+                                    <div class="carousel__price-bar">
+                                        <span class="carousel__item-price carousel__item-price--current">998$</span>
+                                        <span class="carousel__item-discount carousel__item-price--old">1200$</span>
+                                    </div>
+                                    <button class="carousel__cart-btn" type="button">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- <rect width="24" height="24" rx="4" fill="#438DB8"/> -->
+                                            <path d="M6.375 7H6.75395C7.39184 7 7.9274 7.48031 7.99658 8.11444L8.50342 12.7606C8.5726 13.3947 9.10816 13.875 9.74605 13.875H15.1538C15.7252 13.875 16.2238 13.4876 16.365 12.9339L17.2275 9.55194C17.429 8.76159 16.8319 7.99306 16.0162 7.99306H8.625M8.64047 16.1406H9.10922M8.64047 16.6093H9.10922M15.5155 16.1406H15.9842M15.5155 16.6093H15.9842M9.5 16.375C9.5 16.7202 9.22018 17 8.875 17C8.52982 17 8.25 16.7202 8.25 16.375C8.25 16.0298 8.52982 15.75 8.875 15.75C9.22018 15.75 9.5 16.0298 9.5 16.375ZM16.375 16.375C16.375 16.7202 16.0952 17 15.75 17C15.4048 17 15.125 16.7202 15.125 16.375C15.125 16.0298 15.4048 15.75 15.75 15.75C16.0952 15.75 16.375 16.0298 16.375 16.375Z" stroke="white" stroke-linecap="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- товар 3 -->
+                        <article class="carousel__item carousel__item--product product-card">
+                            <!-- Элементы блока carousel__item -->
+                            <div class="carousel__item-image carousel__item-image-3">
+                                <div class="carousel__item-badge carousel__item-badge--discount">50%</div>
+                                <button class="carousel__item-favorite" type="button">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99486 4.93011C8.49535 3.18259 5.99481 2.71251 4.11602 4.31271C2.23723 5.91291 1.97273 8.58837 3.44815 10.4809C4.67486 12.0545 8.38733 15.3732 9.60407 16.4473C9.7402 16.5675 9.80827 16.6276 9.88766 16.6512C9.95695 16.6718 10.0328 16.6718 10.1021 16.6512C10.1815 16.6276 10.2495 16.5675 10.3857 16.4473C11.6024 15.3732 15.3149 12.0545 16.5416 10.4809C18.017 8.58837 17.7848 5.89608 15.8737 4.31271C13.9626 2.72935 11.4944 3.18259 9.99486 4.93011Z" stroke="#737373" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel__item-info">
+                                <span class="carousel__item-title">Bosch 300 Series SHEM63W55N</span>
+                                <div class="carousel__item-footer">
+                                    <div class="carousel__price-bar">
+                                        <span class="carousel__item-price carousel__item-price--current">998$</span>
+                                        <span class="carousel__item-discount carousel__item-price--old">1200$</span>
+                                    </div>
+                                    <button class="carousel__cart-btn" type="button">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- <rect width="24" height="24" rx="4" fill="#438DB8"/> -->
+                                            <path d="M6.375 7H6.75395C7.39184 7 7.9274 7.48031 7.99658 8.11444L8.50342 12.7606C8.5726 13.3947 9.10816 13.875 9.74605 13.875H15.1538C15.7252 13.875 16.2238 13.4876 16.365 12.9339L17.2275 9.55194C17.429 8.76159 16.8319 7.99306 16.0162 7.99306H8.625M8.64047 16.1406H9.10922M8.64047 16.6093H9.10922M15.5155 16.1406H15.9842M15.5155 16.6093H15.9842M9.5 16.375C9.5 16.7202 9.22018 17 8.875 17C8.52982 17 8.25 16.7202 8.25 16.375C8.25 16.0298 8.52982 15.75 8.875 15.75C9.22018 15.75 9.5 16.0298 9.5 16.375ZM16.375 16.375C16.375 16.7202 16.0952 17 15.75 17C15.4048 17 15.125 16.7202 15.125 16.375C15.125 16.0298 15.4048 15.75 15.75 15.75C16.0952 15.75 16.375 16.0298 16.375 16.375Z" stroke="white" stroke-linecap="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- товар 4 -->
+                        <article class="carousel__item carousel__item--product product-card">
+                            <!-- Элементы блока carousel__item -->
+                            <div class="carousel__item-image carousel__item-image-4">
+                                <div class="carousel__item-badge carousel__item-badge--discount">50%</div>
+                                <button class="carousel__item-favorite" type="button">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99486 4.93011C8.49535 3.18259 5.99481 2.71251 4.11602 4.31271C2.23723 5.91291 1.97273 8.58837 3.44815 10.4809C4.67486 12.0545 8.38733 15.3732 9.60407 16.4473C9.7402 16.5675 9.80827 16.6276 9.88766 16.6512C9.95695 16.6718 10.0328 16.6718 10.1021 16.6512C10.1815 16.6276 10.2495 16.5675 10.3857 16.4473C11.6024 15.3732 15.3149 12.0545 16.5416 10.4809C18.017 8.58837 17.7848 5.89608 15.8737 4.31271C13.9626 2.72935 11.4944 3.18259 9.99486 4.93011Z" stroke="#737373" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="carousel__item-info">
+                                <span class="carousel__item-title">Bosch 300 Series SHEM63W55N</span>
+                                <div class="carousel__item-footer">
+                                    <div class="carousel__price-bar">
+                                        <span class="carousel__item-price carousel__item-price--current">998$</span>
+                                        <span class="carousel__item-discount carousel__item-price--old">1200$</span>
+                                    </div>
+                                    <button class="carousel__cart-btn" type="button">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- <rect width="24" height="24" rx="4" fill="#438DB8"/> -->
+                                            <path d="M6.375 7H6.75395C7.39184 7 7.9274 7.48031 7.99658 8.11444L8.50342 12.7606C8.5726 13.3947 9.10816 13.875 9.74605 13.875H15.1538C15.7252 13.875 16.2238 13.4876 16.365 12.9339L17.2275 9.55194C17.429 8.76159 16.8319 7.99306 16.0162 7.99306H8.625M8.64047 16.1406H9.10922M8.64047 16.6093H9.10922M15.5155 16.1406H15.9842M15.5155 16.6093H15.9842M9.5 16.375C9.5 16.7202 9.22018 17 8.875 17C8.52982 17 8.25 16.7202 8.25 16.375C8.25 16.0298 8.52982 15.75 8.875 15.75C9.22018 15.75 9.5 16.0298 9.5 16.375ZM16.375 16.375C16.375 16.7202 16.0952 17 15.75 17C15.4048 17 15.125 16.7202 15.125 16.375C15.125 16.0298 15.4048 15.75 15.75 15.75C16.0952 15.75 16.375 16.0298 16.375 16.375Z" stroke="white" stroke-linecap="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                </section>
+                <!-- Карусель - конец -->
+
+                <!-- Баннеры - начало -->
+                <section class="banners">
+                    <div class="banner banner-1">
+                        <div class="banner__info">
+                            <span class="banner__discount">30% OFF</span>
+                            <span class="banner__category">Quick and Hot</span>
+                        </div>
+                    </div>
+                    <div class="banner banner-2">
+                        <div class="banner__info">
+                            <span class="banner__discount">25% OFF</span>
+                            <span class="banner__category">Kitchenware from Top Brands</span>
+                        </div>
+                    </div>
+                    <div class="banner banner-3">
+                        <div class="banner__info">
+                            <span class="banner__discount">30% OFF</span>
+                            <span class="banner__category">Travel with Quality</span>
+                        </div>                    
+                    </div>
+                    <div class="banner banner-4">
+                        <div class="banner__info">
+                            <span class="banner__discount">30% OFF</span>
+                            <span class="banner__category">Cool and High-Quality Refrigerators and Freezers</span>
+                        </div>                      
+                    </div>
+                    <div class="banner banner-5">
+                        <div class="banner__info">
+                            <span class="banner__discount">30% OFF</span>
+                            <span class="banner__category">Clean and Gleaming Clothes</span>
+                        </div>   
+                    </div>
+                </section>
+                <!-- Баннеры - конец -->
+
+                <!-- Products You May Like - начало -->
+                <section class="products">
+                    <div class="products__heading">
+                        <h2>Products You May Like</h2>
+                        <svg width="60" height="5" viewBox="0 0 60 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="60" height="5" rx="2.5" fill="#438DB8"/>
+                        </svg>
+                    </div>
+                    <div class="products__items">
+                        <!-- сетка продуктов - начало -->
+                        <!-- товар 1 -->
+                        <article class="products__item products__item--product product-card product-card-1"> <!-- когда будешь стилизовать для селектора сначала бери класс родителя, а потом product-card-n -->
+                            <!-- Элементы блока products__item -->
+                            <div class="products__item-image products__item-image-1">
+                                <div class="products__item-badge products__item-badge--discount">50%</div>
+                                <button class="products__item-favorite" type="button">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99486 4.93011C8.49535 3.18259 5.99481 2.71251 4.11602 4.31271C2.23723 5.91291 1.97273 8.58837 3.44815 10.4809C4.67486 12.0545 8.38733 15.3732 9.60407 16.4473C9.7402 16.5675 9.80827 16.6276 9.88766 16.6512C9.95695 16.6718 10.0328 16.6718 10.1021 16.6512C10.1815 16.6276 10.2495 16.5675 10.3857 16.4473C11.6024 15.3732 15.3149 12.0545 16.5416 10.4809C18.017 8.58837 17.7848 5.89608 15.8737 4.31271C13.9626 2.72935 11.4944 3.18259 9.99486 4.93011Z" stroke="#737373" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="products__item-info">
+                                <span class="products__item-title">Bosch 300 Series SHEM63W55N</span>
+                                <div class="products__item-footer">
+                                    <div class="products__price-bar">
+                                        <span class="products__item-price products__item-price--current">998$</span>
+                                        <span class="products__item-discount products__item-price--old">1200$</span>
+                                    </div>
+                                    <button class="products__cart-btn" type="button">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- <rect width="24" height="24" rx="4" fill="#438DB8"/> -->
+                                            <path d="M6.375 7H6.75395C7.39184 7 7.9274 7.48031 7.99658 8.11444L8.50342 12.7606C8.5726 13.3947 9.10816 13.875 9.74605 13.875H15.1538C15.7252 13.875 16.2238 13.4876 16.365 12.9339L17.2275 9.55194C17.429 8.76159 16.8319 7.99306 16.0162 7.99306H8.625M8.64047 16.1406H9.10922M8.64047 16.6093H9.10922M15.5155 16.1406H15.9842M15.5155 16.6093H15.9842M9.5 16.375C9.5 16.7202 9.22018 17 8.875 17C8.52982 17 8.25 16.7202 8.25 16.375C8.25 16.0298 8.52982 15.75 8.875 15.75C9.22018 15.75 9.5 16.0298 9.5 16.375ZM16.375 16.375C16.375 16.7202 16.0952 17 15.75 17C15.4048 17 15.125 16.7202 15.125 16.375C15.125 16.0298 15.4048 15.75 15.75 15.75C16.0952 15.75 16.375 16.0298 16.375 16.375Z" stroke="white" stroke-linecap="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- товар 2 -->
+                        <article class="products__item products__item--product product-card product-card-2">
+                            <!-- Элементы блока products__item -->
+                            <div class="products__item-image products__item-image-2">
+                                <div class="products__item-badge products__item-badge--discount">50%</div>
+                                <button class="products__item-favorite" type="button">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99486 4.93011C8.49535 3.18259 5.99481 2.71251 4.11602 4.31271C2.23723 5.91291 1.97273 8.58837 3.44815 10.4809C4.67486 12.0545 8.38733 15.3732 9.60407 16.4473C9.7402 16.5675 9.80827 16.6276 9.88766 16.6512C9.95695 16.6718 10.0328 16.6718 10.1021 16.6512C10.1815 16.6276 10.2495 16.5675 10.3857 16.4473C11.6024 15.3732 15.3149 12.0545 16.5416 10.4809C18.017 8.58837 17.7848 5.89608 15.8737 4.31271C13.9626 2.72935 11.4944 3.18259 9.99486 4.93011Z" stroke="#737373" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="products__item-info">
+                                <span class="products__item-title">Bosch 300 Series SHEM63W55N</span>
+                                <div class="products__item-footer">
+                                    <div class="products__price-bar">
+                                        <span class="products__item-price products__item-price--current">998$</span>
+                                        <span class="products__item-discount products__item-price--old">1200$</span>
+                                    </div>
+                                    <button class="products__cart-btn" type="button">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- <rect width="24" height="24" rx="4" fill="#438DB8"/> -->
+                                            <path d="M6.375 7H6.75395C7.39184 7 7.9274 7.48031 7.99658 8.11444L8.50342 12.7606C8.5726 13.3947 9.10816 13.875 9.74605 13.875H15.1538C15.7252 13.875 16.2238 13.4876 16.365 12.9339L17.2275 9.55194C17.429 8.76159 16.8319 7.99306 16.0162 7.99306H8.625M8.64047 16.1406H9.10922M8.64047 16.6093H9.10922M15.5155 16.1406H15.9842M15.5155 16.6093H15.9842M9.5 16.375C9.5 16.7202 9.22018 17 8.875 17C8.52982 17 8.25 16.7202 8.25 16.375C8.25 16.0298 8.52982 15.75 8.875 15.75C9.22018 15.75 9.5 16.0298 9.5 16.375ZM16.375 16.375C16.375 16.7202 16.0952 17 15.75 17C15.4048 17 15.125 16.7202 15.125 16.375C15.125 16.0298 15.4048 15.75 15.75 15.75C16.0952 15.75 16.375 16.0298 16.375 16.375Z" stroke="white" stroke-linecap="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>                    
+                        <!-- товар 3 -->
+                        <article class="products__item products__item--product product-card product-card-3">
+                            <!-- Элементы блока products__item -->
+                            <div class="products__item-image products__item-image-3">
+                                <div class="products__item-badge products__item-badge--discount">50%</div>
+                                <button class="products__item-favorite" type="button">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99486 4.93011C8.49535 3.18259 5.99481 2.71251 4.11602 4.31271C2.23723 5.91291 1.97273 8.58837 3.44815 10.4809C4.67486 12.0545 8.38733 15.3732 9.60407 16.4473C9.7402 16.5675 9.80827 16.6276 9.88766 16.6512C9.95695 16.6718 10.0328 16.6718 10.1021 16.6512C10.1815 16.6276 10.2495 16.5675 10.3857 16.4473C11.6024 15.3732 15.3149 12.0545 16.5416 10.4809C18.017 8.58837 17.7848 5.89608 15.8737 4.31271C13.9626 2.72935 11.4944 3.18259 9.99486 4.93011Z" stroke="#737373" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="products__item-info">
+                                <span class="products__item-title">Bosch 300 Series SHEM63W55N</span>
+                                <div class="products__item-footer">
+                                    <div class="products__price-bar">
+                                        <span class="products__item-price products__item-price--current">998$</span>
+                                        <span class="products__item-discount products__item-price--old">1200$</span>
+                                    </div>
+                                    <button class="products__cart-btn" type="button">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- <rect width="24" height="24" rx="4" fill="#438DB8"/> -->
+                                            <path d="M6.375 7H6.75395C7.39184 7 7.9274 7.48031 7.99658 8.11444L8.50342 12.7606C8.5726 13.3947 9.10816 13.875 9.74605 13.875H15.1538C15.7252 13.875 16.2238 13.4876 16.365 12.9339L17.2275 9.55194C17.429 8.76159 16.8319 7.99306 16.0162 7.99306H8.625M8.64047 16.1406H9.10922M8.64047 16.6093H9.10922M15.5155 16.1406H15.9842M15.5155 16.6093H15.9842M9.5 16.375C9.5 16.7202 9.22018 17 8.875 17C8.52982 17 8.25 16.7202 8.25 16.375C8.25 16.0298 8.52982 15.75 8.875 15.75C9.22018 15.75 9.5 16.0298 9.5 16.375ZM16.375 16.375C16.375 16.7202 16.0952 17 15.75 17C15.4048 17 15.125 16.7202 15.125 16.375C15.125 16.0298 15.4048 15.75 15.75 15.75C16.0952 15.75 16.375 16.0298 16.375 16.375Z" stroke="white" stroke-linecap="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>                    
+                        
+                        <!-- товар 4 -->
+                        <article class="products__item products__item--product product-card product-card-4">
+                            <!-- Элементы блока products__item -->
+                            <div class="products__item-image products__item-image-4">
+                                <div class="products__item-badge products__item-badge--discount">50%</div>
+                                <button class="products__item-favorite" type="button">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99486 4.93011C8.49535 3.18259 5.99481 2.71251 4.11602 4.31271C2.23723 5.91291 1.97273 8.58837 3.44815 10.4809C4.67486 12.0545 8.38733 15.3732 9.60407 16.4473C9.7402 16.5675 9.80827 16.6276 9.88766 16.6512C9.95695 16.6718 10.0328 16.6718 10.1021 16.6512C10.1815 16.6276 10.2495 16.5675 10.3857 16.4473C11.6024 15.3732 15.3149 12.0545 16.5416 10.4809C18.017 8.58837 17.7848 5.89608 15.8737 4.31271C13.9626 2.72935 11.4944 3.18259 9.99486 4.93011Z" stroke="#737373" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="products__item-info">
+                                <span class="products__item-title">Bosch 300 Series SHEM63W55N</span>
+                                <div class="products__item-footer">
+                                    <div class="products__price-bar">
+                                        <span class="products__item-price products__item-price--current">998$</span>
+                                        <span class="products__item-discount products__item-price--old">1200$</span>
+                                    </div>
+                                    <button class="products__cart-btn" type="button">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- <rect width="24" height="24" rx="4" fill="#438DB8"/> -->
+                                            <path d="M6.375 7H6.75395C7.39184 7 7.9274 7.48031 7.99658 8.11444L8.50342 12.7606C8.5726 13.3947 9.10816 13.875 9.74605 13.875H15.1538C15.7252 13.875 16.2238 13.4876 16.365 12.9339L17.2275 9.55194C17.429 8.76159 16.8319 7.99306 16.0162 7.99306H8.625M8.64047 16.1406H9.10922M8.64047 16.6093H9.10922M15.5155 16.1406H15.9842M15.5155 16.6093H15.9842M9.5 16.375C9.5 16.7202 9.22018 17 8.875 17C8.52982 17 8.25 16.7202 8.25 16.375C8.25 16.0298 8.52982 15.75 8.875 15.75C9.22018 15.75 9.5 16.0298 9.5 16.375ZM16.375 16.375C16.375 16.7202 16.0952 17 15.75 17C15.4048 17 15.125 16.7202 15.125 16.375C15.125 16.0298 15.4048 15.75 15.75 15.75C16.0952 15.75 16.375 16.0298 16.375 16.375Z" stroke="white" stroke-linecap="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>                    
+                        
+                        <!-- товар 5 -->
+                        <article class="products__item products__item--product product-card product-card-5">
+                            <!-- Элементы блока products__item -->
+                            <div class="products__item-image products__item-image-5">
+                                <div class="products__item-badge products__item-badge--discount">50%</div>
+                                <button class="products__item-favorite" type="button">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99486 4.93011C8.49535 3.18259 5.99481 2.71251 4.11602 4.31271C2.23723 5.91291 1.97273 8.58837 3.44815 10.4809C4.67486 12.0545 8.38733 15.3732 9.60407 16.4473C9.7402 16.5675 9.80827 16.6276 9.88766 16.6512C9.95695 16.6718 10.0328 16.6718 10.1021 16.6512C10.1815 16.6276 10.2495 16.5675 10.3857 16.4473C11.6024 15.3732 15.3149 12.0545 16.5416 10.4809C18.017 8.58837 17.7848 5.89608 15.8737 4.31271C13.9626 2.72935 11.4944 3.18259 9.99486 4.93011Z" stroke="#737373" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="products__item-info">
+                                <span class="products__item-title">Bosch 300 Series SHEM63W55N</span>
+                                <div class="products__item-footer">
+                                    <div class="products__price-bar">
+                                        <span class="products__item-price products__item-price--current">998$</span>
+                                        <span class="products__item-discount products__item-price--old">1200$</span>
+                                    </div>
+                                    <button class="products__cart-btn" type="button">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- <rect width="24" height="24" rx="4" fill="#438DB8"/> -->
+                                            <path d="M6.375 7H6.75395C7.39184 7 7.9274 7.48031 7.99658 8.11444L8.50342 12.7606C8.5726 13.3947 9.10816 13.875 9.74605 13.875H15.1538C15.7252 13.875 16.2238 13.4876 16.365 12.9339L17.2275 9.55194C17.429 8.76159 16.8319 7.99306 16.0162 7.99306H8.625M8.64047 16.1406H9.10922M8.64047 16.6093H9.10922M15.5155 16.1406H15.9842M15.5155 16.6093H15.9842M9.5 16.375C9.5 16.7202 9.22018 17 8.875 17C8.52982 17 8.25 16.7202 8.25 16.375C8.25 16.0298 8.52982 15.75 8.875 15.75C9.22018 15.75 9.5 16.0298 9.5 16.375ZM16.375 16.375C16.375 16.7202 16.0952 17 15.75 17C15.4048 17 15.125 16.7202 15.125 16.375C15.125 16.0298 15.4048 15.75 15.75 15.75C16.0952 15.75 16.375 16.0298 16.375 16.375Z" stroke="white" stroke-linecap="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>                    
+                        
+                        <!-- товар 6 -->
+                        <article class="products__item products__item--product product-card product-card-6">
+                            <!-- Элементы блока products__item -->
+                            <div class="products__item-image products__item-image-6">
+                                <div class="products__item-badge products__item-badge--discount">50%</div>
+                                <button class="products__item-favorite" type="button">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99486 4.93011C8.49535 3.18259 5.99481 2.71251 4.11602 4.31271C2.23723 5.91291 1.97273 8.58837 3.44815 10.4809C4.67486 12.0545 8.38733 15.3732 9.60407 16.4473C9.7402 16.5675 9.80827 16.6276 9.88766 16.6512C9.95695 16.6718 10.0328 16.6718 10.1021 16.6512C10.1815 16.6276 10.2495 16.5675 10.3857 16.4473C11.6024 15.3732 15.3149 12.0545 16.5416 10.4809C18.017 8.58837 17.7848 5.89608 15.8737 4.31271C13.9626 2.72935 11.4944 3.18259 9.99486 4.93011Z" stroke="#737373" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="products__item-info">
+                                <span class="products__item-title">Bosch 300 Series SHEM63W55N</span>
+                                <div class="products__item-footer">
+                                    <div class="products__price-bar">
+                                        <span class="products__item-price products__item-price--current">998$</span>
+                                        <span class="products__item-discount products__item-price--old">1200$</span>
+                                    </div>
+                                    <button class="products__cart-btn" type="button">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- <rect width="24" height="24" rx="4" fill="#438DB8"/> -->
+                                            <path d="M6.375 7H6.75395C7.39184 7 7.9274 7.48031 7.99658 8.11444L8.50342 12.7606C8.5726 13.3947 9.10816 13.875 9.74605 13.875H15.1538C15.7252 13.875 16.2238 13.4876 16.365 12.9339L17.2275 9.55194C17.429 8.76159 16.8319 7.99306 16.0162 7.99306H8.625M8.64047 16.1406H9.10922M8.64047 16.6093H9.10922M15.5155 16.1406H15.9842M15.5155 16.6093H15.9842M9.5 16.375C9.5 16.7202 9.22018 17 8.875 17C8.52982 17 8.25 16.7202 8.25 16.375C8.25 16.0298 8.52982 15.75 8.875 15.75C9.22018 15.75 9.5 16.0298 9.5 16.375ZM16.375 16.375C16.375 16.7202 16.0952 17 15.75 17C15.4048 17 15.125 16.7202 15.125 16.375C15.125 16.0298 15.4048 15.75 15.75 15.75C16.0952 15.75 16.375 16.0298 16.375 16.375Z" stroke="white" stroke-linecap="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>                    
+                        
+                        <!-- товар 7 -->
+                        <article class="products__item products__item--product product-card product-card-7">
+                            <!-- Элементы блока products__item -->
+                            <div class="products__item-image products__item-image-7">
+                                <div class="products__item-badge products__item-badge--discount">50%</div>
+                                <button class="products__item-favorite" type="button">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99486 4.93011C8.49535 3.18259 5.99481 2.71251 4.11602 4.31271C2.23723 5.91291 1.97273 8.58837 3.44815 10.4809C4.67486 12.0545 8.38733 15.3732 9.60407 16.4473C9.7402 16.5675 9.80827 16.6276 9.88766 16.6512C9.95695 16.6718 10.0328 16.6718 10.1021 16.6512C10.1815 16.6276 10.2495 16.5675 10.3857 16.4473C11.6024 15.3732 15.3149 12.0545 16.5416 10.4809C18.017 8.58837 17.7848 5.89608 15.8737 4.31271C13.9626 2.72935 11.4944 3.18259 9.99486 4.93011Z" stroke="#737373" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="products__item-info">
+                                <span class="products__item-title">Bosch 300 Series SHEM63W55N</span>
+                                <div class="products__item-footer">
+                                    <div class="products__price-bar">
+                                        <span class="products__item-price products__item-price--current">998$</span>
+                                        <span class="products__item-discount products__item-price--old">1200$</span>
+                                    </div>
+                                    <button class="products__cart-btn" type="button">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- <rect width="24" height="24" rx="4" fill="#438DB8"/> -->
+                                            <path d="M6.375 7H6.75395C7.39184 7 7.9274 7.48031 7.99658 8.11444L8.50342 12.7606C8.5726 13.3947 9.10816 13.875 9.74605 13.875H15.1538C15.7252 13.875 16.2238 13.4876 16.365 12.9339L17.2275 9.55194C17.429 8.76159 16.8319 7.99306 16.0162 7.99306H8.625M8.64047 16.1406H9.10922M8.64047 16.6093H9.10922M15.5155 16.1406H15.9842M15.5155 16.6093H15.9842M9.5 16.375C9.5 16.7202 9.22018 17 8.875 17C8.52982 17 8.25 16.7202 8.25 16.375C8.25 16.0298 8.52982 15.75 8.875 15.75C9.22018 15.75 9.5 16.0298 9.5 16.375ZM16.375 16.375C16.375 16.7202 16.0952 17 15.75 17C15.4048 17 15.125 16.7202 15.125 16.375C15.125 16.0298 15.4048 15.75 15.75 15.75C16.0952 15.75 16.375 16.0298 16.375 16.375Z" stroke="white" stroke-linecap="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>                    
+                        
+                        <!-- товар 8 -->
+                        <article class="products__item products__item--product product-card product-card-8">
+                            <!-- Элементы блока products__item -->
+                            <div class="products__item-image products__item-image-8">
+                                <div class="products__item-badge products__item-badge--discount">50%</div>
+                                <button class="products__item-favorite" type="button">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99486 4.93011C8.49535 3.18259 5.99481 2.71251 4.11602 4.31271C2.23723 5.91291 1.97273 8.58837 3.44815 10.4809C4.67486 12.0545 8.38733 15.3732 9.60407 16.4473C9.7402 16.5675 9.80827 16.6276 9.88766 16.6512C9.95695 16.6718 10.0328 16.6718 10.1021 16.6512C10.1815 16.6276 10.2495 16.5675 10.3857 16.4473C11.6024 15.3732 15.3149 12.0545 16.5416 10.4809C18.017 8.58837 17.7848 5.89608 15.8737 4.31271C13.9626 2.72935 11.4944 3.18259 9.99486 4.93011Z" stroke="#737373" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="products__item-info">
+                                <span class="products__item-title">Bosch 300 Series SHEM63W55N</span>
+                                <div class="products__item-footer">
+                                    <div class="products__price-bar">
+                                        <span class="products__item-price products__item-price--current">998$</span>
+                                        <span class="products__item-discount products__item-price--old">1200$</span>
+                                    </div>
+                                    <button class="products__cart-btn" type="button">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- <rect width="24" height="24" rx="4" fill="#438DB8"/> -->
+                                            <path d="M6.375 7H6.75395C7.39184 7 7.9274 7.48031 7.99658 8.11444L8.50342 12.7606C8.5726 13.3947 9.10816 13.875 9.74605 13.875H15.1538C15.7252 13.875 16.2238 13.4876 16.365 12.9339L17.2275 9.55194C17.429 8.76159 16.8319 7.99306 16.0162 7.99306H8.625M8.64047 16.1406H9.10922M8.64047 16.6093H9.10922M15.5155 16.1406H15.9842M15.5155 16.6093H15.9842M9.5 16.375C9.5 16.7202 9.22018 17 8.875 17C8.52982 17 8.25 16.7202 8.25 16.375C8.25 16.0298 8.52982 15.75 8.875 15.75C9.22018 15.75 9.5 16.0298 9.5 16.375ZM16.375 16.375C16.375 16.7202 16.0952 17 15.75 17C15.4048 17 15.125 16.7202 15.125 16.375C15.125 16.0298 15.4048 15.75 15.75 15.75C16.0952 15.75 16.375 16.0298 16.375 16.375Z" stroke="white" stroke-linecap="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>                    
+                        
+                        <!-- товар 9 -->
+                        <article class="products__item products__item--product product-card product-card-9">
+                            <!-- Элементы блока products__item -->
+                            <div class="products__item-image products__item-image-9">
+                                <div class="products__item-badge products__item-badge--discount">50%</div>
+                                <button class="products__item-favorite" type="button">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99486 4.93011C8.49535 3.18259 5.99481 2.71251 4.11602 4.31271C2.23723 5.91291 1.97273 8.58837 3.44815 10.4809C4.67486 12.0545 8.38733 15.3732 9.60407 16.4473C9.7402 16.5675 9.80827 16.6276 9.88766 16.6512C9.95695 16.6718 10.0328 16.6718 10.1021 16.6512C10.1815 16.6276 10.2495 16.5675 10.3857 16.4473C11.6024 15.3732 15.3149 12.0545 16.5416 10.4809C18.017 8.58837 17.7848 5.89608 15.8737 4.31271C13.9626 2.72935 11.4944 3.18259 9.99486 4.93011Z" stroke="#737373" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="products__item-info">
+                                <span class="products__item-title">Bosch 300 Series SHEM63W55N</span>
+                                <div class="products__item-footer">
+                                    <div class="products__price-bar">
+                                        <span class="products__item-price products__item-price--current">998$</span>
+                                        <span class="products__item-discount products__item-price--old">1200$</span>
+                                    </div>
+                                    <button class="products__cart-btn" type="button">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- <rect width="24" height="24" rx="4" fill="#438DB8"/> -->
+                                            <path d="M6.375 7H6.75395C7.39184 7 7.9274 7.48031 7.99658 8.11444L8.50342 12.7606C8.5726 13.3947 9.10816 13.875 9.74605 13.875H15.1538C15.7252 13.875 16.2238 13.4876 16.365 12.9339L17.2275 9.55194C17.429 8.76159 16.8319 7.99306 16.0162 7.99306H8.625M8.64047 16.1406H9.10922M8.64047 16.6093H9.10922M15.5155 16.1406H15.9842M15.5155 16.6093H15.9842M9.5 16.375C9.5 16.7202 9.22018 17 8.875 17C8.52982 17 8.25 16.7202 8.25 16.375C8.25 16.0298 8.52982 15.75 8.875 15.75C9.22018 15.75 9.5 16.0298 9.5 16.375ZM16.375 16.375C16.375 16.7202 16.0952 17 15.75 17C15.4048 17 15.125 16.7202 15.125 16.375C15.125 16.0298 15.4048 15.75 15.75 15.75C16.0952 15.75 16.375 16.0298 16.375 16.375Z" stroke="white" stroke-linecap="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>                    
+                        <!-- товар 10 -->
+                        <article class="products__item products__item--product product-card product-card-10">
+                            <!-- Элементы блока products__item -->
+                            <div class="products__item-image products__item-image-10">
+                                <div class="products__item-badge products__item-badge--discount">50%</div>
+                                <button class="products__item-favorite" type="button">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99486 4.93011C8.49535 3.18259 5.99481 2.71251 4.11602 4.31271C2.23723 5.91291 1.97273 8.58837 3.44815 10.4809C4.67486 12.0545 8.38733 15.3732 9.60407 16.4473C9.7402 16.5675 9.80827 16.6276 9.88766 16.6512C9.95695 16.6718 10.0328 16.6718 10.1021 16.6512C10.1815 16.6276 10.2495 16.5675 10.3857 16.4473C11.6024 15.3732 15.3149 12.0545 16.5416 10.4809C18.017 8.58837 17.7848 5.89608 15.8737 4.31271C13.9626 2.72935 11.4944 3.18259 9.99486 4.93011Z" stroke="#737373" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="products__item-info">
+                                <span class="products__item-title">Bosch 300 Series SHEM63W55N</span>
+                                <div class="products__item-footer">
+                                    <div class="products__price-bar">
+                                        <span class="products__item-price products__item-price--current">998$</span>
+                                        <span class="products__item-discount products__item-price--old">1200$</span>
+                                    </div>
+                                    <button class="products__cart-btn" type="button">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <!-- <rect width="24" height="24" rx="4" fill="#438DB8"/> -->
+                                            <path d="M6.375 7H6.75395C7.39184 7 7.9274 7.48031 7.99658 8.11444L8.50342 12.7606C8.5726 13.3947 9.10816 13.875 9.74605 13.875H15.1538C15.7252 13.875 16.2238 13.4876 16.365 12.9339L17.2275 9.55194C17.429 8.76159 16.8319 7.99306 16.0162 7.99306H8.625M8.64047 16.1406H9.10922M8.64047 16.6093H9.10922M15.5155 16.1406H15.9842M15.5155 16.6093H15.9842M9.5 16.375C9.5 16.7202 9.22018 17 8.875 17C8.52982 17 8.25 16.7202 8.25 16.375C8.25 16.0298 8.52982 15.75 8.875 15.75C9.22018 15.75 9.5 16.0298 9.5 16.375ZM16.375 16.375C16.375 16.7202 16.0952 17 15.75 17C15.4048 17 15.125 16.7202 15.125 16.375C15.125 16.0298 15.4048 15.75 15.75 15.75C16.0952 15.75 16.375 16.0298 16.375 16.375Z" stroke="white" stroke-linecap="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>                  
+                        <!-- сетка продуктов - конец -->
+                    </div>
+                    <div class="products__arrows">
+                        <button class="products__arrow-left" type="button">
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.75003 3.75L5.44197 7.05806C5.19789 7.30214 5.19789 7.69786 5.44197 7.94194L8.75003 11.25" stroke="white" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <button class="products__arrow-right" type="button">
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.25 3.75L9.55806 7.05806C9.80214 7.30214 9.80214 7.69786 9.55806 7.94194L6.25 11.25" stroke="white" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </section>
+                <!-- Products You May Like - конец -->
+
+                <!-- Steel 10-Piece Cookware Set - начало -->
+                <section class="products-set">
+                    <div class="products-set__info">
+                        <div class="products-set__title">
+                            <h3>Mansoury.</h3> <br>
+                            <span>Steel 10-Piece Cookware Set</span>
+                        </div>
+                        <!-- <div class="products-set__description">Steel 10-Piece Cookware Set</div> -->
+                        <button class="products-set__button">
+                            Show Products
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.25 3.75L9.55806 7.05806C9.80214 7.30214 9.80214 7.69786 9.55806 7.94194L6.25 11.25" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </section>
+                <!-- Steel 10-Piece Cookware Set - конец -->
+
+                <!-- Features - начало -->
+                <section class="features">
+                    <div class="features__feature feature--support">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25 29.1667C30.753 29.1667 35.4167 24.503 35.4167 18.75C35.4167 12.9971 30.753 8.33337 25 8.33337C19.2471 8.33337 14.5834 12.9971 14.5834 18.75C14.5834 24.503 19.2471 29.1667 25 29.1667ZM25 29.1667C15.7953 29.1667 8.33337 34.7631 8.33337 41.6667M25 29.1667C34.2048 29.1667 41.6667 34.7631 41.6667 41.6667" stroke="#666666" stroke-linecap="round"/>
+                        </svg>
+                        <div class="features__info">
+                            <span class="features__title">Online Support</span>
+                            <span class="features__description">Dedicated Support Team</span>
+                        </div>
+                    </div>
+
+                    <div class="features__feature feature--shipping">
+                        <svg width="51" height="41" viewBox="0 0 51 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M30 33.8333V1.83333C30 1.09695 29.4404 0.5 28.75 0.5H1.25C0.559644 0.5 0 1.09695 0 1.83333V33.8333C0 34.5697 0.559644 35.1667 1.25 35.1667H5M30 33.8333C30 34.5697 29.4404 35.1667 28.75 35.1667H15M30 33.8333V9.83333C30 9.09695 30.5596 8.5 31.25 8.5H39.4822C39.8138 8.5 40.1317 8.64048 40.3661 8.89052L49.6339 18.7761C49.8683 19.0262 50 19.3653 50 19.719V33.8333C50 34.5697 49.4404 35.1667 48.75 35.1667H45M30 33.8333C30 34.5697 30.5596 35.1667 31.25 35.1667H35M5 35.1667C5 38.1122 7.23858 40.5 10 40.5C12.7614 40.5 15 38.1122 15 35.1667M5 35.1667C5 32.2211 7.23858 29.8333 10 29.8333C12.7614 29.8333 15 32.2211 15 35.1667M35 35.1667C35 38.1122 37.2386 40.5 40 40.5C42.7614 40.5 45 38.1122 45 35.1667M35 35.1667C35 32.2211 37.2386 29.8333 40 29.8333C42.7614 29.8333 45 32.2211 45 35.1667" stroke="#666666"/>
+                        </svg>
+                        <div class="features__info">
+                            <span class="features__title">Free Shipping</span>
+                            <span class="features__description">Purchases Over $100</span>
+                        </div>                    
+                    </div>
+
+                    <div class="features__feature feature--shopping">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M35.4167 19.0789L35.2587 16.9493C35.114 14.9983 33.428 13.4868 31.3968 13.4868H27.2584M12.5 39.5833H10.1219C7.87501 39.5833 6.09995 37.7477 6.26004 35.5896L7.6428 16.9493C7.78752 14.9983 9.47344 13.4868 11.5047 13.4868H15.6431M15.6431 13.4868V9.75873C15.6431 6.6703 18.2433 4.16663 21.4507 4.16663C24.6582 4.16663 27.2584 6.6703 27.2584 9.75873V13.4868M15.6431 13.4868H27.2584M35.4167 31.25C35.4167 33.5511 33.5512 35.4166 31.25 35.4166C28.9488 35.4166 27.0833 33.5511 27.0833 31.25M22.9167 43.75H39.5833C41.8845 43.75 43.75 41.8845 43.75 39.5833V29.1666C43.75 26.8654 41.8845 25 39.5833 25H22.9167C20.6155 25 18.75 26.8654 18.75 29.1666V39.5833C18.75 41.8845 20.6155 43.75 22.9167 43.75Z" stroke="#666666" stroke-linecap="round"/>
+                        </svg>
+                        <div class="features__info">
+                            <span class="features__title">Timeless Shopping</span>
+                            <span class="features__description">24/7 Purchasing</span>
+                        </div>  
+                    </div>
+
+                    <div class="features__feature feature--returns">
+                        <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.8889 44.9444C13.8889 48.0127 11.4016 50.5 8.33333 50.5C5.26508 50.5 2.77778 48.0127 2.77778 44.9444C2.77778 41.8762 5.26508 39.3889 8.33333 39.3889C11.4016 39.3889 13.8889 41.8762 13.8889 44.9444ZM13.8889 44.9444H36.1111C39.1794 44.9444 41.6667 42.4571 41.6667 39.3889V28.2778M36.1111 6.05556C36.1111 9.1238 38.5984 11.6111 41.6667 11.6111C44.7349 11.6111 47.2222 9.1238 47.2222 6.05556C47.2222 2.98731 44.7349 0.5 41.6667 0.5C38.5984 0.5 36.1111 2.98731 36.1111 6.05556ZM36.1111 6.05556H13.8889C10.8206 6.05556 8.33333 8.54286 8.33333 11.6111V22.7222M50 33.8333L42.6488 25.937C42.1064 25.3543 41.227 25.3543 40.6846 25.937L33.3333 33.8333M16.6667 17.1667L9.31542 25.063C8.77303 25.6457 7.89363 25.6457 7.35124 25.063L0 17.1667" stroke="#666666" stroke-linecap="round"/>
+                        </svg>
+                        <div class="features__info">
+                            <span class="features__title">Product Returns</span>
+                            <span class="features__description">No-Questions-Asked Returns</span>
+                        </div>                      
+                    </div>
+                </section>
+                <!-- Features - конец -->
+            </div> 
+        </main>
+        
+        <footer class="footer footer--fullwidth">
+            <div class="container">
+                <div class="footer__content">
+                    <!-- контактные данные - начало -->
+                    <div class="footer__contacts">
+                        <div class="footer__contacts-title footer-title footer-title-connected">Stay Connected</div>
+                        <div class="footer__contact-info">
+                            <span class="footer__address">Address: Istanbul, Turkey</span>
+                            <span>Phone: (+90) 985 98 75</span>
+                        </div>
+                        <div class="footer__social-media">
+                            <span>Follow us on social media</span>
+                            <div class="footer__icons">
+                                <a class="footer__twitter" href="#">
+                                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="36" height="36" rx="12" fill="#F6F6F6"/>
+                                        <path d="M26.6056 14.5802C26.6166 14.7339 26.6166 14.8877 26.6166 15.0414C26.6166 19.7307 23.0475 25.1339 16.5241 25.1339C14.5144 25.1339 12.6475 24.5518 11.077 23.5415C11.3626 23.5744 11.6371 23.5854 11.9336 23.5854C13.5919 23.5854 15.1184 23.0254 16.3374 22.0699C14.778 22.037 13.4711 21.0156 13.0208 19.6099C13.2405 19.6429 13.4601 19.6648 13.6908 19.6648C14.0092 19.6648 14.3277 19.6209 14.6242 19.5441C12.9989 19.2146 11.7798 17.7869 11.7798 16.0627V16.0188C12.2521 16.2824 12.8012 16.4471 13.3832 16.4691C12.4278 15.8321 11.8018 14.7449 11.8018 13.5149C11.8018 12.856 11.9775 12.252 12.285 11.7248C14.0312 13.8773 16.6559 15.283 19.599 15.4368C19.5441 15.1732 19.5112 14.8987 19.5112 14.6241C19.5112 12.6693 21.0926 11.0769 23.0584 11.0769C24.0797 11.0769 25.0022 11.5052 25.6501 12.1971C26.4518 12.0433 27.2205 11.7468 27.9015 11.3405C27.6379 12.1641 27.0778 12.856 26.342 13.2953C27.0558 13.2184 27.7477 13.0207 28.3846 12.7462C27.9015 13.449 27.2975 14.075 26.6056 14.5802Z" fill="#666666"/>
+                                    </svg>
+                                </a>
+                                <a class="footer__facebook" href="#">
+                                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="36" height="36" rx="12" fill="#F6F6F6"/>
+                                        <path d="M22.4366 19.2687L22.931 16.0473H19.84V13.9569C19.84 13.0756 20.2718 12.2165 21.6562 12.2165H23.0614V9.47386C23.0614 9.47386 21.7862 9.25623 20.5669 9.25623C18.0214 9.25623 16.3575 10.7991 16.3575 13.5922V16.0473H13.528V19.2687H16.3575V27.0562H19.84V19.2687H22.4366Z" fill="#666666"/>
+                                    </svg>
+                                </a>
+                                <a class="footer__linkedin" href="#">
+                                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="36" height="36" rx="12" fill="#F6F6F6"/>
+                                        <path d="M14.5478 15.1259V24.1538H12.1364V15.1259H14.5478ZM11.9863 12.7729C11.9863 12.4225 12.1086 12.1332 12.3534 11.9052C12.5981 11.6771 12.9263 11.5631 13.3379 11.5631C13.744 11.5631 14.0694 11.6771 14.3142 11.9052C14.5645 12.1332 14.6896 12.4225 14.6896 12.7729C14.6896 13.1234 14.5645 13.4126 14.3142 13.6407C14.0694 13.8687 13.744 13.9828 13.3379 13.9828C12.9263 13.9828 12.5981 13.8687 12.3534 13.6407C12.1086 13.4126 11.9863 13.1234 11.9863 12.7729ZM19.2283 17.0533V24.1538H16.8253V15.1259H19.0781L19.2283 17.0533ZM18.8779 19.3228H18.227C18.227 18.6553 18.3133 18.0545 18.4857 17.5205C18.6581 16.981 18.9001 16.5221 19.2116 16.1438C19.5231 15.76 19.893 15.468 20.3213 15.2677C20.7552 15.0619 21.2391 14.959 21.7731 14.959C22.1959 14.959 22.5825 15.0202 22.9329 15.1426C23.2834 15.2649 23.5837 15.4596 23.834 15.7266C24.0899 15.9936 24.2846 16.3468 24.4181 16.7863C24.5572 17.2257 24.6267 17.7625 24.6267 18.3966V24.1538H22.207V18.3883C22.207 17.9878 22.1514 17.6763 22.0401 17.4538C21.9289 17.2313 21.7648 17.0755 21.5479 16.9865C21.3365 16.892 21.075 16.8447 20.7635 16.8447C20.4409 16.8447 20.16 16.9087 19.9208 17.0366C19.6872 17.1645 19.4925 17.3425 19.3368 17.5706C19.1866 17.7931 19.0725 18.0545 18.9947 18.3549C18.9168 18.6553 18.8779 18.9779 18.8779 19.3228Z" fill="#666666"/>
+                                    </svg>
+                                </a>
+                                <a class="footer__instagram" href="#">
+                                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="36" height="36" rx="12" fill="#F6F6F6"/>
+                                        <path d="M17.9628 14.0751C15.8129 14.0751 14.0787 15.8092 14.0787 17.9592C14.0787 20.1091 15.8129 21.8433 17.9628 21.8433C20.1127 21.8433 21.8469 20.1091 21.8469 17.9592C21.8469 15.8092 20.1127 14.0751 17.9628 14.0751ZM17.9628 20.4843C16.5734 20.4843 15.4376 19.3519 15.4376 17.9592C15.4376 16.5664 16.5701 15.434 17.9628 15.434C19.3555 15.434 20.488 16.5664 20.488 17.9592C20.488 19.3519 19.3521 20.4843 17.9628 20.4843ZM22.9117 13.9162C22.9117 14.4199 22.5061 14.8222 22.0058 14.8222C21.5021 14.8222 21.0998 14.4165 21.0998 13.9162C21.0998 13.4159 21.5055 13.0103 22.0058 13.0103C22.5061 13.0103 22.9117 13.4159 22.9117 13.9162ZM25.4842 14.8357C25.4267 13.6221 25.1495 12.5471 24.2605 11.6615C23.3748 10.7758 22.2999 10.4986 21.0863 10.4378C19.8355 10.3668 16.0867 10.3668 14.8359 10.4378C13.6257 10.4952 12.5508 10.7724 11.6617 11.6581C10.7727 12.5438 10.4989 13.6187 10.438 14.8323C10.367 16.083 10.367 19.8319 10.438 21.0827C10.4955 22.2962 10.7727 23.3712 11.6617 24.2569C12.5508 25.1425 13.6224 25.4197 14.8359 25.4806C16.0867 25.5516 19.8355 25.5516 21.0863 25.4806C22.2999 25.4231 23.3748 25.1459 24.2605 24.2569C25.1462 23.3712 25.4234 22.2962 25.4842 21.0827C25.5552 19.8319 25.5552 16.0864 25.4842 14.8357ZM23.8684 22.4247C23.6047 23.0873 23.0943 23.5977 22.4283 23.8647C21.4311 24.2603 19.0648 24.169 17.9628 24.169C16.8608 24.169 14.4911 24.2569 13.4973 23.8647C12.8347 23.6011 12.3243 23.0906 12.0572 22.4247C11.6617 21.4275 11.753 19.0612 11.753 17.9592C11.753 16.8572 11.6651 14.4875 12.0572 13.4937C12.3209 12.8311 12.8313 12.3207 13.4973 12.0536C14.4945 11.6581 16.8608 11.7494 17.9628 11.7494C19.0648 11.7494 21.4345 11.6615 22.4283 12.0536C23.0909 12.3173 23.6013 12.8277 23.8684 13.4937C24.2639 14.4909 24.1726 16.8572 24.1726 17.9592C24.1726 19.0612 24.2639 21.4309 23.8684 22.4247Z" fill="#666666"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- контактные данные - конец -->
+                    <!-- Mansoury - начало -->
+                    <div class="footer__mansoury">
+                        <div class="footer__mansoury-title footer-title">Mansoury.</div>
+                        <ul class="footer__links-list">
+                            <li><a href="">About Us</a></li>
+                            <li><a href="">Careers</a></li>
+                            <li><a href="">Collaboration</a></li>
+                            <li><a href="">Dashboard</a></li>
+                            <li><a href="">policies</a></li>
+                        </ul>
+                    </div>
+                    <!-- Mansoury - начало -->
+                    <div class="footer__services">
+                        <div class="footer__services-title footer-title">Customer Services</div>
+                        <ul class="footer__links-list">
+                            <li><a href="">Rules and Regulations</a></li>
+                            <li><a href="">Terms of Use</a></li>
+                            <li><a href="">Return Procedures</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                            <li><a href="">Forums</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__access">
+                        <div class="footer__access-title footer-title">Quick Access</div>
+                        <ul class="footer__links-list">
+                            <li><a href="">Contact Us</a></li>
+                            <li><a href="">Blog</a></li>
+                            <li><a href="">Returns and refunds</a></li>
+                            <li><a href="">Track order</a></li>
+                            <li><a href="">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>    
+        </footer>
+        
+        <div class="bottomline bottomline--fullwidth">
+            <span>&copy;All Rights Reserved for Mansoury - 2023</span>
+        </div>
+    <!-- </div>     -->
+</body>
+</html>
